@@ -6,3 +6,8 @@ golint:
 tools:
 	go get github.com/couchbase/gocb/v2@latest
 
+run: 
+	go run cmd/app/main.go
+
+up-down:
+	docker compose down -v && docker compose up -d
