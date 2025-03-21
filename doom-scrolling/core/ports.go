@@ -8,10 +8,10 @@ type DocumentDB interface {
 }
 
 type GraphDB interface {
-	FollowUser(ctx context.Context, followerID, followingID string) error
+	FollowUser(ctx context.Context, followerName, followingName string) error
 	LikePost(ctx context.Context, userID, postID string) error
 	GetFeed(ctx context.Context, userID string) (string, error)
 
 	CreateUser(ctx context.Context, username string) error
-	CreatePost(ctx context.Context, postId string) error
+	CreatePost(ctx context.Context, postId string, userId string) error
 }

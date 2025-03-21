@@ -2,6 +2,7 @@ package dgraph
 
 import (
 	"context"
+	"encoding/json"
 	"log/slog"
 	"rshd/lab1/v2/config"
 	"rshd/lab1/v2/db/graph"
@@ -14,6 +15,12 @@ type DgraphDb struct {
 	dgraphClient *graph.DgraphClient
 }
 
+type response struct {
+	People []struct {
+		UID string `json:"uid"`
+	} `json:"people"`
+}
+
 func New(log *slog.Logger, cfg config.Config) (*DgraphDb, error) {
 	dgraphClient, err := graph.InitClient(cfg, log)
 	ctx := context.Background()
@@ -23,10 +30,11 @@ func New(log *slog.Logger, cfg config.Config) (*DgraphDb, error) {
 
 	op := &api.Operation{
 		Schema: `
+			name: string @index(exact) @upsert .
 			id: string @index(exact) .
 			username: string @index(exact) @upsert .
 			follows: uid @reverse .
-			likes: uid .
+			likes: uid @reverse .
 		`,
 	}
 	err = dgraphClient.Dg.Alter(ctx, op)
@@ -38,91 +46,174 @@ func New(log *slog.Logger, cfg config.Config) (*DgraphDb, error) {
 	return &DgraphDb{log: log, dgraphClient: dgraphClient}, nil
 }
 
-func (db *DgraphDb) FollowUser(ctx context.Context, followerID, followingID string) error {
+func (db *DgraphDb) SETBEN200() {
+	txn := db.dgraphClient.Dg.NewTxn()
+	defer txn.Discard(context.Background())
+
 	query := `
 	{
-		follower as var(func: eq(id, "` + followerID + `"))
-		following as var(func: eq(id, "` + followingID + `"))
+		people(func: eq(name, "Ann")) {
+			uid
+		}
 	}`
 
-	mu := &api.Mutation{
-		SetNquads: []byte(`
-			uid(follower) <follows> uid(following) .
-		`),
-		CommitNow: true,
-	}
-
-	req := &api.Request{
-		Query:     query,
-		Mutations: []*api.Mutation{mu},
-		CommitNow: true,
-	}
-
-	_, err := db.dgraphClient.Dg.NewTxn().Do(ctx, req)
+	resp, err := txn.Query(context.Background(), query)
 	if err != nil {
-		db.log.Error("Error of following", "error", err)
+		db.log.Error("Query failed", "error", err)
+		panic(err)
+	}
+	var response response
+	if err := json.Unmarshal(resp.Json, &response); err != nil {
+		db.log.Error("Error unmarshalling JSON", "error", err)
+		panic(err)
+	}
+
+	if len(response.People) == 0 {
+		db.log.Error("No person found to update")
+		return
+	}
+
+	mutation := &api.Mutation{
+		SetJson: []byte(
+			`
+			{
+				"uid": "` + response.People[0].UID + `",
+				"age": 200
+			}
+			`),
+		CommitNow: true,
+	}
+
+	_, err = txn.Mutate(context.Background(), mutation)
+	if err != nil {
+		db.log.Error("Mutation failed", "error", err)
+		panic(err)
+	}
+}
+func (db *DgraphDb) FollowUser(ctx context.Context, followerName, followingName string) error {
+	txn := db.dgraphClient.Dg.NewTxn()
+	defer txn.Discard(context.Background())
+
+	queryFollower := `
+	{
+		people(func: eq(username, "` + followerName + `")) {
+			uid
+		}
+	}`
+	var structFollower response
+	var structFollowing response
+
+	queryFollowing := `
+	{
+		people(func: eq(username, "` + followerName + `")) {
+			uid
+		}
+	}`
+
+	respFollower, err := txn.Query(context.Background(), queryFollower)
+	if err != nil {
+		db.log.Error("Query failed", "error", err)
 		return err
 	}
 
-	db.log.Info("User followed", "follower", followerID, "following", followingID)
+	if err := json.Unmarshal(respFollower.Json, &structFollower); err != nil {
+		db.log.Error("Error unmarshalling JSON", "error", err)
+		return err
+	}
+
+	respFollowing, err := txn.Query(context.Background(), queryFollowing)
+	if err != nil {
+		db.log.Error("Query failed", "error", err)
+		return err
+	}
+	if err := json.Unmarshal(respFollowing.Json, &structFollowing); err != nil {
+		db.log.Error("Error unmarshalling JSON", "error", err)
+		return err
+	}
+
+	mutation := &api.Mutation{
+		SetJson: []byte(`
+			{
+				"uid": "` + structFollowing.People[0].UID + `",
+				"follows": {
+					"uid": "` + structFollower.People[0].UID + `"
+				}
+			}
+		`),
+		CommitNow: true,
+	}
+	_, err = txn.Mutate(context.Background(), mutation)
+	if err != nil {
+		db.log.Error("Mutation failed", "error", err)
+		return err
+	}
 	return nil
 }
 
 func (db *DgraphDb) LikePost(ctx context.Context, userID, postID string) error {
-	query := `
+	txn := db.dgraphClient.Dg.NewTxn()
+	defer txn.Discard(context.Background())
+
+	userUid := `
 	{
-		user as var(func: eq(id, "` + userID + `"))
-		post as var(func: eq(id, "` + postID + `"))
+		people(func: eq(username, "` + userID + `")) {
+			uid
+		}
 	}`
 
-	mu := &api.Mutation{
-		SetNquads: []byte(`
-			uid(user) <likes> uid(post) .
-		`),
-		CommitNow: true,
-	}
+	postUid := `
+	{
+		people(func: eq(id, "` + postID + `")) {
+			uid
+		}
+	}`
 
-	req := &api.Request{
-		Query:     query,
-		Mutations: []*api.Mutation{mu},
-		CommitNow: true,
-	}
+	var user response
+	var post response
 
-	_, err := db.dgraphClient.Dg.NewTxn().Do(ctx, req)
+	respUser, err := txn.Query(context.Background(), userUid)
 	if err != nil {
-		db.log.Error("Error while liking", "error", err)
+		db.log.Error("Query failed", "error", err)
+		return err
+	}
+	respPost, err := txn.Query(context.Background(), postUid)
+	if err != nil {
+		db.log.Error("Query failed", "error", err)
 		return err
 	}
 
-	db.log.Debug("User liked", "user", userID, "post", postID)
+	if err := json.Unmarshal(respUser.Json, &user); err != nil {
+		db.log.Error("Error unmarshalling JSON", "error", err)
+		return err
+	}
+	if err := json.Unmarshal(respPost.Json, &post); err != nil {
+		db.log.Error("Error unmarshalling JSON", "error", err)
+		return err
+	}
+
+	mutation := &api.Mutation{
+		SetJson: []byte(`
+			{
+				"uid": "` + post.People[0].UID + `",
+				"likes": {
+					"uid": "` + user.People[0].UID + `"
+				}
+			}
+		`),
+		CommitNow: true,
+	}
+	_, err = txn.Mutate(ctx, mutation)
+	if err != nil {
+		db.log.Error("Mutation failed", "error", err)
+		return err
+	}
 	return nil
 }
 
+// GetFeed returns a feed of posts for a given user
+// TODO: буквально последний и самый важный метод, который нужно реализовать
 func (db *DgraphDb) GetFeed(ctx context.Context, userID string) (string, error) {
-	query := `
-	{
-		var(func: eq(id, "` + userID + `")) {
-			followed as follows
-		}
 
-		feed(func: uid(followed)) {
-			posts {
-				id
-				caption
-				image_url
-				likes
-				created_at
-			}
-		}
-	}`
-
-	resp, err := db.dgraphClient.Dg.NewTxn().Query(ctx, query)
-	if err != nil {
-		db.log.Error("Error request to feed", "error", err)
-		return "", err
-	}
-
-	db.log.Debug("User feed", "userID", userID, "data", resp.String())
 	return resp.String(), nil
 }
 
@@ -149,13 +240,15 @@ func (db *DgraphDb) CreateUser(ctx context.Context, username string) error {
 	return nil
 }
 
-func (db *DgraphDb) CreatePost(ctx context.Context, postId string) error {
+func (db *DgraphDb) CreatePost(ctx context.Context, postId, userId string) error {
 	mutation := &api.Mutation{
 		SetJson: []byte(`{
-			"id": "` + postId + `"
-		}`),
+			"id": "` + postId + `",
+			"user_id": "` + userId + `"
+			}`),
 		CommitNow: true,
 	}
+
 	req := &api.Request{
 		Mutations: []*api.Mutation{mutation},
 		CommitNow: true,
@@ -169,4 +262,58 @@ func (db *DgraphDb) CreatePost(ctx context.Context, postId string) error {
 
 	db.log.Debug("Post created in Dgraph", "postID", postId)
 	return nil
+}
+
+func (db *DgraphDb) READ() {
+	txn := db.dgraphClient.Dg.NewTxn()
+	defer txn.Discard(context.Background())
+
+	query := `
+	{
+		people(func: has(name)) {
+			name
+			age
+    	follows{
+				name
+        age
+      }
+  }
+}`
+
+	resp, err := txn.Query(context.Background(), query)
+	if err != nil {
+		panic(err)
+
+	}
+
+	db.log.Info("Query result:", "response", resp.Json)
+
+}
+
+func (db *DgraphDb) RANDOMBULLSHITGO() {
+	txn := db.dgraphClient.Dg.NewTxn()
+	defer txn.Discard(context.Background())
+
+	mutation := &api.Mutation{
+		SetJson: []byte(`
+			{
+				"name": "Ann",
+				"age": 28,
+				"follows": [
+					{
+						"name": "Ben",
+						"age": 31
+					}
+				]
+			}
+		`),
+		CommitNow: true,
+	}
+
+	_, err := txn.Mutate(context.Background(), mutation)
+	if err != nil {
+		db.log.Error("Mutation failed", "error", err)
+		panic(err)
+	}
+
 }

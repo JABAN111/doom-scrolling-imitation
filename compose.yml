@@ -6,13 +6,13 @@ services:
       - 11210:11210
     environment:
       - CLUSTER_NAME=couchbase-demo
-      - COUCHBASE_ADMINISTRATOR_USERNAME=Administrator
-      - COUCHBASE_ADMINISTRATOR_PASSWORD=P@$$w0rd12
-      - COUCHBASE_BUCKET=projects
+      - COUCHBASE_ADMINISTRATOR_USERNAME=jaba_admin
+      - COUCHBASE_ADMINISTRATOR_PASSWORD=jaba_pwd
+      - COUCHBASE_BUCKET=doom-scrolling
       - COUCHBASE_BUCKET_RAMSIZE=512
-      - COUCHBASE_RBAC_USERNAME=admin
-      - COUCHBASE_RBAC_PASSWORD=P@$$w0rd
-      - COUCHBASE_RBAC_NAME=admin
+      - COUCHBASE_RBAC_USERNAME=jaba_rbac
+      - COUCHBASE_RBAC_PASSWORD=jaba_rbac_pwd
+      - COUCHBASE_RBAC_NAME=jaba_rbac_name
       - COUCHBASE_RAM_SIZE=2048
       - COUCHBASE_INDEX_RAM_SIZE=512
     hostname: couchbase-server
@@ -23,7 +23,10 @@ services:
     networks:
       - workshop
     entrypoint: [""]
+    volumes:
+      - /tmp/data:/opt/couchbase/var
     command: sh -c "/opt/couchbase/init/init-cbserver.sh"
+    
 
   sync-gateway:
     build: ./sync-gateway
@@ -32,13 +35,57 @@ services:
     hostname: sync-gateway
     container_name: sync-gateway
     depends_on:
-      - couchbase-server  # Исправлено
+      - couchbase-server  
     working_dir: /docker-syncgateway
     stdin_open: true
-    tty: true      
+    tty: true
+    
     networks:
       - workshop
 
+  zero:
+    image: dgraph/dgraph:latest
+    volumes:
+      - dgraph:/dgraph
+    ports:
+      - 5080:5080
+      - 6080:6080
+    restart: on-failure
+    networks:
+      - workshop
+    command: dgraph zero --my=zero:5080
+
+  alpha:
+    image: dgraph/dgraph:latest
+    volumes:
+      - dgraph:/dgraph
+    ports:
+      - 8080:8080
+      - 9080:9080
+    restart: on-failure
+    networks:
+      - workshop
+    command: dgraph alpha --my=alpha:7080 --zero=zero:5080 --security whitelist=0.0.0.0/0
+
+  ratel:
+    image: dgraph/ratel:latest
+    ports:
+      - 8000:8000
+    networks:
+      - workshop
+
+
+  # TODO: tmp unvailable
+  # doom-scrolling:
+  #   build:
+  #     ./doom-scrolling
+  #     # TODO: env вынести сюды
+  #   ports:
+  #     - 8080:8080
+  #   depends_on:
+  #     - couchbase-server
 networks:
   workshop:
     driver: bridge
+volumes:
+  dgraph:

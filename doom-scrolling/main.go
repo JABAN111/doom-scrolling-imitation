@@ -30,6 +30,12 @@ func main() {
 		panic(err)
 	}
 	dgraph, err := dgraph.New(log, cfg)
+
+	// dgraph.RANDOMBULLSHITGO()
+	// dgraph.READ()
+	// dgraph.SETBEN200()
+	// os.Exit(0)
+
 	if err != nil {
 		log.Error("Failed to create dgraph", "error", err)
 		panic(err)
@@ -61,9 +67,9 @@ func main() {
 	}
 	log.Info("User followed")
 
-	res, err := service.GetFeed(ctx, user1.Username)
+	// res, err := service.GetFeed(ctx, user1.Username)
 	if err != nil {
 		panic(err)
 	}
-	log.Info("Feed received", "feed", res)
+	// log.Info("Feed received", "feed", res)
 }

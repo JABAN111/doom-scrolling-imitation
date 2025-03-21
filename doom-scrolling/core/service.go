@@ -46,7 +46,7 @@ func (s *Service) CreatePost(ctx context.Context, post Post) (Post, error) {
 	}
 	s.log.Debug("Post created on document side", "post", post)
 
-	err = s.GraphDB.CreatePost(ctx, post.ID)
+	err = s.GraphDB.CreatePost(ctx, post.ID, post.UserID)
 	if err != nil {
 		s.log.Info("Failed to create post", "error", err)
 		return Post{}, err
@@ -54,8 +54,8 @@ func (s *Service) CreatePost(ctx context.Context, post Post) (Post, error) {
 	return post, nil
 }
 
-func (s *Service) FollowUser(ctx context.Context, followerID, followingID string) error {
-	if err := s.GraphDB.FollowUser(ctx, followerID, followingID); err != nil {
+func (s *Service) FollowUser(ctx context.Context, followerName, followingName string) error {
+	if err := s.GraphDB.FollowUser(ctx, followerName, followingName); err != nil {
 		s.log.Info("Failed to follow user", "error", err)
 		return err
 	}
