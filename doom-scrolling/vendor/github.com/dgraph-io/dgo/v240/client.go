@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Dgraph Labs, Inc. and Contributors
+ * Copyright (C) 2023 Dgraph Labs, Inc. and Contributors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,15 +18,26 @@ package dgo
 
 import (
 	"context"
+	"crypto/x509"
+	"errors"
 	"fmt"
 	"math/rand"
+	"net/url"
 	"strings"
 	"sync"
 
-	"github.com/dgraph-io/dgo/protos/api"
+	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
+	"google.golang.org/protobuf/proto"
+
+	"github.com/dgraph-io/dgo/v240/protos/api"
+)
+
+const (
+	cloudPort = "443"
 )
 
 // Dgraph is a transaction aware client to a set of Dgraph server instances.
@@ -34,6 +45,19 @@ type Dgraph struct {
 	jwtMutex sync.RWMutex
 	jwt      api.Jwt
 	dc       []api.DgraphClient
+}
+type authCreds struct {
+	token string
+}
+
+func (a *authCreds) GetRequestMetadata(ctx context.Context, uri ...string) (
+	map[string]string, error) {
+
+	return map[string]string{"Authorization": a.token}, nil
+}
+
+func (a *authCreds) RequireTransportSecurity() bool {
+	return true
 }
 
 // NewDgraphClient creates a new Dgraph (client) for interacting with Alphas.
@@ -49,29 +73,97 @@ func NewDgraphClient(clients ...api.DgraphClient) *Dgraph {
 	return dg
 }
 
-// Login logs in the current client using the provided credentials.
-// Valid for the duration the client is alive.
-func (d *Dgraph) Login(ctx context.Context, userid string, password string) error {
+// DialCloud creates a new TLS connection to a Dgraph Cloud backend
+//
+//	It requires the backend endpoint as well as the api token
+//	Usage:
+//		conn, err := grpc.DialCloud("CLOUD_ENDPOINT","API_TOKEN")
+//		if err != nil {
+//			log.Fatal(err)
+//		}
+//		defer conn.Close()
+//		dgraphClient := dgo.NewDgraphClient(api.NewDgraphClient(conn))
+func DialCloud(endpoint, key string) (*grpc.ClientConn, error) {
+	var grpcHost string
+	switch {
+	case strings.Contains(endpoint, ".grpc.") && strings.Contains(endpoint, ":"+cloudPort):
+		// if we already have the grpc URL with the port, we don't need to do anything
+		grpcHost = endpoint
+	case strings.Contains(endpoint, ".grpc.") && !strings.Contains(endpoint, ":"+cloudPort):
+		// if we have the grpc URL without the port, just add the port
+		grpcHost = endpoint + ":" + cloudPort
+	default:
+		// otherwise, parse the non-grpc URL and add ".grpc." along with port to it.
+		if !strings.HasPrefix(endpoint, "http") {
+			endpoint = "https://" + endpoint
+		}
+		u, err := url.Parse(endpoint)
+		if err != nil {
+			return nil, err
+		}
+		urlParts := strings.SplitN(u.Host, ".", 2)
+		if len(urlParts) < 2 {
+			return nil, errors.New("invalid URL to Dgraph Cloud")
+		}
+		grpcHost = urlParts[0] + ".grpc." + urlParts[1] + ":" + cloudPort
+	}
+
+	pool, err := x509.SystemCertPool()
+	if err != nil {
+		return nil, err
+	}
+	creds := credentials.NewClientTLSFromCert(pool, "")
+	return grpc.NewClient(
+		grpcHost,
+		grpc.WithTransportCredentials(creds),
+		grpc.WithPerRPCCredentials(&authCreds{key}),
+	)
+}
+
+func (d *Dgraph) login(ctx context.Context, userid string, password string,
+	namespace uint64) error {
 	d.jwtMutex.Lock()
 	defer d.jwtMutex.Unlock()
 
 	dc := d.anyClient()
 	loginRequest := &api.LoginRequest{
-		Userid:   userid,
-		Password: password,
+		Userid:    userid,
+		Password:  password,
+		Namespace: namespace,
 	}
 	resp, err := dc.Login(ctx, loginRequest)
 	if err != nil {
 		return err
 	}
 
-	return d.jwt.Unmarshal(resp.Json)
+	return proto.Unmarshal(resp.Json, &d.jwt)
+}
+
+// GetJwt returns back the JWT for the dgraph client.
+func (d *Dgraph) GetJwt() api.Jwt {
+	d.jwtMutex.RLock()
+	defer d.jwtMutex.RUnlock()
+	return d.jwt
+}
+
+// Login logs in the current client using the provided credentials into
+// default namespace (0). Valid for the duration the client is alive.
+func (d *Dgraph) Login(ctx context.Context, userid string, password string) error {
+	return d.login(ctx, userid, password, 0)
+}
+
+// LoginIntoNamespace logs in the current client using the provided credentials.
+// Valid for the duration the client is alive.
+func (d *Dgraph) LoginIntoNamespace(ctx context.Context,
+	userid string, password string, namespace uint64) error {
+
+	return d.login(ctx, userid, password, namespace)
 }
 
 // Alter can be used to do the following by setting various fields of api.Operation:
-//   1. Modify the schema.
-//   2. Drop a predicate.
-//   3. Drop the database.
+//  1. Modify the schema.
+//  2. Drop a predicate.
+//  3. Drop the database.
 func (d *Dgraph) Alter(ctx context.Context, op *api.Operation) error {
 	dc := d.anyClient()
 
@@ -91,6 +183,12 @@ func (d *Dgraph) Alter(ctx context.Context, op *api.Operation) error {
 	return err
 }
 
+// Relogin relogin the current client using the refresh token. This can be used when the
+// access-token gets expired.
+func (d *Dgraph) Relogin(ctx context.Context) error {
+	return d.retryLogin(ctx)
+}
+
 func (d *Dgraph) retryLogin(ctx context.Context) error {
 	d.jwtMutex.Lock()
 	defer d.jwtMutex.Unlock()
@@ -108,7 +206,7 @@ func (d *Dgraph) retryLogin(ctx context.Context) error {
 		return err
 	}
 
-	return d.jwt.Unmarshal(resp.Json)
+	return proto.Unmarshal(resp.Json, &d.jwt)
 }
 
 func (d *Dgraph) getContext(ctx context.Context) context.Context {
@@ -121,11 +219,9 @@ func (d *Dgraph) getContext(ctx context.Context) context.Context {
 			// no metadata key is in the context, add one
 			md = metadata.New(nil)
 		}
-
 		md.Set("accessJwt", d.jwt.AccessJwt)
 		return metadata.NewOutgoingContext(ctx, md)
 	}
-
 	return ctx
 }
 
@@ -141,6 +237,7 @@ func isJwtExpired(err error) bool {
 }
 
 func (d *Dgraph) anyClient() api.DgraphClient {
+	//nolint:gosec
 	return d.dc[rand.Intn(len(d.dc))]
 }
 

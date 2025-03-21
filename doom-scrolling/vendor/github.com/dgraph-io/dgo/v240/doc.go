@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Dgraph Labs, Inc. and Contributors
+ * Copyright (C) 2023 Dgraph Labs, Inc. and Contributors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +14,6 @@
  * limitations under the License.
  */
 
-// Package y contains the code shared by the Go client and Dgraph server.
-// It should have minimum dependencies in order to keep the client light.
-package y
-
-import (
-	"errors"
-)
-
-var (
-	// ErrAborted is returned when an operation is performed on an aborted transaction.
-	ErrAborted = errors.New("Transaction has been aborted. Please retry")
-	// ErrConflict is returned when commit couldn't succeed due to conflicts.
-	ErrConflict = errors.New("Conflicts with pending transaction. Please abort")
-)
+// Package dgo is used to interact with a Dgraph server. Queries, mutations,
+// and most other types of admin tasks can be run from the client.
+package dgo
