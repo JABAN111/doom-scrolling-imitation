@@ -11,6 +11,5 @@ type Post struct {
 	UserID    string `json:"user_id"`
 	ImageURL  string `json:"image_url"`
 	Caption   string `json:"caption"`
-	Likes     int    `json:"likes_count"`
 	CreatedAt string `json:"created_at"`
 }

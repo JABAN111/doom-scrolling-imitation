@@ -54,8 +54,8 @@ func (s *Service) CreatePost(ctx context.Context, post Post) (Post, error) {
 	return post, nil
 }
 
-func (s *Service) FollowUser(ctx context.Context, followerName, followingName string) error {
-	if err := s.GraphDB.FollowUser(ctx, followerName, followingName); err != nil {
+func (s *Service) FollowUser(ctx context.Context, username, usernameToFollow string) error {
+	if err := s.GraphDB.FollowUser(ctx, username, usernameToFollow); err != nil {
 		s.log.Info("Failed to follow user", "error", err)
 		return err
 	}
@@ -70,11 +70,11 @@ func (s *Service) LikePost(ctx context.Context, userID, postID string) error {
 	return nil
 }
 
-func (s *Service) GetFeed(ctx context.Context, userID string) (string, error) {
+func (s *Service) GetFeed(ctx context.Context, userID string) ([]string, error) {
 	res, err := s.GraphDB.GetFeed(ctx, userID)
 	if err != nil {
 		s.log.Info("Failed to get feed", "error", err)
-		return "", err
+		return nil, err
 	}
 	return res, nil
 }

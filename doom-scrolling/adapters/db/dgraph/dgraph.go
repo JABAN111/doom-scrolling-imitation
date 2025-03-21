@@ -3,6 +3,7 @@ package dgraph
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"log/slog"
 	"rshd/lab1/v2/config"
 	"rshd/lab1/v2/db/graph"
@@ -96,7 +97,7 @@ func (db *DgraphDb) FollowUser(ctx context.Context, followerName, followingName 
 
 	queryFollower := `
 	{
-		people(func: eq(username, "` + followerName + `")) {
+		people(func: eq(username, "` + followingName + `")) {
 			uid
 		}
 	}`
@@ -131,13 +132,18 @@ func (db *DgraphDb) FollowUser(ctx context.Context, followerName, followingName 
 		return err
 	}
 
+	if structFollower.People == nil || structFollowing.People == nil {
+		db.log.Error("User not found", "follower", followerName, "following", followingName)
+		return fmt.Errorf("user not found")
+	}
+
 	mutation := &api.Mutation{
 		SetJson: []byte(`
 			{
 				"uid": "` + structFollowing.People[0].UID + `",
-				"follows": {
+				"follows": [{
 					"uid": "` + structFollower.People[0].UID + `"
-				}
+				}]
 			}
 		`),
 		CommitNow: true,
@@ -210,11 +216,74 @@ func (db *DgraphDb) LikePost(ctx context.Context, userID, postID string) error {
 	return nil
 }
 
-// GetFeed returns a feed of posts for a given user
-// TODO: буквально последний и самый важный метод, который нужно реализовать
-func (db *DgraphDb) GetFeed(ctx context.Context, userID string) (string, error) {
+func (db *DgraphDb) GetFeed(ctx context.Context, userID string) ([]string, error) {
+	txn := db.dgraphClient.Dg.NewTxn()
+	defer txn.Discard(context.Background())
 
-	return resp.String(), nil
+	query := fmt.Sprintf(`
+	{
+		people(func: eq(username, "%s")) {
+			uid
+			follows {
+				uid
+			}
+		}
+	}`, userID)
+
+	queryResponse, err := txn.Query(ctx, query)
+	if err != nil {
+		db.log.Error("Query failed", "error", err)
+		return nil, err
+	}
+
+	var userResponse struct {
+		People []struct {
+			UID     string `json:"uid"`
+			Follows []struct {
+				UID string `json:"uid"`
+			} `json:"follows"`
+		} `json:"people"`
+	}
+	if err := json.Unmarshal(queryResponse.Json, &userResponse); err != nil {
+		db.log.Error("Error unmarshalling JSON (GetFeed)", "error", err)
+		return nil, err
+	}
+	if len(userResponse.People) == 0 {
+		db.log.Error("User not found", "username", userID)
+		return nil, fmt.Errorf("user not found")
+	}
+
+	//
+	// var postUIDs []string
+	// for _, follow := range userResponse.People[0].Follows {
+	// 	followUID := follow.UID
+	// 	postQuery := fmt.Sprintf(`
+	// 	{
+	// 		posts(func: eq(user_id, "%s")) {
+	// 			id
+	// 		}
+	// 	}`, followUID)
+	// 	data, err := txn.Query(ctx, postQuery)
+	// 	if err != nil {
+	// 		db.log.Error("Query failed for posts", "error", err)
+	// 		return nil, err
+	// 	}
+	// 	var postsResponse struct {
+	// 		Posts []struct {
+	// 			ID string `json:"id"`
+	// 		} `json:"posts"`
+	// 	}
+	// 	if err := json.Unmarshal(data.Json, &postsResponse); err != nil {
+	// 		db.log.Error("Error unmarshalling JSON for posts", "error", err)
+	// 		return nil, err
+	// 	}
+	// 	for _, post := range postsResponse.Posts {
+	// 		postUIDs = append(postUIDs, post.ID)
+	// 	}
+	// }
+	// return postUIDs, nil
+
+	return nil, nil
 }
 
 func (db *DgraphDb) CreateUser(ctx context.Context, username string) error {
