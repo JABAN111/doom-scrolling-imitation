@@ -23,7 +23,10 @@ services:
     networks:
       - workshop
     entrypoint: [""]
+    volumes:
+      - /tmp/data:/opt/couchbase/var
     command: sh -c "/opt/couchbase/init/init-cbserver.sh"
+    
 
   sync-gateway:
     build: ./couchbase/sync-gateway
@@ -35,14 +38,15 @@ services:
       - couchbase-server  
     working_dir: /docker-syncgateway
     stdin_open: true
-    tty: true      
+    tty: true
+    
     networks:
       - workshop
 
   zero:
     image: dgraph/dgraph:latest
     volumes:
-      - /tmp/data:/dgraph
+      - dgraph:/dgraph
     ports:
       - 5080:5080
       - 6080:6080
@@ -54,7 +58,7 @@ services:
   alpha:
     image: dgraph/dgraph:latest
     volumes:
-      - /tmp/data:/dgraph
+      - dgraph:/dgraph
     ports:
       - 8080:8080
       - 9080:9080
@@ -83,3 +87,5 @@ services:
 networks:
   workshop:
     driver: bridge
+volumes:
+  dgraph:
