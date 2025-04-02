@@ -21,7 +21,7 @@ func NewCreateUserHandler(ctx context.Context, log *slog.Logger, service *core.S
 
 		if user.Username == "" {
 			w.WriteHeader(http.StatusBadRequest)
-			w.Write([]byte("Username is required"))
+			w.Write([]byte("Username is required")) //TODO заменить на утилитарные ручки
 			return
 		}
 

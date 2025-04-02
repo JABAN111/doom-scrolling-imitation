@@ -23,11 +23,13 @@ type CouchDB struct {
 	collections Collections
 }
 
+// collections
 const (
 	userCollection = "users"
 	postCollection = "posts"
 )
 
+// scopes
 const scope = "doom-data"
 
 func New(log *slog.Logger, cfg config.Config) (*CouchDB, error) {
@@ -40,14 +42,30 @@ func New(log *slog.Logger, cfg config.Config) (*CouchDB, error) {
 
 	res.bucket = cluster.Bucket(cfg.CouchBaseCfg.Bucket)
 	err = res.bucket.WaitUntilReady(5*time.Second, nil)
-
 	if err != nil {
 		log.Error("Failed to wait Couchbase bucket ready", "error", err)
 		return nil, err
 	}
 
+	mgr := res.bucket.Collections()
+	if err = mgr.CreateScope(scope, nil); err != nil {
+		log.Warn("Failed to create scope", "scope", scope, "error", err)
+	}
+
 	res.collections.userCollection = res.bucket.Scope(scope).Collection(userCollection)
 	res.collections.postCollection = res.bucket.Scope(scope).Collection(postCollection)
+
+	spec := gocb.CollectionSpec{
+		ScopeName: scope,
+		Name:      userCollection,
+	}
+	if err = mgr.CreateCollection(spec, nil); err != nil {
+		log.Warn("Failed to create collection of users", "error", err)
+	}
+	spec.Name = postCollection
+	if err = mgr.CreateCollection(spec, nil); err != nil {
+		log.Warn("Failed to create collection of posts", "error", err)
+	}
 
 	return res, nil
 }

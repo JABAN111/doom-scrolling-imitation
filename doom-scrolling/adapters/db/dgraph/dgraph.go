@@ -65,7 +65,7 @@ func (db *DgraphDb) SETBEN200() {
 	}
 	var response response
 	if err := json.Unmarshal(resp.Json, &response); err != nil {
-		db.log.Error("Error unmarshalling JSON", "error", err)
+		db.log.Error("Error unmarshaling JSON", "error", err)
 		panic(err)
 	}
 
@@ -118,7 +118,7 @@ func (db *DgraphDb) FollowUser(ctx context.Context, followerName, followingName 
 	}
 
 	if err := json.Unmarshal(respFollower.Json, &structFollower); err != nil {
-		db.log.Error("Error unmarshalling JSON", "error", err)
+		db.log.Error("Error unmarshaling JSON", "error", err)
 		return err
 	}
 
@@ -128,7 +128,7 @@ func (db *DgraphDb) FollowUser(ctx context.Context, followerName, followingName 
 		return err
 	}
 	if err := json.Unmarshal(respFollowing.Json, &structFollowing); err != nil {
-		db.log.Error("Error unmarshalling JSON", "error", err)
+		db.log.Error("Error unmarshaling JSON", "error", err)
 		return err
 	}
 
@@ -189,11 +189,11 @@ func (db *DgraphDb) LikePost(ctx context.Context, userID, postID string) error {
 	}
 
 	if err := json.Unmarshal(respUser.Json, &user); err != nil {
-		db.log.Error("Error unmarshalling JSON", "error", err)
+		db.log.Error("Error unmarshaling JSON", "error", err)
 		return err
 	}
 	if err := json.Unmarshal(respPost.Json, &post); err != nil {
-		db.log.Error("Error unmarshalling JSON", "error", err)
+		db.log.Error("Error unmarshaling JSON", "error", err)
 		return err
 	}
 
@@ -252,37 +252,6 @@ func (db *DgraphDb) GetFeed(ctx context.Context, userID string) ([]string, error
 		db.log.Error("User not found", "username", userID)
 		return nil, fmt.Errorf("user not found")
 	}
-
-	//
-	// var postUIDs []string
-	// for _, follow := range userResponse.People[0].Follows {
-	// 	followUID := follow.UID
-	// 	postQuery := fmt.Sprintf(`
-	// 	{
-	// 		posts(func: eq(user_id, "%s")) {
-	// 			id
-	// 		}
-	// 	}`, followUID)
-	// 	data, err := txn.Query(ctx, postQuery)
-	// 	if err != nil {
-	// 		db.log.Error("Query failed for posts", "error", err)
-	// 		return nil, err
-	// 	}
-	// 	var postsResponse struct {
-	// 		Posts []struct {
-	// 			ID string `json:"id"`
-	// 		} `json:"posts"`
-	// 	}
-	// 	if err := json.Unmarshal(data.Json, &postsResponse); err != nil {
-	// 		db.log.Error("Error unmarshalling JSON for posts", "error", err)
-	// 		return nil, err
-	// 	}
-	// 	for _, post := range postsResponse.Posts {
-	// 		postUIDs = append(postUIDs, post.ID)
-	// 	}
-	// }
-	// return postUIDs, nil
-
 	return nil, nil
 }
 

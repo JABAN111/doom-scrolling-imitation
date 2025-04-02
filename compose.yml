@@ -19,14 +19,13 @@ services:
     container_name: couchbase-server
     working_dir: /opt/couchbase
     stdin_open: true
-    tty: true      
+    tty: true
     networks:
       - workshop
-    entrypoint: [""]
+    entrypoint: ['']
     volumes:
       - /tmp/data:/opt/couchbase/var
     command: sh -c "/opt/couchbase/init/init-cbserver.sh"
-    
 
   sync-gateway:
     build: ./couchbase/sync-gateway
@@ -35,11 +34,11 @@ services:
     hostname: sync-gateway
     container_name: sync-gateway
     depends_on:
-      - couchbase-server  
+      - couchbase-server
     working_dir: /docker-syncgateway
     stdin_open: true
     tty: true
-    
+
     networks:
       - workshop
 
@@ -74,7 +73,64 @@ services:
     networks:
       - workshop
 
+  # export CHVER=23.4
+  # export CHKVER=23.4-alpine
+  clickhouse:
+    image: 'clickhouse/clickhouse-server:${CHVER:-latest}'
+    user: '101:101'
+    container_name: clickhouse
+    hostname: clickhouse
+    # volumes:
+    #   - ${PWD}/fs/volumes/clickhouse/etc/clickhouse-server/config.d/config.xml:/etc/clickhouse-server/config.d/config.xml
+    #   - ${PWD}/fs/volumes/clickhouse/etc/clickhouse-server/users.d/users.xml:/etc/clickhouse-server/users.d/users.xml
+    ports:
+      - '127.0.0.1:8123:8123'
+      - '127.0.0.1:9000:9000'
+    depends_on:
+      - clickhouse-keeper
+  clickhouse-keeper:
+    image: 'clickhouse/clickhouse-keeper:${CHKVER:-latest-alpine}'
+    user: '101:101'
+    container_name: clickhouse-keeper
+    hostname: clickhouse-keeper
+    # volumes:
+    #   - ${PWD}/fs/volumes/clickhouse-keeper/etc/clickhouse-keeper/keeper_config.xml:/etc/clickhouse-keeper/keeper_config.xml
+    ports:
+      - '127.0.0.1:9181:9181'
 
+  influxdb2:
+    image: influxdb:2
+    ports:
+      - 8086:8086
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME_FILE: /run/secrets/influxdb2-admin-username
+      DOCKER_INFLUXDB_INIT_PASSWORD_FILE: /run/secrets/influxdb2-admin-password
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN_FILE: /run/secrets/influxdb2-admin-token
+      DOCKER_INFLUXDB_INIT_ORG: docs
+      DOCKER_INFLUXDB_INIT_BUCKET: home
+    secrets:
+      - influxdb2-admin-username
+      - influxdb2-admin-password
+      - influxdb2-admin-token
+    volumes:
+      - type: volume
+        source: influxdb2-data
+        target: /var/lib/influxdb2
+      - type: volume
+        source: influxdb2-config
+        target: /etc/influxdb2
+secrets:
+  influxdb2-admin-username:
+    file: ./.env/influxdb2-admin-username
+  influxdb2-admin-password:
+    file: ./.env/influxdb2-admin-password
+  influxdb2-admin-token:
+    file: ./.env/influxdb2-admin-token
+volumes:
+  influxdb2-data:
+  influxdb2-config:
+  dgraph:
   # TODO: tmp unvailable
   # doom-scrolling:
   #   build:
@@ -87,5 +143,3 @@ services:
 networks:
   workshop:
     driver: bridge
-volumes:
-  dgraph:
