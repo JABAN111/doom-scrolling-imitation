@@ -18,4 +18,5 @@ func RegisterRoutes(ctx context.Context, log *slog.Logger, mux *http.ServeMux, s
 	mux.HandleFunc("POST /api/create/post", controller.NewCreatePostHandler(ctx, log, service))
 	mux.HandleFunc("POST /api/follow", controller.NewFollowUserHandler(ctx, log, service))
 	mux.HandleFunc("POST /api/like", controller.NewLikeHandler(ctx, log, service))
+	mux.HandleFunc("GET /api/feed", controller.NewFeed(log, service))
 }

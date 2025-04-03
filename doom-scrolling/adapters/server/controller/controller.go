@@ -91,3 +91,19 @@ func NewLikeHandler(ctx context.Context, log *slog.Logger, service *core.Service
 		w.Write([]byte("Post liked"))
 	}
 }
+
+func NewFeed(log *slog.Logger, service *core.Service) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		res, err := service.GetFeed(r.Context(), r.URL.Query().Get("username"))
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			w.Write([]byte("Sex"))
+		}
+		ans := res[:]
+		for an := range ans {
+			log.Info("an", "an", an)
+		}
+		w.WriteHeader(http.StatusOK)
+		// w.Write([]byte(res] /))
+	}
+}
