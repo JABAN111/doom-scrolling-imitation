@@ -85,3 +85,17 @@ func (d *CouchDB) CreatePost(_ context.Context, post core.Post) (core.Post, erro
 	}
 	return post, nil
 }
+
+func (d *CouchDB) GetPost(ctx context.Context, postId string) (core.Post, error) {
+	getResult, err := d.collections.postCollection.Get(postId, nil)
+	if err != nil {
+		return core.Post{}, err
+	}
+
+	var post core.Post
+	if err := getResult.Content(&post); err != nil {
+		return core.Post{}, err
+	}
+	return post, nil
+
+}

@@ -27,74 +27,31 @@ services:
       - /tmp/data:/opt/couchbase/var
     command: sh -c "/opt/couchbase/init/init-cbserver.sh"
 
-  sync-gateway:
-    build: ./couchbase/sync-gateway
+  neo4j:
+    container_name: neo4j
+    image: neo4j:latest
     ports:
-      - 4984-4986:4984-4986
-    hostname: sync-gateway
-    container_name: sync-gateway
-    depends_on:
-      - couchbase-server
-    working_dir: /docker-syncgateway
-    stdin_open: true
-    tty: true
+      - 7474:7474
+      - 7687:7687
+    environment:
+      - NEO4J_AUTH=neo4j/password123
 
-    networks:
-      - workshop
-
-  zero:
-    image: dgraph/dgraph:latest
-    volumes:
-      - dgraph:/dgraph
-    ports:
-      - 5080:5080
-      - 6080:6080
-    restart: on-failure
-    networks:
-      - workshop
-    command: dgraph zero --my=zero:5080
-
-  alpha:
-    image: dgraph/dgraph:latest
-    volumes:
-      - dgraph:/dgraph
-    ports:
-      - 8080:8080
-      - 9080:9080
-    restart: on-failure
-    networks:
-      - workshop
-    command: dgraph alpha --my=alpha:7080 --zero=zero:5080 --security whitelist=0.0.0.0/0
-
-  ratel:
-    image: dgraph/ratel:latest
-    ports:
-      - 8000:8000
-    networks:
-      - workshop
-
-  # export CHVER=23.4
-  # export CHKVER=23.4-alpine
   clickhouse:
-    image: 'clickhouse/clickhouse-server:${CHVER:-latest}'
+    image: 'clickhouse/clickhouse-server:23.4'
     user: '101:101'
     container_name: clickhouse
     hostname: clickhouse
-    # volumes:
-    #   - ${PWD}/fs/volumes/clickhouse/etc/clickhouse-server/config.d/config.xml:/etc/clickhouse-server/config.d/config.xml
-    #   - ${PWD}/fs/volumes/clickhouse/etc/clickhouse-server/users.d/users.xml:/etc/clickhouse-server/users.d/users.xml
+
     ports:
       - '127.0.0.1:8123:8123'
       - '127.0.0.1:9000:9000'
     depends_on:
       - clickhouse-keeper
   clickhouse-keeper:
-    image: 'clickhouse/clickhouse-keeper:${CHKVER:-latest-alpine}'
+    image: 'clickhouse/clickhouse-keeper:23.4-alpine'
     user: '101:101'
     container_name: clickhouse-keeper
     hostname: clickhouse-keeper
-    # volumes:
-    #   - ${PWD}/fs/volumes/clickhouse-keeper/etc/clickhouse-keeper/keeper_config.xml:/etc/clickhouse-keeper/keeper_config.xml
     ports:
       - '127.0.0.1:9181:9181'
 
@@ -106,8 +63,8 @@ services:
       DOCKER_INFLUXDB_INIT_MODE: setup
       DOCKER_INFLUXDB_INIT_USERNAME_FILE: /run/secrets/influxdb2-admin-username
       DOCKER_INFLUXDB_INIT_PASSWORD_FILE: /run/secrets/influxdb2-admin-password
-      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN_FILE: /run/secrets/influxdb2-admin-token
       DOCKER_INFLUXDB_INIT_ORG: docs
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: '0YVmO2e179ymcr4AZoA9FOEAIZSdDmezA8yIuLnSL4ERowgKZGKWEKqZAR64BCVn1aC4tN6Jq7aVM0ldAMZJIQ=='
       DOCKER_INFLUXDB_INIT_BUCKET: home
     secrets:
       - influxdb2-admin-username
@@ -131,15 +88,7 @@ volumes:
   influxdb2-data:
   influxdb2-config:
   dgraph:
-  # TODO: tmp unvailable
-  # doom-scrolling:
-  #   build:
-  #     ./doom-scrolling
-  #     # TODO: env вынести сюды
-  #   ports:
-  #     - 8080:8080
-  #   depends_on:
-  #     - couchbase-server
+
 networks:
   workshop:
     driver: bridge

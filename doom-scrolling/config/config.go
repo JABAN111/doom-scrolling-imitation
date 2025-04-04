@@ -1,8 +1,9 @@
 package config
 
 import (
-	"github.com/ilyakaznacheev/cleanenv"
 	"log"
+
+	"github.com/ilyakaznacheev/cleanenv"
 )
 
 type CouchBaseConfig struct {
@@ -19,6 +20,8 @@ type DgraphConfig struct {
 type Config struct {
 	CouchBaseCfg CouchBaseConfig
 	DgraphCfg    DgraphConfig
+	// TMP
+	Neo4jURI string
 }
 
 func MustLoad(configPath string) Config {
