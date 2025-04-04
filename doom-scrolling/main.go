@@ -141,14 +141,19 @@ func main() {
 
 	mux.HandleFunc("POST /api/action/follow", rest.NewFollowUserHandler(ctx, log, service))
 	mux.HandleFunc("POST /api/action/like", rest.NewLikeHandler(ctx, log, service))
+	mux.HandleFunc("GET /api/action/feed", rest.NewFeedHandler(log, service))
 
-	mux.HandleFunc("GET /api/action/feed", rest.NewFeed(log, service))
+	mux.HandleFunc("GET /api/stat", rest.NewUserStats(log, service))
+	mux.HandleFunc("GET /api/stat/popular", rest.NewPopularTags(log, service))
 	res, err := service.GetUserStats(ctx, "charlie")
+	if err != nil {
+		log.Error("Failed to get user stats")
+	}
 	log.Info("res", "res", res)
 
 	na, err := service.GetPopularTags(ctx, 10, 10)
 	if err != nil {
-		panic(err)
+		log.Error("Failed to get popular tags")
 	}
 	for _, r := range na {
 		fmt.Println(r)

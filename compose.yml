@@ -27,21 +27,6 @@ services:
       - /tmp/data:/opt/couchbase/var
     command: sh -c "/opt/couchbase/init/init-cbserver.sh"
 
-  # sync-gateway:
-  #   build: ./couchbase/sync-gateway
-  #   ports:
-  #     - 4984-4986:4984-4986
-  #   hostname: sync-gateway
-  #   container_name: sync-gateway
-  #   depends_on:
-  #     - couchbase-server
-  #   working_dir: /docker-syncgateway
-  #   stdin_open: true
-  #   tty: true
-
-  #   networks:
-  #     - workshop
-
   neo4j:
     container_name: neo4j
     image: neo4j:latest
@@ -50,27 +35,13 @@ services:
       - 7687:7687
     environment:
       - NEO4J_AUTH=neo4j/password123
-      # - NEO4J_apoc_export_file_enabled=true
-      # - NEO4J_apoc_import_file_enabled=true
-      # - NEO4J_apoc_import_file_use__neo4j__config=true
-      # - NEO4J_PLUGINS=["apoc", "graph-data-science"]
-    # volumes:
-    #   - ./neo4j_db/data:/data
-    #   - ./neo4j_db/logs:/logs
-    #   - ./neo4j_db/import:/var/lib/neo4j/import
-    #   - ./neo4j_db/plugins:/plugins
-
-  # export CHVER=23.4
-  # export CHKVER=23.4-alpine
 
   clickhouse:
     image: 'clickhouse/clickhouse-server:23.4'
     user: '101:101'
     container_name: clickhouse
     hostname: clickhouse
-    # volumes:
-    #   - ${PWD}/fs/volumes/clickhouse/etc/clickhouse-server/config.d/config.xml:/etc/clickhouse-server/config.d/config.xml
-    #   - ${PWD}/fs/volumes/clickhouse/etc/clickhouse-server/users.d/users.xml:/etc/clickhouse-server/users.d/users.xml
+
     ports:
       - '127.0.0.1:8123:8123'
       - '127.0.0.1:9000:9000'
@@ -81,8 +52,6 @@ services:
     user: '101:101'
     container_name: clickhouse-keeper
     hostname: clickhouse-keeper
-    # volumes:
-    #   - ${PWD}/fs/volumes/clickhouse-keeper/etc/clickhouse-keeper/keeper_config.xml:/etc/clickhouse-keeper/keeper_config.xml
     ports:
       - '127.0.0.1:9181:9181'
 
@@ -94,7 +63,6 @@ services:
       DOCKER_INFLUXDB_INIT_MODE: setup
       DOCKER_INFLUXDB_INIT_USERNAME_FILE: /run/secrets/influxdb2-admin-username
       DOCKER_INFLUXDB_INIT_PASSWORD_FILE: /run/secrets/influxdb2-admin-password
-      # DOCKER_INFLUXDB_INIT_ADMIN_TOKEN_FILE: /run/secrets/influxdb2-admin-token
       DOCKER_INFLUXDB_INIT_ORG: docs
       DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: '0YVmO2e179ymcr4AZoA9FOEAIZSdDmezA8yIuLnSL4ERowgKZGKWEKqZAR64BCVn1aC4tN6Jq7aVM0ldAMZJIQ=='
       DOCKER_INFLUXDB_INIT_BUCKET: home
@@ -120,15 +88,7 @@ volumes:
   influxdb2-data:
   influxdb2-config:
   dgraph:
-  # TODO: tmp unvailable
-  # doom-scrolling:
-  #   build:
-  #     ./doom-scrolling
-  #     # TODO: env вынести сюды
-  #   ports:
-  #     - 8080:8080
-  #   depends_on:
-  #     - couchbase-server
+
 networks:
   workshop:
     driver: bridge

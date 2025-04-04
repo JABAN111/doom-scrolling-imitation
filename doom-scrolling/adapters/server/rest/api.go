@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"rshd/lab1/v2/core"
 	"rshd/lab1/v2/util"
+	"strconv"
 )
 
 func NewCreateUserHandler(ctx context.Context, log *slog.Logger, service *core.Service) http.HandlerFunc {
@@ -71,7 +72,7 @@ func NewLikeHandler(ctx context.Context, log *slog.Logger, service *core.Service
 	}
 }
 
-func NewFeed(log *slog.Logger, service *core.Service) http.HandlerFunc {
+func NewFeedHandler(log *slog.Logger, service *core.Service) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		res, err := service.GetFeed(r.Context(), r.URL.Query().Get("username"))
 		if err != nil {
@@ -79,5 +80,52 @@ func NewFeed(log *slog.Logger, service *core.Service) http.HandlerFunc {
 			return
 		}
 		util.WriteResponseJSON(r.Context(), log, w, http.StatusOK, res)
+	}
+}
+
+func NewUserStats(log *slog.Logger, service *core.Service) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		username := r.URL.Query().Get("username")
+		if username == "" {
+			util.WriteResponse(r.Context(), log, w, http.StatusBadRequest, "Username is required")
+			return
+		}
+
+		res, err := service.GetUserStats(r.Context(), username)
+		if err != nil {
+			util.WriteResponse(r.Context(), log, w, http.StatusInternalServerError, "Failed to get stats")
+			return
+		}
+		util.WriteResponseJSON(r.Context(), log, w, http.StatusOK, res)
+	}
+}
+
+func NewPopularTags(log *slog.Logger, service *core.Service) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		days := r.URL.Query().Get("days")
+		limit := r.URL.Query().Get("limit")
+
+		if days == "" || limit == "" {
+			util.WriteResponse(r.Context(), log, w, http.StatusBadRequest, "days & limit is required")
+			return
+		}
+		daysInt, err := strconv.Atoi(days)
+		if err != nil {
+			util.WriteResponse(r.Context(), log, w, http.StatusBadRequest, "days must be an integer")
+			return
+		}
+		limitInt, err := strconv.Atoi(limit)
+		if err != nil {
+			util.WriteResponse(r.Context(), log, w, http.StatusBadRequest, "limit must be an integer")
+			return
+		}
+
+		tags, err := service.GetPopularTags(r.Context(), daysInt, limitInt)
+		if err != nil {
+			log.Error("Failed to get popular tags", "error", err)
+			util.WriteResponse(r.Context(), log, w, http.StatusInternalServerError, "Failed to get tags")
+			return
+		}
+		util.WriteResponseJSON(r.Context(), log, w, http.StatusOK, tags)
 	}
 }
