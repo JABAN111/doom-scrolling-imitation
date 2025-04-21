@@ -31,7 +31,7 @@ func InitializeCluster(cfg config.Config, log *slog.Logger) (*gocb.Cluster, erro
 	}
 
 	bucket := cluster.Bucket(cfg.CouchBaseCfg.Bucket)
-	//
+
 	err = bucket.WaitUntilReady(5*time.Second, nil)
 	if err != nil {
 		log.Error("Failed to wait Couchbase bucket ready", "error", err)
