@@ -47,7 +47,7 @@ func New(log *slog.Logger, cfg config.Config) (*CouchDB, error) {
 		return nil, err
 	}
 
-	mgr := res.bucket.Collections()
+	mgr := res.bucket.CollectionsV2()
 	if err = mgr.CreateScope(scope, nil); err != nil {
 		log.Warn("Failed to create scope", "scope", scope, "error", err)
 	}
@@ -59,11 +59,11 @@ func New(log *slog.Logger, cfg config.Config) (*CouchDB, error) {
 		ScopeName: scope,
 		Name:      userCollection,
 	}
-	if err = mgr.CreateCollection(spec, nil); err != nil {
+	if err = mgr.CreateCollection(spec.ScopeName, spec.Name, nil, nil); err != nil {
 		log.Warn("Failed to create collection of users", "error", err)
 	}
 	spec.Name = postCollection
-	if err = mgr.CreateCollection(spec, nil); err != nil {
+	if err = mgr.CreateCollection(spec.ScopeName, spec.Name, nil, nil); err != nil {
 		log.Warn("Failed to create collection of posts", "error", err)
 	}
 
