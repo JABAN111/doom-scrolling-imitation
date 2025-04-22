@@ -23,8 +23,6 @@ services:
     networks:
       - workshop
     entrypoint: ['']
-    volumes:
-      - /tmp/data:/opt/couchbase/var
     command: sh -c "/opt/couchbase/init/init-cbserver.sh"
 
   neo4j:
@@ -41,7 +39,6 @@ services:
     user: '101:101'
     container_name: clickhouse
     hostname: clickhouse
-
     ports:
       - '127.0.0.1:8123:8123'
       - '127.0.0.1:9000:9000'
@@ -70,13 +67,6 @@ services:
       - influxdb2-admin-username
       - influxdb2-admin-password
       - influxdb2-admin-token
-    volumes:
-      - type: volume
-        source: influxdb2-data
-        target: /var/lib/influxdb2
-      - type: volume
-        source: influxdb2-config
-        target: /etc/influxdb2
 secrets:
   influxdb2-admin-username:
     file: config-db/influx-secrets/influxdb2-admin-username
