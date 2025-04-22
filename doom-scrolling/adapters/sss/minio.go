@@ -92,6 +92,5 @@ func (m *MinioConfig) DownloadPostImage(ctx context.Context, id, filePath string
 }
 
 func (m *MinioConfig) DeletePostImage(ctx context.Context, id string) error {
-	//TODO implement me
-	panic("implement me")
+	return m.client.RemoveObject(ctx, bucketName, id, minio.RemoveObjectOptions{})
 }

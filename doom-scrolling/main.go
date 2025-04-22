@@ -49,6 +49,14 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	err = minioClient.DeletePostImage(context.Background(), filepath.Base(testFile))
+	if err != nil {
+		panic(err)
+	}
+	err = minioClient.DownloadPostImage(context.Background(), filepath.Base(testFile), "/Users/jaba/Documents/life/ITMO/rshd/lab1/tt/data.txt")
+	if err == nil {
+		panic("???")
+	}
 
 	cfg := config.Config{
 		CouchBaseCfg: config.CouchBaseConfig{
