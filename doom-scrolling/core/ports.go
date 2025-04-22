@@ -2,6 +2,7 @@ package core
 
 import (
 	"context"
+	"os"
 	"time"
 )
 
@@ -37,4 +38,10 @@ type TimeSeriesDB interface {
 
 	WriteSystemMetric(ctx context.Context, metric SystemMetric) error
 	GetSystemHealth(ctx context.Context) (SystemHealthStats, error)
+}
+
+type S3 interface {
+	UploadPostImage(ctx context.Context, id string, file os.File) error
+	DownloadPostImage(ctx context.Context, id string) (os.File, error)
+	DeletePostImage(ctx context.Context, id string) error
 }
