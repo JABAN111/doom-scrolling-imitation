@@ -1,6 +1,21 @@
+x-minio-common: &minio-common
+  image: quay.io/minio/minio:RELEASE.2025-01-20T14-49-07Z
+  command: server --console-address ":9001" http://minio{1...4}/data{1...2}
+  expose:
+    - "9000"
+    - "9001"
+  environment:
+    MINIO_ROOT_USER: JABA_SUPER_USER_MINIO
+    MINIO_ROOT_PASSWORD: jaba127!368601NO
+  healthcheck:
+    test: [ "CMD", "mc", "ready", "local" ]
+    interval: 5s
+    timeout: 5s
+    retries: 5
+
 services:
   couchbase-server:
-    build: config-db/couchbase/couchbase-server
+    build: configs/couchbase/couchbase-server
     ports:
       - 8091-8096:8091-8096
       - 11210:11210
@@ -41,7 +56,7 @@ services:
     hostname: clickhouse
     ports:
       - '127.0.0.1:8123:8123'
-      - '127.0.0.1:9000:9000'
+      - '127.0.0.1:9005:9000'
     depends_on:
       - clickhouse-keeper
   clickhouse-keeper:
@@ -67,17 +82,67 @@ services:
       - influxdb2-admin-username
       - influxdb2-admin-password
       - influxdb2-admin-token
+  minio1:
+    <<: *minio-common
+    hostname: minio1
+    volumes:
+      - data1-1:/data1
+      - data1-2:/data2
+
+  minio2:
+    <<: *minio-common
+    hostname: minio2
+    volumes:
+      - data2-1:/data1
+      - data2-2:/data2
+
+  minio3:
+    <<: *minio-common
+    hostname: minio3
+    volumes:
+      - data3-1:/data1
+      - data3-2:/data2
+
+  minio4:
+    <<: *minio-common
+    hostname: minio4
+    volumes:
+      - data4-1:/data1
+      - data4-2:/data2
+
+  nginx:
+    image: nginx:1.19.2-alpine
+    hostname: nginx
+    volumes:
+      - ./configs/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    depends_on:
+      - minio1
+      - minio2
+      - minio3
+      - minio4
+
 secrets:
   influxdb2-admin-username:
-    file: config-db/influx-secrets/influxdb2-admin-username
+    file: configs/influx-secrets/influxdb2-admin-username
   influxdb2-admin-password:
-    file: config-db/influx-secrets/influxdb2-admin-password
+    file: configs/influx-secrets/influxdb2-admin-password
   influxdb2-admin-token:
-    file: config-db/influx-secrets/influxdb2-admin-token
+    file: configs/influx-secrets/influxdb2-admin-token
 volumes:
   influxdb2-data:
   influxdb2-config:
   dgraph:
+  data1-1:
+  data1-2:
+  data2-1:
+  data2-2:
+  data3-1:
+  data3-2:
+  data4-1:
+  data4-2:
 
 networks:
   workshop:
