@@ -2,7 +2,6 @@ package core
 
 import (
 	"context"
-	"os"
 	"time"
 )
 
@@ -41,7 +40,9 @@ type TimeSeriesDB interface {
 }
 
 type S3 interface {
-	UploadPostImage(ctx context.Context, id string, file os.File) error
-	DownloadPostImage(ctx context.Context, id string) (os.File, error)
+	UploadPostImage(ctx context.Context, id string, filePath string) error
+	// DownloadPostImage contains filepath because some s3(especially minio) are saving file to specified path,
+	// without returning os.File or something like this.
+	DownloadPostImage(ctx context.Context, id string, filePath string) error
 	DeletePostImage(ctx context.Context, id string) error
 }
