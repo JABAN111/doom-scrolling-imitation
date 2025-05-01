@@ -6,7 +6,7 @@ import (
 	"log/slog"
 	"net/http"
 	"rshd/lab1/v2/core"
-	"rshd/lab1/v2/util"
+	"rshd/lab1/v2/internal/util"
 	"strconv"
 )
 

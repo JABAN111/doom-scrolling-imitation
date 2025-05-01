@@ -1,4 +1,10 @@
 services:
+  tests:
+    image: tests:latest
+    build: test/.
+    container_name: tests
+    restart: 'no'
+    entrypoint: 'true'
   couchbase-server:
     build: config-db/couchbase/couchbase-server
     ports:
@@ -67,6 +73,7 @@ services:
       - influxdb2-admin-username
       - influxdb2-admin-password
       - influxdb2-admin-token
+
 secrets:
   influxdb2-admin-username:
     file: config-db/influx-secrets/influxdb2-admin-username

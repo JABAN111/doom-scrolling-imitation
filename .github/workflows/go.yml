@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  lint:
+    name: Lint & Format Go Code
+    runs-on: ubuntu-latest
+    container: golangci/golangci-lint:latest
+    env:
+      GOFLAGS: -buildvcs=false
+    defaults:
+      run:
+        working-directory: doom-scrolling
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          apt-get update && apt-get install -y make
+          go install golang.org/x/tools/cmd/goimports@latest
+          go install github.com/yoheimuta/protolint/cmd/protolint@v0.53.0
+
+      - name: ProtoLint
+        run: protolint lint proto/
+
+      - name: Goimports Check
+        run: goimports -l -w .
+
+      - name: GolangCI-Lint (only gocritic)
+        run: golangci-lint run -E gocritic -v ./...

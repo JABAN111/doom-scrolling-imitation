@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"rshd/lab1/v2/config"
 	"rshd/lab1/v2/core"
-	"rshd/lab1/v2/db/document"
+	"rshd/lab1/v2/internal/db/document"
 	"time"
 
 	"github.com/couchbase/gocb/v2"

@@ -1,13 +1,10 @@
 lint: golint
 
 golint:
-	golangci-lint run -E goimports,gocritic -v ./...
+	golangci-lint run -E gocritic -v ./...
 
 tools:
-	go get github.com/couchbase/gocb/v2@latest
-
-run: 
-	go run cmd/app/main.go
-
-up-down:
-	docker compose down -v && docker compose up -d
+	go install golang.org/x/tools/cmd/goimports@latest
+	go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
+	go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.64.2
+	go mod tidy

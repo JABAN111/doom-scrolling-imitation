@@ -22,16 +22,11 @@ func New(log *slog.Logger) *clickhouseDb {
 		return nil
 	}
 
-	chConn, ok := conn.(clickhouse.Conn)
-	createTables(chConn)
-	chConn.Ping(context.Background())
-	if !ok {
-		log.Error("не удалось привести соединение к типу clickhouse.Conn")
-		return nil
-	}
+	_ = createTables(conn)
+	_ = conn.Ping(context.Background())
 	return &clickhouseDb{
 		log:  log,
-		conn: chConn,
+		conn: conn,
 	}
 }
 
