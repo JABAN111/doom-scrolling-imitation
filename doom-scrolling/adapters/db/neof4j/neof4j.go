@@ -2,10 +2,9 @@ package neof4j
 
 import (
 	"context"
+	"github.com/neo4j/neo4j-go-driver/v5/neo4j"
 	"log/slog"
 	"rshd/lab1/v2/config"
-
-	"github.com/neo4j/neo4j-go-driver/v5/neo4j"
 )
 
 type Neo4jDb struct {
