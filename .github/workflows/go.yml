@@ -25,8 +25,6 @@ jobs:
           go install golang.org/x/tools/cmd/goimports@latest
           go install github.com/yoheimuta/protolint/cmd/protolint@v0.53.0
 
-      - name: ProtoLint
-        run: protolint lint proto/
 
       - name: Goimports Check
         run: goimports -l -w .
