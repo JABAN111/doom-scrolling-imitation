@@ -60,7 +60,7 @@ func main() {
 
 	cfg := config.Config{
 		CouchBaseCfg: config.CouchBaseConfig{
-			URL:      "localhost",
+			URL:      "localhost:11210",
 			Username: "jaba_admin",
 			Password: "jaba_pwd",
 			Bucket:   "doom-scrolling",
