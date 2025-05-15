@@ -22,7 +22,7 @@ import (
 func main() {
 	log := slog.New(slog.NewTextHandler(os.Stdout, nil))
 
-	endpoint := "localhost:9000" //push to config file
+	endpoint := "localhost:9000" // push to config file
 
 	// Initialize minio client object.
 	minioClient, err := sss.NewMinio(log, endpoint, false)
