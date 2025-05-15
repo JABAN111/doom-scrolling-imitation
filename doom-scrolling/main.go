@@ -2,16 +2,18 @@ package main
 
 import (
 	"context"
+	"errors"
 	"fmt"
-
 	"log/slog"
 	"net/http"
 	"os"
+	"path/filepath"
 	"rshd/lab1/v2/adapters/db/clickhouse"
 	"rshd/lab1/v2/adapters/db/couchbase"
 	"rshd/lab1/v2/adapters/db/influx"
 	"rshd/lab1/v2/adapters/db/neof4j"
 	"rshd/lab1/v2/adapters/server/rest"
+	"rshd/lab1/v2/adapters/sss"
 	"rshd/lab1/v2/config"
 	"rshd/lab1/v2/core"
 	"time"
@@ -19,6 +21,42 @@ import (
 
 func main() {
 	log := slog.New(slog.NewTextHandler(os.Stdout, nil))
+
+	endpoint := "localhost:9000" //push to config file
+
+	// Initialize minio client object.
+	minioClient, err := sss.NewMinio(log, endpoint, false)
+	if err != nil {
+		if errors.Is(err, sss.ErrAccessKeyId) {
+			log.Error("access key env is not specified", "err", err)
+			os.Exit(1)
+		}
+		if errors.Is(err, sss.ErrSecretAccessKey) {
+			log.Error("secret key env is not specified", "err", err)
+			os.Exit(1)
+		}
+		log.Error("unexpected error while connecting to minio", "err", err)
+		os.Exit(2)
+	}
+	testFile := "/Users/jaba/Documents/life/ITMO/rshd/lab1/doom-scrolling/main.go"
+	fmt.Println(filepath.Base(testFile))
+	err = minioClient.UploadPostImage(context.Background(), filepath.Base(testFile), testFile)
+	if err != nil {
+		panic(err)
+	}
+
+	err = minioClient.DownloadPostImage(context.Background(), filepath.Base(testFile), "/Users/jaba/Documents/life/ITMO/rshd/lab1/tt/data.txt")
+	if err != nil {
+		panic(err)
+	}
+	err = minioClient.DeletePostImage(context.Background(), filepath.Base(testFile))
+	if err != nil {
+		panic(err)
+	}
+	err = minioClient.DownloadPostImage(context.Background(), filepath.Base(testFile), "/Users/jaba/Documents/life/ITMO/rshd/lab1/tt/data.txt")
+	if err == nil {
+		panic("???")
+	}
 
 	cfg := config.Config{
 		CouchBaseCfg: config.CouchBaseConfig{

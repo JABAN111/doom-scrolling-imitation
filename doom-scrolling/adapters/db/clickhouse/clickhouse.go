@@ -34,7 +34,7 @@ func New(log *slog.Logger) *clickhouseDb {
 func connect(log *slog.Logger) (clickhouse.Conn, error) {
 	ctx := context.Background()
 	conn, err := clickhouse.Open(&clickhouse.Options{
-		Addr: []string{"localhost:9000"},
+		Addr: []string{"localhost:9005"},
 		Auth: clickhouse.Auth{
 			Database: "default",
 			Username: "default",
