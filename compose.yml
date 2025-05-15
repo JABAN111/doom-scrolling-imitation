@@ -13,6 +13,19 @@ x-minio-common: &minio-common
     timeout: 5s
     retries: 5
 
+x-neo4j-common: &neo4j-common
+  image: neo4j:4.4-enterprise
+  environment:
+    - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+
+    - NEO4J_dbms_mode=CORE
+    - NEO4J_causal_clustering_discovery_type=LIST
+    - NEO4J_causal_clustering_initial_discovery_members=neo4j1:5000,neo4j2:5000,neo4j3:5000
+  expose:
+    - "5000"
+  networks:
+    - workshop
+
 services:
   couchbase-server:
     build: configs/couchbase/couchbase-server
@@ -39,15 +52,84 @@ services:
       - workshop
     entrypoint: ['']
     command: sh -c "/opt/couchbase/init/init-cbserver.sh"
-
-  neo4j:
-    container_name: neo4j
-    image: neo4j:latest
-    ports:
-      - 7474:7474
-      - 7687:7687
+  neo4j1:
+    <<: *neo4j-common
+    container_name: neo4j1
+    hostname: neo4j1
     environment:
+      - NEO4J_dbms__default__advertised__address=neo4j1
+      - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
       - NEO4J_AUTH=neo4j/password123
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - neo4j1-data:/data
+      - neo4j1-logs:/logs
+
+  neo4j2:
+      <<: *neo4j-common
+      container_name: neo4j2
+      hostname: neo4j2
+      environment:
+        - NEO4J_dbms__default__advertised__address=neo4j2
+        - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+        - NEO4J_AUTH=neo4j/password123
+      ports:
+        - "8484:7474"
+        - "8687:7687"
+      volumes:
+        - neo4j2-data:/data
+        - neo4j2-logs:/logs
+
+  neo4j3:
+      <<: *neo4j-common
+      container_name: neo4j3
+      hostname: neo4j3
+      environment:
+        - NEO4J_dbms__default__advertised__address=neo4j3
+        - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+        - NEO4J_AUTH=neo4j/password123
+      ports:
+        - "9494:7474"
+        - "9687:7687"
+      volumes:
+        - neo4j3-data:/data
+        - neo4j3-logs:/logs
+#  neo4j1:
+#    <<: *neo4j-common
+#    container_name: neo4j1
+#    hostname: neo4j1
+#    ports:
+#      - "7474:7474"   # HTTP
+#      - "7687:7687"   # Bolt
+##      - "5000:5000"   # discovery
+#
+#  neo4j2:
+#      <<: *neo4j-common
+#      container_name: neo4j2
+#      hostname: neo4j2
+#      ports:
+#        - "8484:7474"
+#        - "8687:7687"
+##        - "5000:5000"
+#
+#  neo4j3:
+#      <<: *neo4j-common
+#      container_name: neo4j3
+#      hostname: neo4j3
+#      ports:
+#        - "9494:7474"
+#        - "9687:7687"
+##        - "5000:5000"
+#  neo4j:
+#    container_name: neo4j
+#    image: neo4j:latest
+#    ports:
+#      - 7474:7474
+#      - 7687:7687
+#    environment:
+#      - NEO4J_AUTH=neo4j/password123
 
   clickhouse:
     image: 'clickhouse/clickhouse-server:23.4'
@@ -143,6 +225,12 @@ volumes:
   data3-2:
   data4-1:
   data4-2:
+  neo4j1-data:
+  neo4j2-data:
+  neo4j3-data:
+  neo4j1-logs:
+  neo4j2-logs:
+  neo4j3-logs:
 
 networks:
   workshop:
