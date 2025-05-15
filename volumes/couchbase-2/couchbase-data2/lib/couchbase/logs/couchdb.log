@@ -1,0 +1,28 @@
+[couchdb:info,2025-05-15T18:46:49.493Z,couchdb_ns_1@cb.local:couch_audit<0.285.0>:couch_log:info:30]Couch audit settings changed <ud>[{audit_enabled,false},
+                                  {disabled_users,[]},
+                                  {enabled_events,[]}]</ud>
+[couchdb:info,2025-05-15T18:47:24.880Z,couchdb_ns_1@cb.local:couch_audit<0.282.0>:couch_log:info:30]Couch audit settings changed <ud>[{audit_enabled,false},
+                                  {disabled_users,[]},
+                                  {enabled_events,[]}]</ud>
+[couchdb:info,2025-05-15T18:47:50.421Z,couchdb_ns_1@cb.local:<0.662.0>:couch_log:info:30]Deleting couch file "/opt/couchbase/var/lib/couchbase/data/doom-scrolling/master.couch.1.compact" with renaming it to "/opt/couchbase/var/lib/couchbase/data/.delete/10924d32540e1cb165223a72f85c9be5"
+[couchdb:info,2025-05-15T18:47:50.422Z,couchdb_ns_1@cb.local:<0.662.0>:couch_log:info:30]Deleting couch file "/opt/couchbase/var/lib/couchbase/data/doom-scrolling/master.couch.1.compact" with renaming it to "/opt/couchbase/var/lib/couchbase/data/.delete/6de425af6280c050e862cafa10bd6cfc"
+[couchdb:info,2025-05-15T18:47:50.458Z,couchdb_ns_1@cb.local:couch_view<0.249.0>:couch_log:info:30]Deleting couch file "/opt/couchbase/var/lib/couchbase/data/.doom-scrolling/master_temp" with renaming it to "/opt/couchbase/var/lib/couchbase/data/.delete/aacbd4ce782421c7ab70dfbbf0440dc7"
+[couchdb:info,2025-05-15T18:47:50.460Z,couchdb_ns_1@cb.local:couch_view<0.249.0>:couch_log:info:30]Deleting couch file "/opt/couchbase/var/lib/couchbase/data/.doom-scrolling/master_temp" with renaming it to "/opt/couchbase/var/lib/couchbase/data/.delete/8f220870b57330152ad48597d884feb1"
+[couchdb:info,2025-05-15T18:48:24.770Z,couchdb_ns_1@cb.local:couch_query_logger<0.224.0>:couch_log:info:30]Query-Volume
+---
+[couchdb:info,2025-05-15T18:49:24.771Z,couchdb_ns_1@cb.local:couch_query_logger<0.224.0>:couch_log:info:30]Query-Volume
+---
+[couchdb:info,2025-05-15T18:50:24.774Z,couchdb_ns_1@cb.local:couch_query_logger<0.224.0>:couch_log:info:30]Query-Volume
+---
+[couchdb:info,2025-05-15T18:51:24.777Z,couchdb_ns_1@cb.local:couch_query_logger<0.224.0>:couch_log:info:30]Query-Volume
+---
+[couchdb:info,2025-05-15T18:52:24.781Z,couchdb_ns_1@cb.local:couch_query_logger<0.224.0>:couch_log:info:30]Query-Volume
+---
+[couchdb:info,2025-05-15T18:53:24.784Z,couchdb_ns_1@cb.local:couch_query_logger<0.224.0>:couch_log:info:30]Query-Volume
+---
+[couchdb:info,2025-05-15T18:54:24.787Z,couchdb_ns_1@cb.local:couch_query_logger<0.224.0>:couch_log:info:30]Query-Volume
+---
+[couchdb:info,2025-05-15T18:55:24.793Z,couchdb_ns_1@cb.local:couch_query_logger<0.224.0>:couch_log:info:30]Query-Volume
+---
+[couchdb:info,2025-05-15T18:56:24.790Z,couchdb_ns_1@cb.local:couch_query_logger<0.224.0>:couch_log:info:30]Query-Volume
+---

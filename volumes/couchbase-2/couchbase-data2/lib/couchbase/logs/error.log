@@ -1,0 +1,41 @@
+[ns_server:error,2025-05-15T18:47:25.173Z,ns_1@db2.lan:<0.2580.0>:prometheus:post_async:217]Prometheus http request failed:
+URL: http://127.0.0.1:9123/api/v1/query
+Body: query=%7Bname%3D~%60kv_curr_items%7Ckv_curr_items_tot%7Ckv_mem_used_bytes%7Ccouch_docs_actual_disk_size%7Ccouch_views_actual_disk_size%7Ckv_ep_db_data_size_bytes%7Ckv_ep_bg_fetched%60%7D+or+kv_vb_curr_items%7Bstate%3D%27replica%27%7D+or+kv_vb_num_non_resident%7Bstate%3D%27active%27%7D+or+label_replace%28sum+by+%28bucket%2C+name%29+%28irate%28kv_ops%7Bop%3D%60get%60%7D%5B1m%5D%29%29%2C+%60name%60%2C%60cmd_get%60%2C+%60%60%2C+%60%60%29+or+label_replace%28irate%28kv_ops%7Bop%3D%60get%60%2Cresult%3D%60hit%60%7D%5B1m%5D%29%2C%60name%60%2C%60get_hits%60%2C%60%60%2C%60%60%29+or+label_replace%28sum+by+%28bucket%29+%28irate%28kv_cmd_lookup%5B1m%5D%29+or+irate%28kv_ops%7Bop%3D~%60set%7Cincr%7Cdecr%7Cdelete%7Cdel_meta%7Cget_meta%7Cset_meta%7Cset_ret_meta%7Cdel_ret_meta%60%7D%5B1m%5D%29%29%2C+%60name%60%2C+%60ops%60%2C+%60%60%2C+%60%60%29+or+sum+by+%28bucket%2C+name%29+%28%7Bname%3D~%60index_data_size%7Cindex_disk_size%7Ccouch_spatial_data_size%7Ccouch_spatial_disk_size%7Ccouch_views_data_size%60%7D%29&timeout=5s
+Reason: {failed_connect,[{to_address,{"127.0.0.1",9123}},
+                         {inet,[inet],econnrefused}]}
+[ns_server:error,2025-05-15T18:47:25.175Z,ns_1@db2.lan:<0.2589.0>:prometheus:post_async:217]Prometheus http request failed:
+URL: http://127.0.0.1:9123/api/v1/query
+Body: query=%7Bcategory%3D%60system-processes%60%2Cname%3D~%60sysproc_mem_resident%7Csysproc_mem_size%7Csysproc_cpu_utilization%7Csysproc_major_faults_raw%60%7D&timeout=5s
+Reason: {failed_connect,[{to_address,{"127.0.0.1",9123}},
+                         {inet,[inet],econnrefused}]}
+[ns_server:error,2025-05-15T18:47:25.176Z,ns_1@db2.lan:<0.2603.0>:prometheus:post_async:217]Prometheus http request failed:
+URL: http://127.0.0.1:9123/api/v1/query
+Body: query=%7Bcategory%3D%60system%60%2Cname%3D~%60sys_cpu_utilization_rate%7Csys_cpu_stolen_rate%7Csys_swap_total%7Csys_swap_used%7Csys_mem_total%7Csys_mem_free%7Csys_mem_limit%7Csys_cpu_cores_available%7Csys_allocstall%60%7D&timeout=5s
+Reason: {failed_connect,[{to_address,{"127.0.0.1",9123}},
+                         {inet,[inet],econnrefused}]}
+[ns_server:error,2025-05-15T18:47:25.192Z,ns_1@db2.lan:<0.2696.0>:prometheus:post_async:217]Prometheus http request failed:
+URL: http://127.0.0.1:9123/api/v1/query
+Body: query=%7Bname%3D~%60kv_curr_items%7Ckv_curr_items_tot%7Ckv_mem_used_bytes%7Ccouch_docs_actual_disk_size%7Ccouch_views_actual_disk_size%7Ckv_ep_db_data_size_bytes%7Ckv_ep_bg_fetched%60%7D+or+kv_vb_curr_items%7Bstate%3D%27replica%27%7D+or+kv_vb_num_non_resident%7Bstate%3D%27active%27%7D+or+label_replace%28sum+by+%28bucket%2C+name%29+%28irate%28kv_ops%7Bop%3D%60get%60%7D%5B1m%5D%29%29%2C+%60name%60%2C%60cmd_get%60%2C+%60%60%2C+%60%60%29+or+label_replace%28irate%28kv_ops%7Bop%3D%60get%60%2Cresult%3D%60hit%60%7D%5B1m%5D%29%2C%60name%60%2C%60get_hits%60%2C%60%60%2C%60%60%29+or+label_replace%28sum+by+%28bucket%29+%28irate%28kv_cmd_lookup%5B1m%5D%29+or+irate%28kv_ops%7Bop%3D~%60set%7Cincr%7Cdecr%7Cdelete%7Cdel_meta%7Cget_meta%7Cset_meta%7Cset_ret_meta%7Cdel_ret_meta%60%7D%5B1m%5D%29%29%2C+%60name%60%2C+%60ops%60%2C+%60%60%2C+%60%60%29+or+sum+by+%28bucket%2C+name%29+%28%7Bname%3D~%60index_data_size%7Cindex_disk_size%7Ccouch_spatial_data_size%7Ccouch_spatial_disk_size%7Ccouch_views_data_size%60%7D%29&timeout=5s
+Reason: {failed_connect,[{to_address,{"127.0.0.1",9123}},
+                         {inet,[inet],econnrefused}]}
+[ns_server:error,2025-05-15T18:47:25.193Z,ns_1@db2.lan:<0.2706.0>:prometheus:post_async:217]Prometheus http request failed:
+URL: http://127.0.0.1:9123/api/v1/query
+Body: query=%7Bcategory%3D%60system-processes%60%2Cname%3D~%60sysproc_mem_resident%7Csysproc_mem_size%7Csysproc_cpu_utilization%7Csysproc_major_faults_raw%60%7D&timeout=5s
+Reason: {failed_connect,[{to_address,{"127.0.0.1",9123}},
+                         {inet,[inet],econnrefused}]}
+[ns_server:error,2025-05-15T18:47:25.193Z,ns_1@db2.lan:<0.2709.0>:prometheus:post_async:217]Prometheus http request failed:
+URL: http://127.0.0.1:9123/api/v1/query
+Body: query=%7Bcategory%3D%60system%60%2Cname%3D~%60sys_cpu_utilization_rate%7Csys_cpu_stolen_rate%7Csys_swap_total%7Csys_swap_used%7Csys_mem_total%7Csys_mem_free%7Csys_mem_limit%7Csys_cpu_cores_available%7Csys_allocstall%60%7D&timeout=5s
+Reason: {failed_connect,[{to_address,{"127.0.0.1",9123}},
+                         {inet,[inet],econnrefused}]}
+[ns_server:error,2025-05-15T18:47:40.217Z,ns_1@db2.lan:service_status_keeper_worker<0.2743.0>:rest_utils:get_json:62]Request to (indexer) getIndexStatus with headers [] failed: {ok,
+                                                             {{500,
+                                                               "Internal Server Error"},
+                                                              [{"Content-Length",
+                                                                "130"},
+                                                               {"Date",
+                                                                "Thu, 15 May 2025 18:47:40 GMT"},
+                                                               {"Content-Type",
+                                                                "application/json"}],
+                                                              <<"{\"code\":\"error\",\"error\":\"Fail to retrieve cluster-wide metadata from index service\",\"failedNodes\":[\"db2.lan:8091\",\"db3.lan:8091\"]}">>}}
+[ns_server:error,2025-05-15T18:47:40.217Z,ns_1@db2.lan:service_status_keeper-index<0.2744.0>:service_status_keeper:handle_cast:103]Service service_index returned incorrect status

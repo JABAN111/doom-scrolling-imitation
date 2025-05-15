@@ -1,0 +1,75 @@
+ts=2025-05-15T18:46:49.952Z caller=main.go:578 level=info msg="Starting Prometheus Server" mode=server version="(version=2.45.0, branch=HEAD, revision=8ef767e396bf8445f009f945b0162fd71827f445)"
+ts=2025-05-15T18:46:49.952Z caller=main.go:583 level=info build_context="(go=go1.22.2, platform=linux/arm64, user=couchbase@56d7f54c602b, date=20240412-06:12:03, tags=netgo,builtinassets,stringlabels)"
+ts=2025-05-15T18:46:49.952Z caller=main.go:584 level=info host_details="(Linux 6.10.14-linuxkit #1 SMP Fri Nov 29 17:22:03 UTC 2024 aarch64 db2.lan (none))"
+ts=2025-05-15T18:46:49.952Z caller=main.go:585 level=info fd_limits="(soft=1048576, hard=1048576)"
+ts=2025-05-15T18:46:49.952Z caller=main.go:586 level=info vm_limits="(soft=unlimited, hard=unlimited)"
+ts=2025-05-15T18:46:49.956Z caller=web.go:562 level=info component=web msg="Start listening for connections" address=127.0.0.1:9123
+ts=2025-05-15T18:46:49.958Z caller=main.go:1019 level=info msg="Starting TSDB ..."
+ts=2025-05-15T18:46:49.958Z caller=tls_config.go:274 level=info component=web msg="Listening on" address=127.0.0.1:9123
+ts=2025-05-15T18:46:49.960Z caller=tls_config.go:313 level=info component=web msg="TLS is disabled." http2=false address=127.0.0.1:9123
+ts=2025-05-15T18:46:49.969Z caller=head.go:595 level=info component=tsdb msg="Replaying on-disk memory mappable chunks if any"
+ts=2025-05-15T18:46:49.969Z caller=head.go:676 level=info component=tsdb msg="On-disk memory mappable chunks replay completed" duration=2.458µs
+ts=2025-05-15T18:46:49.969Z caller=head.go:684 level=info component=tsdb msg="Replaying WAL, this may take a while"
+ts=2025-05-15T18:46:49.971Z caller=head.go:755 level=info component=tsdb msg="WAL segment loaded" segment=0 maxSegment=0
+ts=2025-05-15T18:46:49.971Z caller=head.go:792 level=info component=tsdb msg="WAL replay completed" checkpoint_replay_duration=931.083µs wal_replay_duration=1.314375ms wbl_replay_duration=41ns total_replay_duration=2.26075ms
+ts=2025-05-15T18:46:49.972Z caller=main.go:1040 level=info fs_type=6a656a63
+ts=2025-05-15T18:46:49.972Z caller=main.go:1043 level=info msg="TSDB started"
+ts=2025-05-15T18:46:49.972Z caller=main.go:1044 level=debug msg="TSDB options" MinBlockDuration=2h MaxBlockDuration=1d1h MaxBytes=1GiB NoLockfile=true RetentionDuration=1y WALSegmentSize=0B WALCompression=true
+ts=2025-05-15T18:46:49.972Z caller=main.go:1224 level=info msg="Loading configuration file" filename=/opt/couchbase/var/lib/couchbase/config/prometheus.yml
+ts=2025-05-15T18:46:49.973Z caller=manager.go:196 level=debug component="discovery manager scrape" msg="Starting provider" provider=static/0 subs=[kv_high_cardinality]
+ts=2025-05-15T18:46:49.973Z caller=manager.go:196 level=debug component="discovery manager scrape" msg="Starting provider" provider=static/1 subs=[general]
+ts=2025-05-15T18:46:49.973Z caller=manager.go:196 level=debug component="discovery manager scrape" msg="Starting provider" provider=static/2 subs=[ns_server_high_cardinality]
+ts=2025-05-15T18:46:49.973Z caller=manager.go:214 level=debug component="discovery manager scrape" msg="Discoverer channel closed" provider=static/0
+ts=2025-05-15T18:46:49.973Z caller=manager.go:214 level=debug component="discovery manager scrape" msg="Discoverer channel closed" provider=static/2
+ts=2025-05-15T18:46:49.973Z caller=manager.go:214 level=debug component="discovery manager scrape" msg="Discoverer channel closed" provider=static/1
+ts=2025-05-15T18:46:49.980Z caller=main.go:1261 level=info msg="Completed loading of configuration file" filename=/opt/couchbase/var/lib/couchbase/config/prometheus.yml totalDuration=7.442125ms db_storage=1.208µs remote_storage=1.208µs web_handler=584ns query_engine=917ns scrape=120.875µs scrape_sd=65.084µs notify=791ns notify_sd=1.166µs rules=6.566292ms tracing=5.417µs
+ts=2025-05-15T18:46:49.980Z caller=main.go:1004 level=info msg="Server is ready to receive web requests."
+ts=2025-05-15T18:46:49.980Z caller=manager.go:995 level=info component="rule manager" msg="Starting rule manager..."
+ts=2025-05-15T18:46:55.823Z caller=scrape.go:1372 level=debug component="scrape manager" scrape_pool=general target="http://127.0.0.1:9998/_prometheusMetrics?timeout=10000" msg="Scrape failed" err="server returned HTTP status 401 Unauthorized"
+ts=2025-05-15T18:47:05.826Z caller=scrape.go:1372 level=debug component="scrape manager" scrape_pool=general target="http://127.0.0.1:9998/_prometheusMetrics?timeout=10000" msg="Scrape failed" err="server returned HTTP status 401 Unauthorized"
+ts=2025-05-15T18:47:15.833Z caller=scrape.go:1372 level=debug component="scrape manager" scrape_pool=general target="http://127.0.0.1:9998/_prometheusMetrics?timeout=10000" msg="Scrape failed" err="server returned HTTP status 401 Unauthorized"
+ts=2025-05-15T18:47:23.086Z caller=main.go:857 level=warn msg="Received termination request via web service, exiting gracefully..."
+ts=2025-05-15T18:47:23.086Z caller=main.go:878 level=info msg="Stopping scrape discovery manager..."
+ts=2025-05-15T18:47:23.086Z caller=main.go:892 level=info msg="Stopping notify discovery manager..."
+ts=2025-05-15T18:47:23.086Z caller=manager.go:1009 level=info component="rule manager" msg="Stopping rule manager..."
+ts=2025-05-15T18:47:23.086Z caller=manager.go:1019 level=info component="rule manager" msg="Rule manager stopped"
+ts=2025-05-15T18:47:23.086Z caller=main.go:929 level=info msg="Stopping scrape manager..."
+ts=2025-05-15T18:47:23.086Z caller=main.go:874 level=info msg="Scrape discovery manager stopped"
+ts=2025-05-15T18:47:23.086Z caller=main.go:888 level=info msg="Notify discovery manager stopped"
+ts=2025-05-15T18:47:23.086Z caller=main.go:921 level=info msg="Scrape manager stopped"
+ts=2025-05-15T18:47:23.087Z caller=notifier.go:603 level=info component=notifier msg="Stopping notification manager..."
+ts=2025-05-15T18:47:23.087Z caller=main.go:1150 level=info msg="Notifier manager stopped"
+ts=2025-05-15T18:47:23.087Z caller=main.go:1162 level=info msg="See you next time!"
+ts=2025-05-15T18:47:25.195Z caller=main.go:578 level=info msg="Starting Prometheus Server" mode=server version="(version=2.45.0, branch=HEAD, revision=8ef767e396bf8445f009f945b0162fd71827f445)"
+ts=2025-05-15T18:47:25.195Z caller=main.go:583 level=info build_context="(go=go1.22.2, platform=linux/arm64, user=couchbase@56d7f54c602b, date=20240412-06:12:03, tags=netgo,builtinassets,stringlabels)"
+ts=2025-05-15T18:47:25.195Z caller=main.go:584 level=info host_details="(Linux 6.10.14-linuxkit #1 SMP Fri Nov 29 17:22:03 UTC 2024 aarch64 db2.lan (none))"
+ts=2025-05-15T18:47:25.195Z caller=main.go:585 level=info fd_limits="(soft=1048576, hard=1048576)"
+ts=2025-05-15T18:47:25.195Z caller=main.go:586 level=info vm_limits="(soft=unlimited, hard=unlimited)"
+ts=2025-05-15T18:47:25.199Z caller=web.go:562 level=info component=web msg="Start listening for connections" address=127.0.0.1:9123
+ts=2025-05-15T18:47:25.201Z caller=main.go:1019 level=info msg="Starting TSDB ..."
+ts=2025-05-15T18:47:25.202Z caller=tls_config.go:274 level=info component=web msg="Listening on" address=127.0.0.1:9123
+ts=2025-05-15T18:47:25.203Z caller=tls_config.go:313 level=info component=web msg="TLS is disabled." http2=false address=127.0.0.1:9123
+ts=2025-05-15T18:47:25.207Z caller=head.go:595 level=info component=tsdb msg="Replaying on-disk memory mappable chunks if any"
+ts=2025-05-15T18:47:25.207Z caller=head.go:676 level=info component=tsdb msg="On-disk memory mappable chunks replay completed" duration=1.958µs
+ts=2025-05-15T18:47:25.207Z caller=head.go:684 level=info component=tsdb msg="Replaying WAL, this may take a while"
+ts=2025-05-15T18:47:25.218Z caller=head.go:755 level=info component=tsdb msg="WAL segment loaded" segment=0 maxSegment=1
+ts=2025-05-15T18:47:25.219Z caller=head.go:755 level=info component=tsdb msg="WAL segment loaded" segment=1 maxSegment=1
+ts=2025-05-15T18:47:25.219Z caller=head.go:792 level=info component=tsdb msg="WAL replay completed" checkpoint_replay_duration=1.422333ms wal_replay_duration=10.278417ms wbl_replay_duration=417ns total_replay_duration=11.716416ms
+ts=2025-05-15T18:47:25.220Z caller=main.go:1040 level=info fs_type=6a656a63
+ts=2025-05-15T18:47:25.220Z caller=main.go:1043 level=info msg="TSDB started"
+ts=2025-05-15T18:47:25.220Z caller=main.go:1044 level=debug msg="TSDB options" MinBlockDuration=2h MaxBlockDuration=1d1h MaxBytes=1GiB NoLockfile=true RetentionDuration=1y WALSegmentSize=0B WALCompression=true
+ts=2025-05-15T18:47:25.220Z caller=main.go:1224 level=info msg="Loading configuration file" filename=/opt/couchbase/var/lib/couchbase/config/prometheus.yml
+ts=2025-05-15T18:47:25.221Z caller=manager.go:196 level=debug component="discovery manager scrape" msg="Starting provider" provider=static/0 subs=[kv_high_cardinality]
+ts=2025-05-15T18:47:25.221Z caller=manager.go:196 level=debug component="discovery manager scrape" msg="Starting provider" provider=static/1 subs=[general]
+ts=2025-05-15T18:47:25.221Z caller=manager.go:196 level=debug component="discovery manager scrape" msg="Starting provider" provider=static/2 subs=[ns_server_high_cardinality]
+ts=2025-05-15T18:47:25.221Z caller=manager.go:196 level=debug component="discovery manager scrape" msg="Starting provider" provider=static/3 subs=[index_high_cardinality]
+ts=2025-05-15T18:47:25.221Z caller=manager.go:214 level=debug component="discovery manager scrape" msg="Discoverer channel closed" provider=static/0
+ts=2025-05-15T18:47:25.221Z caller=manager.go:214 level=debug component="discovery manager scrape" msg="Discoverer channel closed" provider=static/1
+ts=2025-05-15T18:47:25.221Z caller=manager.go:214 level=debug component="discovery manager scrape" msg="Discoverer channel closed" provider=static/3
+ts=2025-05-15T18:47:25.221Z caller=manager.go:214 level=debug component="discovery manager scrape" msg="Discoverer channel closed" provider=static/2
+ts=2025-05-15T18:47:25.222Z caller=main.go:1261 level=info msg="Completed loading of configuration file" filename=/opt/couchbase/var/lib/couchbase/config/prometheus.yml totalDuration=1.860708ms db_storage=1.5µs remote_storage=1.584µs web_handler=750ns query_engine=917ns scrape=171.667µs scrape_sd=71µs notify=1.417µs notify_sd=1.167µs rules=1.020417ms tracing=3.625µs
+ts=2025-05-15T18:47:25.222Z caller=main.go:1004 level=info msg="Server is ready to receive web requests."
+ts=2025-05-15T18:47:25.222Z caller=manager.go:995 level=info component="rule manager" msg="Starting rule manager..."
+ts=2025-05-15T18:47:31.321Z caller=scrape.go:1372 level=debug component="scrape manager" scrape_pool=general target="http://127.0.0.1:8093/_prometheusMetrics?timeout=10000" msg="Scrape failed" err="Get \"http://127.0.0.1:8093/_prometheusMetrics?timeout=10000\": dial tcp 127.0.0.1:8093: connect: connection refused"
+ts=2025-05-15T18:47:32.948Z caller=scrape.go:1372 level=debug component="scrape manager" scrape_pool=index_high_cardinality target="http://127.0.0.1:9102/_prometheusMetricsHigh?timeout=10000" msg="Scrape failed" err="Get \"http://127.0.0.1:9102/_prometheusMetricsHigh?timeout=10000\": dial tcp 127.0.0.1:9102: connect: connection refused"
+ts=2025-05-15T18:47:35.292Z caller=scrape.go:1372 level=debug component="scrape manager" scrape_pool=general target="http://127.0.0.1:9102/_prometheusMetrics?timeout=10000" msg="Scrape failed" err="Get \"http://127.0.0.1:9102/_prometheusMetrics?timeout=10000\": dial tcp 127.0.0.1:9102: connect: connection refused"

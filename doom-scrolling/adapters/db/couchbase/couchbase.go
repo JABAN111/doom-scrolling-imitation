@@ -2,13 +2,12 @@ package couchbase
 
 import (
 	"context"
+	"github.com/couchbase/gocb/v2"
 	"log/slog"
 	"rshd/lab1/v2/config"
 	"rshd/lab1/v2/core"
 	"rshd/lab1/v2/internal/db/document"
 	"time"
-
-	"github.com/couchbase/gocb/v2"
 )
 
 type Collections struct {
@@ -40,8 +39,8 @@ func New(log *slog.Logger, cfg config.Config) (*CouchDB, error) {
 
 	res := &CouchDB{log: log, conn: cluster}
 
-	res.bucket = cluster.Bucket(cfg.CouchBaseCfg.Bucket)
-	err = res.bucket.WaitUntilReady(5*time.Second, nil)
+	res.bucket = cluster.Bucket("doom-scrolling")
+	err = res.bucket.WaitUntilReady(30*time.Second, nil)
 	if err != nil {
 		log.Error("Failed to wait Couchbase bucket ready", "error", err)
 		return nil, err

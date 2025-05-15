@@ -9,7 +9,6 @@ init-cluster:
 		--cluster-username $(COUCHBASE_USER) \
 		--cluster-password $(COUCHBASE_PASSWORD) \
 		--services data,index,query \
-		--cluster-name medium \
 		--cluster-ramsize 3072 \
 		--cluster-index-ramsize 512 \
 		--cluster-analytics-ramsize 1024 \
@@ -36,5 +35,11 @@ rebalance:
 	docker exec -it db1.lan bash -c "couchbase-cli rebalance -c db1.lan:8091 \
 		-u $(COUCHBASE_USER) \
 		-p $(COUCHBASE_PASSWORD)"
+create-bucket:
+	docker exec -it db1.lan bash -c "couchbase-cli bucket-create -c db1.lan:8091 \
+  -u $(COUCHBASE_USER) -p $(COUCHBASE_PASSWORD) \
+  --bucket=doom-scrolling \
+  --bucket-ramsize=512\
+   --bucket-type=couchbase"
 
-cluster-up: init-cluster add-nodes rebalance
+cluster-up: init-cluster add-nodes rebalance create-bucket

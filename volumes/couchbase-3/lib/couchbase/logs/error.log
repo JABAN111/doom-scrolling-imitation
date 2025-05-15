@@ -1,0 +1,12 @@
+[ns_server:error,2025-05-15T18:47:42.873Z,ns_1@db3.lan:service_status_keeper_worker<0.2811.0>:rest_utils:get_json:62]Request to (indexer) getIndexStatus with headers [{"If-None-Match",
+                                                   "968a6f4a2618448e"}] failed: {ok,
+                                                                                 {{500,
+                                                                                   "Internal Server Error"},
+                                                                                  [{"Content-Length",
+                                                                                    "130"},
+                                                                                   {"Date",
+                                                                                    "Thu, 15 May 2025 18:47:42 GMT"},
+                                                                                   {"Content-Type",
+                                                                                    "application/json"}],
+                                                                                  <<"{\"code\":\"error\",\"error\":\"Fail to retrieve cluster-wide metadata from index service\",\"failedNodes\":[\"db2.lan:8091\",\"db3.lan:8091\"]}">>}}
+[ns_server:error,2025-05-15T18:47:42.873Z,ns_1@db3.lan:service_status_keeper-index<0.2812.0>:service_status_keeper:handle_cast:103]Service service_index returned incorrect status

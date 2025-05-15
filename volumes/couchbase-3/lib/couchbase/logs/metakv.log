@@ -1,0 +1,172 @@
+[metakv:debug,2025-05-15T18:46:50.177Z,ns_1@cb.local:simple_store_xdcr_ckpt_data<0.600.0>:simple_store:init:108]Creating Table: xdcr_ckpt_data
+[metakv:debug,2025-05-15T18:46:50.295Z,ns_1@cb.local:simple_store_testconditions<0.706.0>:simple_store:init:108]Creating Table: testconditions
+[metakv:debug,2025-05-15T18:46:50.655Z,ns_1@cb.local:<0.635.0>:menelaus_metakv:handle_mutate:84]Updated <<"/query/sequences_cache/revision">>. Elapsed time:0 ms.
+[metakv:debug,2025-05-15T18:46:50.657Z,ns_1@cb.local:<0.635.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /query/sequences_cache/. Continuous = true
+[metakv:debug,2025-05-15T18:46:50.658Z,ns_1@cb.local:<0.635.0>:menelaus_metakv:write_chunk:155]Sent /query/sequences_cache/revision rev: g2gCYQBsAAAAAWgCbQAAACBlMGQ1MjBjYjM1NzAwYjRhNDczY2YzNTllMzM1NDUyOGgCYQFuBQCasprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:46:50.660Z,ns_1@cb.local:<0.637.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /remoteCluster/. Continuous = false
+[metakv:debug,2025-05-15T18:46:50.693Z,ns_1@cb.local:<0.640.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /remoteCluster/. Continuous = false
+[metakv:debug,2025-05-15T18:46:50.697Z,ns_1@cb.local:<0.640.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /replicationSpec/. Continuous = false
+[metakv:debug,2025-05-15T18:46:50.698Z,ns_1@cb.local:<0.640.0>:metakv:check_continuous_allowed:95]Continuous should not be set to true while iterating on XDCR Checkpoints.
+[metakv:debug,2025-05-15T18:46:50.698Z,ns_1@cb.local:<0.640.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /ckpt/backfill/. Continuous = false
+[metakv:debug,2025-05-15T18:46:50.700Z,ns_1@cb.local:<0.640.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /GlobalConfiguration/. Continuous = true
+[metakv:debug,2025-05-15T18:46:51.204Z,ns_1@cb.local:<0.642.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /V2InternalSettings/. Continuous = true
+[metakv:debug,2025-05-15T18:46:51.705Z,ns_1@cb.local:<0.643.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /remoteCluster/. Continuous = true
+[metakv:debug,2025-05-15T18:46:52.207Z,ns_1@cb.local:<0.644.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /replicationSpec/. Continuous = true
+[metakv:debug,2025-05-15T18:47:27.828Z,ns_1@db3.lan:simple_store_xdcr_ckpt_data<0.2669.0>:simple_store:init:108]Creating Table: xdcr_ckpt_data
+[metakv:debug,2025-05-15T18:47:27.848Z,ns_1@db3.lan:simple_store_testconditions<0.2776.0>:simple_store:init:108]Creating Table: testconditions
+[metakv:debug,2025-05-15T18:47:28.011Z,ns_1@db3.lan:<0.2707.0>:menelaus_metakv:handle_mutate:87]Failed to update <<"/query/sequences_cache/revision">> (rev missing) with error {abort,
+                                                                                 mismatch}.
+[metakv:debug,2025-05-15T18:47:28.013Z,ns_1@db3.lan:<0.2707.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /query/sequences_cache/. Continuous = true
+[metakv:debug,2025-05-15T18:47:28.013Z,ns_1@db3.lan:<0.2706.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /remoteCluster/. Continuous = false
+[metakv:debug,2025-05-15T18:47:28.013Z,ns_1@db3.lan:<0.2707.0>:menelaus_metakv:write_chunk:155]Sent /query/sequences_cache/revision rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQCZsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:28.018Z,ns_1@db3.lan:<0.2710.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /remoteCluster/. Continuous = false
+[metakv:debug,2025-05-15T18:47:28.018Z,ns_1@db3.lan:<0.2710.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /replicationSpec/. Continuous = false
+[metakv:debug,2025-05-15T18:47:28.019Z,ns_1@db3.lan:<0.2710.0>:metakv:check_continuous_allowed:95]Continuous should not be set to true while iterating on XDCR Checkpoints.
+[metakv:debug,2025-05-15T18:47:28.019Z,ns_1@db3.lan:<0.2710.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /ckpt/backfill/. Continuous = false
+[metakv:debug,2025-05-15T18:47:28.020Z,ns_1@db3.lan:<0.2710.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /GlobalConfiguration/. Continuous = true
+[metakv:debug,2025-05-15T18:47:28.525Z,ns_1@db3.lan:<0.2711.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /V2InternalSettings/. Continuous = true
+[metakv:debug,2025-05-15T18:47:29.024Z,ns_1@db3.lan:<0.2713.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /remoteCluster/. Continuous = true
+[metakv:debug,2025-05-15T18:47:29.528Z,ns_1@db3.lan:<0.2714.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /replicationSpec/. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.204Z,ns_1@db3.lan:<0.3215.0>:menelaus_metakv:handle_mutate:87]Failed to update <<"/query/sequences_cache/revision">> (rev missing) with error {abort,
+                                                                                 mismatch}.
+[metakv:debug,2025-05-15T18:47:37.206Z,ns_1@db3.lan:<0.3215.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /query/sequences_cache/. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.206Z,ns_1@db3.lan:<0.3215.0>:menelaus_metakv:write_chunk:155]Sent /query/sequences_cache/revision rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQCZsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:37.238Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.238Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /analytics/settings/config rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQCZsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:37.238Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /eventing/settings/config rev: g2gCYQBq sensitive: false
+[metakv:debug,2025-05-15T18:47:37.239Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /indexing/info/versionToken rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQDCsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:37.239Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /indexing/settings/config rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQNuBQC9sprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:37.240Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /query/functions_cache/counter rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQC6sprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:37.240Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /query/sequences_cache/revision rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQCZsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:37.240Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /query/settings/config rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQCZsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:37.302Z,ns_1@db3.lan:<0.3260.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.309Z,ns_1@db3.lan:<0.3262.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/delete/. Continuous = false
+[metakv:debug,2025-05-15T18:47:37.310Z,ns_1@db3.lan:<0.3262.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/dropInstance/. Continuous = false
+[metakv:debug,2025-05-15T18:47:37.315Z,ns_1@db3.lan:<0.3262.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.463Z,ns_1@db3.lan:<0.3351.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /query/migration/. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.464Z,ns_1@db3.lan:<0.3352.0>:menelaus_metakv:handle_mutate:87]Failed to update <<"/query/sequences_cache/revision">> (rev missing) with error {abort,
+                                                                                 mismatch}.
+[metakv:debug,2025-05-15T18:47:37.465Z,ns_1@db3.lan:<0.3350.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /query/sequences_cache/. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.465Z,ns_1@db3.lan:<0.3350.0>:menelaus_metakv:write_chunk:155]Sent /query/sequences_cache/revision rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQCZsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:37.465Z,ns_1@db3.lan:<0.3352.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /fts/cbgt/cfg/. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.469Z,ns_1@db3.lan:<0.3355.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /query/settings/. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.469Z,ns_1@db3.lan:<0.3355.0>:menelaus_metakv:write_chunk:155]Sent /query/settings/config rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQCZsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:37.495Z,ns_1@db3.lan:<0.3359.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /query/settings/. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.495Z,ns_1@db3.lan:<0.3359.0>:menelaus_metakv:write_chunk:155]Sent /query/settings/config rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQCZsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:37.513Z,ns_1@db3.lan:<0.3360.0>:menelaus_metakv:handle_mutate:87]Failed to update <<"/query/functions_cache/counter">> (rev missing) with error {abort,
+                                                                                mismatch}.
+[metakv:debug,2025-05-15T18:47:37.513Z,ns_1@db3.lan:<0.3360.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /query/functions_cache/. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.514Z,ns_1@db3.lan:<0.3360.0>:menelaus_metakv:write_chunk:155]Sent /query/functions_cache/counter rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQC6sprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:37.536Z,ns_1@db3.lan:<0.3363.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /functions_metadata/v1/cbq-engine/. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.537Z,ns_1@db3.lan:<0.3364.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /functions/v1/cbq-engine/. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.537Z,ns_1@db3.lan:<0.3365.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /evaluator/cbq-engine/v1/config/. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.558Z,ns_1@db3.lan:<0.3374.0>:menelaus_metakv:handle_mutate:87]Failed to update <<"/query/sequences_cache/revision">> (rev missing) with error {abort,
+                                                                                 mismatch}.
+[metakv:debug,2025-05-15T18:47:37.558Z,ns_1@db3.lan:<0.3374.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /query/sequences_cache/. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.559Z,ns_1@db3.lan:<0.3374.0>:menelaus_metakv:write_chunk:155]Sent /query/sequences_cache/revision rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQCZsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:37.586Z,ns_1@db3.lan:<0.3383.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/settings/. Continuous = true
+[metakv:debug,2025-05-15T18:47:37.586Z,ns_1@db3.lan:<0.3383.0>:menelaus_metakv:write_chunk:155]Sent /indexing/settings/config rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQNuBQC9sprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:39.645Z,ns_1@db3.lan:<0.3497.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /fts/cbgt/cfg/nodeDefs-known/. Continuous = false
+[metakv:debug,2025-05-15T18:47:39.732Z,ns_1@db3.lan:<0.3295.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:47:39.760Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /indexing/rebalance/RebalanceToken rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQNuBQDLsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:39.769Z,ns_1@db3.lan:<0.3338.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = true
+[metakv:debug,2025-05-15T18:47:39.769Z,ns_1@db3.lan:<0.3338.0>:menelaus_metakv:write_chunk:155]Sent /indexing/rebalance/RebalanceToken rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQNuBQDLsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:41.096Z,ns_1@db3.lan:<0.3383.0>:menelaus_metakv:write_chunk:155]Sent /indexing/settings/config rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQRuBQDNsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:41.096Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /indexing/settings/config rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQRuBQDNsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:41.099Z,ns_1@db3.lan:<0.3383.0>:menelaus_metakv:write_chunk:155]Sent /indexing/settings/config/features/PlasmaEnablePageBloomFilterBackIndex rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQDNsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:41.099Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /indexing/settings/config/features/PlasmaEnablePageBloomFilterBackIndex rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQDNsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:43.348Z,ns_1@db3.lan:<0.3632.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = true
+[metakv:debug,2025-05-15T18:47:43.348Z,ns_1@db3.lan:<0.3632.0>:menelaus_metakv:write_chunk:155]Sent /indexing/rebalance/RebalanceToken rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQNuBQDLsprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:43.348Z,ns_1@db3.lan:<0.3631.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/. Continuous = true
+[metakv:debug,2025-05-15T18:47:43.349Z,ns_1@db3.lan:<0.3630.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/. Continuous = true
+[metakv:debug,2025-05-15T18:47:44.796Z,ns_1@db3.lan:<0.3629.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/create/. Continuous = false
+[metakv:debug,2025-05-15T18:47:44.798Z,ns_1@db3.lan:<0.3629.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/delete/. Continuous = false
+[metakv:debug,2025-05-15T18:47:44.799Z,ns_1@db3.lan:<0.3629.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/dropInstance/. Continuous = false
+[metakv:debug,2025-05-15T18:47:44.800Z,ns_1@db3.lan:<0.3629.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/create/. Continuous = false
+[metakv:debug,2025-05-15T18:47:44.801Z,ns_1@db3.lan:<0.3629.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/dropInstance/. Continuous = false
+[metakv:debug,2025-05-15T18:47:49.777Z,ns_1@db3.lan:<0.3632.0>:menelaus_metakv:write_chunk:155]Sent /indexing/rebalance/RebalanceToken rev: null sensitive: false
+[metakv:debug,2025-05-15T18:47:49.777Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /indexing/rebalance/RebalanceToken rev: null sensitive: false
+[metakv:debug,2025-05-15T18:47:49.776Z,ns_1@db3.lan:<0.3338.0>:menelaus_metakv:write_chunk:155]Sent /indexing/rebalance/RebalanceToken rev: null sensitive: false
+[metakv:debug,2025-05-15T18:47:49.780Z,ns_1@db3.lan:<0.3629.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:47:54.488Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /query/migration/CBO_STATS/state rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQDasprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:54.488Z,ns_1@db3.lan:<0.3351.0>:menelaus_metakv:write_chunk:155]Sent /query/migration/CBO_STATS/state rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQDasprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:54.489Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /query/migration/UDF/state rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQDasprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:54.489Z,ns_1@db3.lan:<0.3351.0>:menelaus_metakv:write_chunk:155]Sent /query/migration/UDF/state rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQDasprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:54.649Z,ns_1@db3.lan:<0.3981.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/create/. Continuous = false
+[metakv:debug,2025-05-15T18:47:54.650Z,ns_1@db3.lan:<0.3981.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/delete/. Continuous = false
+[metakv:debug,2025-05-15T18:47:54.651Z,ns_1@db3.lan:<0.3981.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/dropInstance/. Continuous = false
+[metakv:debug,2025-05-15T18:47:54.654Z,ns_1@db3.lan:<0.3981.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/create/. Continuous = false
+[metakv:debug,2025-05-15T18:47:54.655Z,ns_1@db3.lan:<0.3981.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/dropInstance/. Continuous = false
+[metakv:debug,2025-05-15T18:47:54.826Z,ns_1@db3.lan:<0.3631.0>:menelaus_metakv:write_chunk:155]Sent /indexing/ddl/commandToken/create/17514355370907628042/0 rev: g2gCYQBsAAAAAWgCbQAAACA3YTMzZDQ2ZmQxOTc2ZTY1NDY2YzVlZmM4YjQ1ZWYyZWgCYQFuBQDasprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:54.826Z,ns_1@db3.lan:<0.3260.0>:menelaus_metakv:write_chunk:155]Sent /indexing/ddl/commandToken/create/17514355370907628042/0 rev: g2gCYQBsAAAAAWgCbQAAACA3YTMzZDQ2ZmQxOTc2ZTY1NDY2YzVlZmM4YjQ1ZWYyZWgCYQFuBQDasprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:54.827Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /indexing/ddl/commandToken/create/17514355370907628042/0 rev: g2gCYQBsAAAAAWgCbQAAACA3YTMzZDQ2ZmQxOTc2ZTY1NDY2YzVlZmM4YjQ1ZWYyZWgCYQFuBQDasprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:54.826Z,ns_1@db3.lan:<0.3262.0>:menelaus_metakv:write_chunk:155]Sent /indexing/ddl/commandToken/create/17514355370907628042/0 rev: g2gCYQBsAAAAAWgCbQAAACA3YTMzZDQ2ZmQxOTc2ZTY1NDY2YzVlZmM4YjQ1ZWYyZWgCYQFuBQDasprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:54.826Z,ns_1@db3.lan:<0.3630.0>:menelaus_metakv:write_chunk:155]Sent /indexing/ddl/commandToken/create/17514355370907628042/0 rev: g2gCYQBsAAAAAWgCbQAAACA3YTMzZDQ2ZmQxOTc2ZTY1NDY2YzVlZmM4YjQ1ZWYyZWgCYQFuBQDasprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:54.828Z,ns_1@db3.lan:<0.4307.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/create/17514355370907628042/. Continuous = false
+[metakv:debug,2025-05-15T18:47:54.829Z,ns_1@db3.lan:<0.4307.0>:menelaus_metakv:write_chunk:155]Sent /indexing/ddl/commandToken/create/17514355370907628042/0 rev: g2gCYQBsAAAAAWgCbQAAACA3YTMzZDQ2ZmQxOTc2ZTY1NDY2YzVlZmM4YjQ1ZWYyZWgCYQFuBQDasprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:47:54.831Z,ns_1@db3.lan:<0.4360.0>:menelaus_metakv:handle_mutate:84]Updated <<"/indexing/ddl/commandToken/create/17514355370907628042/0">>. Elapsed time:0 ms.
+[metakv:debug,2025-05-15T18:47:55.108Z,ns_1@db3.lan:<0.3262.0>:menelaus_metakv:write_chunk:155]Sent /indexing/ddl/commandToken/create/17514355370907628042/0 rev: null sensitive: false
+[metakv:debug,2025-05-15T18:47:55.108Z,ns_1@db3.lan:<0.3631.0>:menelaus_metakv:write_chunk:155]Sent /indexing/ddl/commandToken/create/17514355370907628042/0 rev: null sensitive: false
+[metakv:debug,2025-05-15T18:47:55.108Z,ns_1@db3.lan:<0.3260.0>:menelaus_metakv:write_chunk:155]Sent /indexing/ddl/commandToken/create/17514355370907628042/0 rev: null sensitive: false
+[metakv:debug,2025-05-15T18:47:55.108Z,ns_1@db3.lan:<0.3630.0>:menelaus_metakv:write_chunk:155]Sent /indexing/ddl/commandToken/create/17514355370907628042/0 rev: null sensitive: false
+[metakv:debug,2025-05-15T18:47:55.108Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /indexing/ddl/commandToken/create/17514355370907628042/0 rev: null sensitive: false
+[metakv:debug,2025-05-15T18:48:13.357Z,ns_1@db3.lan:<0.4367.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:48:25.097Z,ns_1@db3.lan:<0.3383.0>:menelaus_metakv:write_chunk:155]Sent /indexing/settings/config rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQVuBQD5sprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:48:25.097Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /indexing/settings/config rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQVuBQD5sprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:48:25.099Z,ns_1@db3.lan:<0.3383.0>:menelaus_metakv:write_chunk:155]Sent /indexing/settings/config/features/PlasmaInMemoryCompression rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQD5sprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:48:25.099Z,ns_1@db3.lan:<0.3217.0>:menelaus_metakv:write_chunk:155]Sent /indexing/settings/config/features/PlasmaInMemoryCompression rev: g2gCYQBsAAAAAWgCbQAAACAyODU2OWFjMDBiOWMxZDdjNTBlMzk3NDEwMjdkNDI4Y2gCYQFuBQD5sprhDmo= sensitive: false
+[metakv:debug,2025-05-15T18:48:37.316Z,ns_1@db3.lan:<0.5834.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/. Continuous = true
+[metakv:debug,2025-05-15T18:48:43.371Z,ns_1@db3.lan:<0.6618.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:48:57.317Z,ns_1@db3.lan:<0.6294.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:49:13.386Z,ns_1@db3.lan:<0.6294.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:49:17.317Z,ns_1@db3.lan:<0.6294.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:49:37.317Z,ns_1@db3.lan:<0.6618.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:49:37.317Z,ns_1@db3.lan:<0.6294.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:49:43.390Z,ns_1@db3.lan:<0.6294.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:49:57.318Z,ns_1@db3.lan:<0.6294.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:50:13.397Z,ns_1@db3.lan:<0.6294.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:50:17.314Z,ns_1@db3.lan:<0.6294.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:50:37.320Z,ns_1@db3.lan:<0.11739.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:50:37.320Z,ns_1@db3.lan:<0.6294.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:50:43.401Z,ns_1@db3.lan:<0.11739.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:50:57.320Z,ns_1@db3.lan:<0.11739.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:51:13.403Z,ns_1@db3.lan:<0.11739.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:51:17.314Z,ns_1@db3.lan:<0.11739.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:51:37.316Z,ns_1@db3.lan:<0.11739.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:51:37.316Z,ns_1@db3.lan:<0.6294.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:51:43.405Z,ns_1@db3.lan:<0.11739.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:51:57.317Z,ns_1@db3.lan:<0.11739.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:52:13.410Z,ns_1@db3.lan:<0.11739.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:52:17.317Z,ns_1@db3.lan:<0.11739.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:52:37.317Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:52:37.317Z,ns_1@db3.lan:<0.6294.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:52:37.367Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/create/. Continuous = false
+[metakv:debug,2025-05-15T18:52:37.369Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/build/. Continuous = false
+[metakv:debug,2025-05-15T18:52:37.370Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/delete/. Continuous = false
+[metakv:debug,2025-05-15T18:52:37.370Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/dropInstance/. Continuous = false
+[metakv:debug,2025-05-15T18:52:43.417Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:52:57.316Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:53:13.420Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:53:17.315Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:53:37.316Z,ns_1@db3.lan:<0.19889.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:53:37.316Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:53:43.423Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:53:57.317Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:54:13.431Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:54:17.317Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:54:37.321Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:54:37.321Z,ns_1@db3.lan:<0.19889.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:54:43.433Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:54:57.318Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:55:13.442Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:55:17.323Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:55:37.325Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:55:37.325Z,ns_1@db3.lan:<0.19889.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:55:43.453Z,ns_1@db3.lan:<0.19889.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:55:57.326Z,ns_1@db3.lan:<0.19889.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:56:13.464Z,ns_1@db3.lan:<0.19889.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:56:17.326Z,ns_1@db3.lan:<0.19889.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:56:37.330Z,ns_1@db3.lan:<0.19889.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:56:37.330Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false
+[metakv:debug,2025-05-15T18:56:43.466Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/rebalance/. Continuous = false
+[metakv:debug,2025-05-15T18:56:57.327Z,ns_1@db3.lan:<0.17180.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /indexing/ddl/commandToken/stopSchedule/. Continuous = false

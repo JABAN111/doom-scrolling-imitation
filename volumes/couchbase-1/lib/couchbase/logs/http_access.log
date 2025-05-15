@@ -1,0 +1,327 @@
+172.19.0.4 - jaba_admin [15/May/2025:18:47:21 +0000] "GET /pools HTTP/1.1" 200 611 - "couchbase-cli  7.6.2-3721" 1
+172.19.0.4 - jaba_admin [15/May/2025:18:47:21 +0000] "GET /pools HTTP/1.1" 200 611 - "couchbase-cli  7.6.2-3721" 0
+172.19.0.4 - jaba_admin [15/May/2025:18:47:21 +0000] "GET /pools HTTP/1.1" 200 611 - "couchbase-cli  7.6.2-3721" 0
+172.19.0.4 - jaba_admin [15/May/2025:18:47:21 +0000] "POST /clusterInit HTTP/1.1" 200 37 - "couchbase-cli  7.6.2-3721" 86
+172.19.0.4 - jaba_admin [15/May/2025:18:47:22 +0000] "GET /pools HTTP/1.1" 200 978 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:22 +0000] "GET /pools HTTP/1.1" 200 978 - "couchbase-cli  7.6.2-3721" 1
+172.19.0.4 - jaba_admin [15/May/2025:18:47:22 +0000] "GET /pools HTTP/1.1" 200 978 - "couchbase-cli  7.6.2-3721" 1
+172.19.0.4 - jaba_admin [15/May/2025:18:47:22 +0000] "GET /pools/default HTTP/1.1" 200 4612 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:22 +0000] "GET /settings/indexes HTTP/1.1" 200 243 - "couchbase-cli  7.6.2-3721" 1
+127.0.0.1 - - [15/May/2025:18:47:22 +0000] "GET /_metakv/indexing/settings/config HTTP/1.1" 503 51 - "indexer-metakv" 0
+172.19.0.4 - jaba_admin [15/May/2025:18:47:25 +0000] "POST /controller/addNode HTTP/1.1" 200 26 - "couchbase-cli  7.6.2-3721" 3198
+172.19.0.4 - jaba_admin [15/May/2025:18:47:25 +0000] "GET /pools HTTP/1.1" 200 978 - "couchbase-cli  7.6.2-3721" 1
+172.19.0.4 - jaba_admin [15/May/2025:18:47:25 +0000] "GET /pools HTTP/1.1" 200 978 - "couchbase-cli  7.6.2-3721" 1
+172.19.0.4 - jaba_admin [15/May/2025:18:47:25 +0000] "GET /pools HTTP/1.1" 200 978 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:25 +0000] "GET /pools/default HTTP/1.1" 200 5686 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:25 +0000] "GET /settings/indexes HTTP/1.1" 200 243 - "couchbase-cli  7.6.2-3721" 1
+172.19.0.4 - jaba_admin [15/May/2025:18:47:27 +0000] "POST /controller/addNode HTTP/1.1" 200 26 - "couchbase-cli  7.6.2-3721" 2442
+172.19.0.4 - jaba_admin [15/May/2025:18:47:28 +0000] "GET /pools HTTP/1.1" 200 978 - "couchbase-cli  7.6.2-3721" 1
+172.19.0.4 - jaba_admin [15/May/2025:18:47:28 +0000] "GET /pools HTTP/1.1" 200 978 - "couchbase-cli  7.6.2-3721" 1
+172.19.0.4 - jaba_admin [15/May/2025:18:47:28 +0000] "GET /pools/default HTTP/1.1" 200 6807 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:28 +0000] "POST /controller/rebalance HTTP/1.1" 200 51 - "couchbase-cli  7.6.2-3721" 62
+172.19.0.4 - jaba_admin [15/May/2025:18:47:29 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 6
+172.19.0.4 - jaba_admin [15/May/2025:18:47:29 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 6
+172.19.0.4 - jaba_admin [15/May/2025:18:47:29 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 6
+172.19.0.4 - jaba_admin [15/May/2025:18:47:29 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:30 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:30 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:30 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:30 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:31 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 5
+172.19.0.4 - jaba_admin [15/May/2025:18:47:31 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 5
+172.19.0.4 - jaba_admin [15/May/2025:18:47:31 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:31 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:32 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:32 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 5
+172.19.0.4 - jaba_admin [15/May/2025:18:47:32 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:33 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:33 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:33 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:33 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:34 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:34 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:34 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:34 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:35 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 5
+172.19.0.4 - jaba_admin [15/May/2025:18:47:35 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:35 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:35 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:36 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:36 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:36 +0000] "GET /pools/default/tasks HTTP/1.1" 200 772 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:36 +0000] "GET /pools/default/tasks HTTP/1.1" 200 791 - "couchbase-cli  7.6.2-3721" 5
+172.19.0.4 - jaba_admin [15/May/2025:18:47:37 +0000] "GET /pools/default/tasks HTTP/1.1" 200 791 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:37 +0000] "GET /pools/default/tasks HTTP/1.1" 200 791 - "couchbase-cli  7.6.2-3721" 9
+172.19.0.4 - jaba_admin [15/May/2025:18:47:37 +0000] "GET /pools/default/tasks HTTP/1.1" 200 791 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:37 +0000] "GET /pools/default/tasks HTTP/1.1" 200 792 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:38 +0000] "GET /pools/default/tasks HTTP/1.1" 200 792 - "couchbase-cli  7.6.2-3721" 5
+172.19.0.4 - jaba_admin [15/May/2025:18:47:38 +0000] "GET /pools/default/tasks HTTP/1.1" 200 792 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:38 +0000] "GET /pools/default/tasks HTTP/1.1" 200 792 - "couchbase-cli  7.6.2-3721" 5
+172.19.0.4 - jaba_admin [15/May/2025:18:47:38 +0000] "GET /pools/default/tasks HTTP/1.1" 200 792 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:39 +0000] "GET /pools/default/tasks HTTP/1.1" 200 792 - "couchbase-cli  7.6.2-3721" 7
+172.19.0.4 - jaba_admin [15/May/2025:18:47:39 +0000] "GET /pools/default/tasks HTTP/1.1" 200 792 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:39 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1123 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:39 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1223 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:40 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1223 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:40 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1223 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:40 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:40 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:41 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 6
+172.19.0.4 - jaba_admin [15/May/2025:18:47:41 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:41 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:42 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:42 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 5
+172.19.0.4 - jaba_admin [15/May/2025:18:47:42 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:42 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:43 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:43 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:43 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 5
+172.19.0.4 - jaba_admin [15/May/2025:18:47:43 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:44 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:44 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 7
+172.19.0.4 - jaba_admin [15/May/2025:18:47:44 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1224 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:44 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:45 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:45 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:45 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 5
+172.19.0.4 - jaba_admin [15/May/2025:18:47:45 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:46 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:46 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 5
+172.19.0.4 - jaba_admin [15/May/2025:18:47:46 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:46 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:47 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.1 - - [15/May/2025:18:47:47 +0000] "GET /pools/default/tasks HTTP/1.1" 401 0 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 8
+172.19.0.1 - - [15/May/2025:18:47:47 +0000] "GET /settings/autoFailover HTTP/1.1" 401 0 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 8
+172.19.0.1 - - [15/May/2025:18:47:47 +0000] "POST /pools/default/stats/range/ HTTP/1.1" 401 0 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 8
+172.19.0.1 - - [15/May/2025:18:47:47 +0000] "GET /pools/default/pendingRetryRebalance HTTP/1.1" 401 0 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 8
+172.19.0.4 - jaba_admin [15/May/2025:18:47:47 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 6
+172.19.0.4 - jaba_admin [15/May/2025:18:47:47 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:47 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:48 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:48 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 5
+172.19.0.4 - jaba_admin [15/May/2025:18:47:48 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 4
+172.19.0.4 - jaba_admin [15/May/2025:18:47:48 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:49 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:49 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1219 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:49 +0000] "GET /pools/default/tasks HTTP/1.1" 200 1220 - "couchbase-cli  7.6.2-3721" 3
+172.19.0.4 - jaba_admin [15/May/2025:18:47:50 +0000] "GET /pools/default/tasks HTTP/1.1" 200 246 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:50 +0000] "GET /pools HTTP/1.1" 200 978 - "couchbase-cli  7.6.2-3721" 1
+172.19.0.4 - jaba_admin [15/May/2025:18:47:50 +0000] "GET /pools HTTP/1.1" 200 978 - "couchbase-cli  7.6.2-3721" 2
+172.19.0.4 - jaba_admin [15/May/2025:18:47:50 +0000] "GET /pools HTTP/1.1" 200 978 - "couchbase-cli  7.6.2-3721" 1
+172.19.0.4 - jaba_admin [15/May/2025:18:47:50 +0000] "POST /pools/default/buckets HTTP/1.1" 202 0 - "couchbase-cli  7.6.2-3721" 30
+127.0.0.1 - - [15/May/2025:18:47:54 +0000] "DELETE /pools/default/buckets/N1QL_SYSTEM_BUCKET HTTP/1.1" 404 31 - "query" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /pools/default?waitChange=0 HTTP/1.1" 401 0 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /ui/index.html HTTP/1.1" 200 3694 - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 18
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /ui/libs/reflect-metadata.js HTTP/1.1" 200 51230 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 4
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /ui/libs/zone.js HTTP/1.1" 200 49589 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 4
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/main.js HTTP/1.1" 200 192726 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 9
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /cssout/index.css HTTP/1.1" 200 651895 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 18
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-CE32KCWP.js HTTP/1.1" 200 1116 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 5
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-MWHOZTC7.js HTTP/1.1" 200 1455 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 5
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-PK2QUWUP.js HTTP/1.1" 200 2548 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 6
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-IS7SWMZY.js HTTP/1.1" 200 674 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 5
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-EJNXU7BP.js HTTP/1.1" 200 46967 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 7
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-LYEG5XPW.js HTTP/1.1" 200 5378 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 6
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-VGNENO43.js HTTP/1.1" 200 5811 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-47K3O5N3.js HTTP/1.1" 200 1987 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-5UJVCTST.js HTTP/1.1" 200 6623 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-2V6LLTWQ.js HTTP/1.1" 200 3288 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-TWFOLJPK.js HTTP/1.1" 200 7465 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-OXBN3FZR.js HTTP/1.1" 200 9309 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 4
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-CCWDQ7TA.js HTTP/1.1" 200 1137 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-LONGRMUL.js HTTP/1.1" 200 9049 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-SAZATQPE.js HTTP/1.1" 200 7209 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-FZBAREMK.js HTTP/1.1" 200 5062 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-ZQNQKV66.js HTTP/1.1" 200 5227 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-U7RNN46P.js HTTP/1.1" 200 10812 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 4
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-MSB7QD5U.js HTTP/1.1" 200 4988 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-3WLDQT6U.js HTTP/1.1" 200 992 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-VRIFRDAH.js HTTP/1.1" 200 554 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-AIFNGV4R.js HTTP/1.1" 200 7416 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-3YI3LVHM.js HTTP/1.1" 200 153 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-5PZ2Y46M.js HTTP/1.1" 200 43 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-7KWQZI4R.js HTTP/1.1" 200 2118 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-KYMLY4M5.js HTTP/1.1" 200 155664 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 4
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-6QWR3SZK.js HTTP/1.1" 200 1405 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-X42XOEVJ.js HTTP/1.1" 200 2828 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-KEXXIVCU.js HTTP/1.1" 200 13727 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-FTJIMQ25.js HTTP/1.1" 200 2175 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-HN35EH3Q.js HTTP/1.1" 200 4095 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-AXCF2SIK.js HTTP/1.1" 200 2338 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-CY3J23S3.js HTTP/1.1" 200 884973 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 23
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-IEGB63TN.js HTTP/1.1" 200 3413 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-YI7627OV.js HTTP/1.1" 200 937377 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 21
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-WXZ6D4YZ.js HTTP/1.1" 200 2248 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 4
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-YZBKCWWF.js HTTP/1.1" 200 2464 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-BDPXT3LV.js HTTP/1.1" 200 42910 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-B4CZJ6PK.js HTTP/1.1" 200 229734 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 15
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-CBNJ4SNT.js HTTP/1.1" 200 6005 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-PF5LRDLD.js HTTP/1.1" 200 2088 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-E4HGYAUG.js HTTP/1.1" 200 2840 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-U46WBKQ3.js HTTP/1.1" 200 1917 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-7NRE3H75.js HTTP/1.1" 200 143741 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 8
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-GGV6WUD3.js HTTP/1.1" 200 34100 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-EUCDM57A.js HTTP/1.1" 200 752 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-OMQDRBN2.js HTTP/1.1" 200 43 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-PV273AT4.js HTTP/1.1" 200 5267 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-3PEED3FO.js HTTP/1.1" 200 1536 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-DLUCOCYT.js HTTP/1.1" 200 12158 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-YOVY2IDQ.js HTTP/1.1" 200 594023 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 19
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-Y4A4RXMG.js HTTP/1.1" 200 4203 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 4
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-4HV7VCRH.js HTTP/1.1" 200 2465 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 4
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-4GSU45GW.js HTTP/1.1" 200 21992 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 4
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-YOIXG746.js HTTP/1.1" 200 29957 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-NC74UYKZ.js HTTP/1.1" 200 8479 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-C4J2PBDJ.js HTTP/1.1" 200 24301 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 4
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-KYZ62VUK.js HTTP/1.1" 200 92928 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 5
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-MXAST5Q7.js HTTP/1.1" 200 131064 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 6
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-46PBHHHH.js HTTP/1.1" 200 266924 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 9
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-6OEIQJKF.js HTTP/1.1" 200 2267 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-JAQQQRPF.js HTTP/1.1" 200 26264 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-EPIUJUIM.js HTTP/1.1" 200 5238 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-6FO7ZJOR.js HTTP/1.1" 200 25110 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 5
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-NQ7G7GTR.js HTTP/1.1" 200 8280 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-R5I676SN.js HTTP/1.1" 200 694009 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 22
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-PMNUIMWU.js HTTP/1.1" 200 63542 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 4
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-2N33YSNW.js HTTP/1.1" 200 87197 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 5
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-24KIOQXD.js HTTP/1.1" 200 147655 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 6
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-PLBUIW37.js HTTP/1.1" 200 16011 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-PY4HJ7F4.js HTTP/1.1" 200 7391 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-GSGWZXBK.js HTTP/1.1" 200 8031 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-EEVACM5E.js HTTP/1.1" 200 105841 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 5
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-OWAHUOU4.js HTTP/1.1" 200 1181 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-4WPXME7X.js HTTP/1.1" 200 170384 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 6
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /jsout/chunk-ZC47CG5T.js HTTP/1.1" 200 353974 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 9
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /_p/ui/query/angular-directives/qw.directives.css HTTP/1.1" 200 6655 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /_p/ui/query/ui-current/query.css HTTP/1.1" 200 7176 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /_p/ui/query/angular-directives/qw.json.chart.css HTTP/1.1" 200 269 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /favicon-32x32.png HTTP/1.1" 200 484 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:27 +0000] "GET /apple-touch-icon.png HTTP/1.1" 200 1136 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:28 +0000] "GET /jsout/mn.collections.module-4K3VQSSK.js HTTP/1.1" 304 0 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:29 +0000] "GET /pools HTTP/1.1" 401 0 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:29 +0000] "GET /jsout/mn.auth.module-H55FHVRZ.js HTTP/1.1" 304 0 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:48:29 +0000] "GET /pools HTTP/1.1" 401 0 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - - [15/May/2025:18:48:29 +0000] "GET /_uiEnv HTTP/1.1" 200 2 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - - [15/May/2025:18:48:29 +0000] "GET /_ui/authMethods HTTP/1.1" 200 48 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 5
+172.19.0.1 - - [15/May/2025:18:48:29 +0000] "GET /cb_logo_bug_white.svg HTTP/1.1" 200 963 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:51:35 +0000] "GET /pools/default/b/ HTTP/1.1" 404 10 - "Go-http-client/1.1" 4
+172.19.0.1 - - [15/May/2025:18:52:29 +0000] "POST /uilogin?use_cert_for_auth=0 HTTP/1.1" 200 0 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 6
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /pools HTTP/1.1" 200 978 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "POST /pools/default/checkPermissions HTTP/1.1" 200 40 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /pools/default/buckets?basic_stats=true&skipMap=true HTTP/1.1" 200 7244 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 5
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "POST /pools/default/checkPermissions HTTP/1.1" 200 5858 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /pools/default?waitChange=0 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 5
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /whoami HTTP/1.1" 200 63 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /pools/default?waitChange=0 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 5
+172.19.0.1 - - [15/May/2025:18:52:29 +0000] "GET /jsout/mn_settings_notifications_service-XM64WB7X.js HTTP/1.1" 304 0 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /settings/autoFailover HTTP/1.1" 200 207 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /pools/default/tasks HTTP/1.1" 200 246 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:52:29 +0000] "GET /jsout/mn_poor_mans_alerts_controller-QVPK6MGB.js HTTP/1.1" 304 0 "http://localhost:8091/jsout/main.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /pools/default/buckets?basic_stats=true&skipMap=true HTTP/1.1" 200 7244 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 3
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /pools/default/buckets?v=118961075&uuid=61933a8028482692b0278a91060e0d90&skipMap=true&basic_stats=true HTTP/1.1" 200 7244 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - - [15/May/2025:18:52:29 +0000] "GET /cb_logo_bug_white_2.svg HTTP/1.1" 200 976 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /settings/saml HTTP/1.1" 200 1245 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 24
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /pools/default/pendingRetryRebalance HTTP/1.1" 200 33 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 25
+172.19.0.1 - - [15/May/2025:18:52:29 +0000] "GET /jsout/chunk-3GF6X365.js HTTP/1.1" 304 0 "http://localhost:8091/jsout/mn_settings_notifications_service-XM64WB7X.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - - [15/May/2025:18:52:29 +0000] "GET /jsout/chunk-HQ2EWZZY.js HTTP/1.1" 304 0 "http://localhost:8091/jsout/mn_settings_notifications_service-XM64WB7X.js" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /logs/rebalanceReport?reportID=c1b1e82bc3018faaa44cc124f5be1eeb HTTP/1.1" 200 1054 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 5
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /settings/stats HTTP/1.1" 200 18 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "POST /pools/default/stats/range/ HTTP/1.1" 200 chunked "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 12
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "POST /pools/default/checkPermissions HTTP/1.1" 200 40 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "POST /pools/default/checkPermissions HTTP/1.1" 200 6734 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "POST /pools/default/stats/range/ HTTP/1.1" 200 chunked "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 7
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "POST /pools/default/checkPermissions HTTP/1.1" 200 40 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "POST /pools/default/checkPermissions HTTP/1.1" 200 6734 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /indexStatus HTTP/1.1" 200 1147 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /settings/indexes HTTP/1.1" 200 242 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /settings/audit HTTP/1.1" 200 785 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /settings/autoCompaction HTTP/1.1" 200 519 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /settings/autoFailover HTTP/1.1" 200 207 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "POST /pools/default/stats/range/ HTTP/1.1" 200 chunked "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 4
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "POST /pools/default/stats/range/ HTTP/1.1" 200 chunked "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 5
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /settings/ldap HTTP/1.1" 200 406 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 8
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:29 +0000] "GET /pools/default/remoteClusters HTTP/1.1" 200 3 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:35 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:39 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8627 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10006
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:40 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:45 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:49 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8628 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10012
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:50 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:55 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:52:59 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10009
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:00 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:05 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:09 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10011
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:10 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:15 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:19 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10014
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:20 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:25 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:29 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10015
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:30 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:35 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:37 +0000] "GET /settings/autoFailover HTTP/1.1" 200 207 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 9
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:37 +0000] "GET /pools/default/pendingRetryRebalance HTTP/1.1" 200 33 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:37 +0000] "GET /pools/default/tasks HTTP/1.1" 200 246 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 7
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:37 +0000] "POST /pools/default/stats/range/ HTTP/1.1" 200 chunked "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 65
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:39 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10017
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:41 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:49 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:49 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10006
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:56 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:53:59 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10007
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:01 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:06 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:09 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10024
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:12 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:17 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:19 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10010
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:21 +0000] "GET /settings/autoFailover HTTP/1.1" 200 207 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:21 +0000] "GET /pools/default/pendingRetryRebalance HTTP/1.1" 200 33 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:21 +0000] "GET /pools/default/tasks HTTP/1.1" 200 246 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 6
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:21 +0000] "POST /pools/default/stats/range/ HTTP/1.1" 200 chunked "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 44
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:22 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:27 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:29 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10012
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:33 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:38 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:39 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8628 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10009
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:43 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:48 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:49 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10007
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:56 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:54:59 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8628 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10008
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:55:01 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:55:06 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:55:09 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10008
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:55:11 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:55:16 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:55:19 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10016
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:55:21 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:55:27 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:55:29 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10020
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:55:32 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:55:37 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:55:39 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10016
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:55:42 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:55:47 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:55:49 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10012
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:00 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10011
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:01 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:06 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:10 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8627 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10009
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:11 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:16 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:20 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8629 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10007
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:21 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:26 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 0
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:30 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8627 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10015
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:31 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:36 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:40 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8628 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10015
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:41 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:46 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 2
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:50 +0000] "GET /pools/default?etag=84548&waitChange=10000 HTTP/1.1" 200 8613 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 10011
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:51 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1
+172.19.0.1 - jaba_admin/UI [15/May/2025:18:56:56 +0000] "GET /pools/default/buckets/doom-scrolling/scopes HTTP/1.1" 200 267 "http://localhost:8091/ui/index.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0" 1

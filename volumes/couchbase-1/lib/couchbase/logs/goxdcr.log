@@ -1,0 +1,363 @@
+2025-05-15T18:46:49.883Z INFO GOXDCR.ReplMgr: GOMAXPROCS=4
+2025-05-15T18:46:49.883Z INFO GOXDCR.SecuritySvc: Security service started. Waiting for security context to be initialized
+2025-05-15T18:46:49.883Z INFO GOXDCR.TopoSvc: Start watching 127.0.0.1:8091:/poolsStreaming/default.
+2025-05-15T18:46:49.883Z INFO GOXDCR.SecuritySvc: Received security change notification. code 15
+2025-05-15T18:46:49.883Z INFO GOXDCR.SecuritySvc: Cluster Encryption is changed to enabled=false, strict=false
+2025-05-15T18:46:49.885Z INFO GOXDCR.SecuritySvc: Certificates are updated.
+2025-05-15T18:46:49.885Z INFO GOXDCR.SecuritySvc: Security context is initialized.
+2025-05-15T18:46:49.896Z INFO GOXDCR.IntSettSvc: Internal settings not found in metakv
+2025-05-15T18:46:49.898Z INFO GOXDCR.ReplMgr: XDCR internal settings: map[AuditReadTimeout:1 AuditWriteTimeout:1 BackfillPersistInterval:1000 BucketTopologyGCPruneTimeHour:24 BucketTopologyGCScanTimeMin:1 BypassSanInCertificateCheck:0 CapellaHostNameSuffix:.cloud.couchbase.com CapiBatchTimeout:180 CapiDataChanSizeMultiplier:1 CapiMaxRetryBatchUpdateDocs:6 CapiReadTimeout:60 CapiRetryInterval:500 CapiWriteTimeout:10 ChangesLeftThresholdForOngoingReplication:200000 CkptCacheCtrlChLen:10 CkptCacheReqChLen:1000 ConnectionErrorsListMaxEntries:20 ConnectionPreCheckGCTimeoutSec:120 ConnectionPreCheckRPCTimeoutSec:15 CpuCollectionInterval:2000 DatapoolLogFrequency:10 DefaultHttpTimeout:180 ExtraQuotaForUnderutilizedCPU:10 FilteringInternalKeyKey:[$%XDCRInternalKey*%$] FilteringInternalXattrKey:[$%XDCRInternalMeta*%$] HELOTimeout:120 HealthCheckIntervalSec:120 IntervalForThrottlerCalibration:4 JsNumWorkers:4 JsWorkerMemQuotaBytes:1572864 KeepAlivePeriod:30 ManifestRefreshSrcInterval:2 ManifestRefreshTgtInterval:60 MaxCheckpointRecordsToKeep:5 MaxCheckpointRecordsToRead:5 MaxCountBacklogForSetDcpPriority:5 MaxCountCpuNotMaxed:3 MaxCountDCPStreamsInactive:10 MaxCountNoBacklogForResetDcpPriority:300 MaxCountThroughputDrop:3 MaxLengthSnapshotHistory:200 MaxNumOfMetakvRetries:4 MaxNumberOfAsyncListeners:4 MaxRetryCapiService:5 MaxRetryForLiveUpdatePipeline:5 MaxRetryTargetStats:6 MaxTopologyChangeCountBeforeRestart:30 MaxTopologyStableCountBeforeRestart:30 MaxWorkersForCheckpointing:5 MemStatsLogInterval:120 NumberOfSlotsForBandwidthThrottling:10 NumberOfSlotsForThroughputThrottling:10 OSOModeOverride:0 P2PCommTimeoutSec:15 P2PMaxReceiveChLen:10000 P2POpaqueCleanupIntervalSec:5 P2PReplicaReplicatorReloadSize:10 P2PRetryFactor:2 P2PRetryWaitTimeMillisec:200 P2PVBRelatedGCIntervalHour:24 PeerManifestsGetterSleepTimeSec:1 PeersManifestsGetterMaxRetry:8 PercentageOfBytesToSendAsMin:30 PipelineTimeoutP2PProtocolSec:60 RefreshRemoteClusterRefInterval:15 RemoteClusterAlternateAddrChangeKey:5 ReplSpecCheckInterval:15 ReplStatusExportBrokenMapTimeoutSec:5 ReplStatusLoadBrokenMapTimeoutSec:5 ReplicationSpecGCCnt:4 ResourceManagementInterval:1000 ResourceManagementRatioBase:100 ResourceManagementRatioUpperBound:90 ResourceManagementStatsInterval:10000 ResourceMgrKVDetectionRetryInterval:60 RetryIntervalMetakv:500 RetryIntervalTargetStats:1000 ShortHttpTimeout:20 StatsLogInterval:30 StopwatchDiagExternalThresholdMs:5000 StopwatchDiagInternalThresholdMs:2000 ThresholdForThroughSeqnoComputation:100 ThresholdPercentageForEventChanSizeLogging:90 ThresholdRatioForProcessCpu:95 ThresholdRatioForTotalCpu:95 ThroughSeqnoBgScannerFreqSec:5 ThroughSeqnoBgScannerLogFreqSec:60 ThroughputSampleAlpha:15 ThroughputSampleSize:1028 ThroughputThrottlerClearTokensInterval:3000 ThroughputThrottlerLogInterval:10000 TimeoutCheckpointBeforeStop:180 TimeoutDcpCloseUprFeed:3 TimeoutDcpCloseUprStreams:3 TimeoutHttpsPortLookup:2 TimeoutPartsStart:30 TimeoutPartsStop:10 TimeoutRuntimeContextStart:30 TimeoutRuntimeContextStop:10 TopologyChangeCheckInterval:10 TopologySvcCooldownPeriodSec:60 TopologySvcErrCooldownPeriodSec:120 UprFeedBufferSize:1048576 UprFeedDataChanLength:20000 WaitTimeBetweenMetadataChangeListeners:500 WaitTimeForLiveUpdatePipeline:2000 XmemBackoffTimeNewConn:1000 XmemBackoffWaitTime:10 XmemDefaultRespTimeout:1000 XmemMaxBackoffFactor:10 XmemMaxBatchSize:50 XmemMaxDataChanSize:10485760 XmemMaxIdleCount:60 XmemMaxIdleCountLowerBound:10 XmemMaxIdleCountUpperBound:120 XmemMaxReadDownTime:60 XmemMaxRetry:5 XmemMaxRetryInterval:300 XmemMaxRetryIntervalMutationLocked:30 XmemMaxRetryMutationLocked:20 XmemMaxRetryNewConn:10 XmemReadTimeout:120 XmemSelfMonitorInterval:6 XmemWriteTimeout:120 dnsSrvReBootstrap:true humanRecoverySec:300]
+2025-05-15T18:46:49.898Z INFO GOXDCR.AuditSvc: Created audit service.
+2025-05-15T18:46:49.898Z INFO GOXDCR.UILogSvc: Created ui log service.
+2025-05-15T18:46:49.898Z INFO GOXDCR.ReplSpecSvc: Cache has been initialized for ReplicationSpecService
+2025-05-15T18:46:49.899Z INFO GOXDCR.CollectionsManifestSvc: CollectionsManifestSvc starting...
+2025-05-15T18:46:49.899Z INFO GOXDCR.CollectionsManifestSvc: CollectionsManifestSvc started
+2025-05-15T18:46:49.899Z INFO GOXDCR.BackfillReplSvc: Cache has been initialized for BackfillReplicationService
+2025-05-15T18:46:49.900Z INFO GOXDCR.PipelineMgr: Pipeline Manager is constructed
+2025-05-15T18:46:49.900Z INFO GOXDCR.ResourceMgr: Resource Manager is initialized
+2025-05-15T18:46:49.900Z INFO GOXDCR.ResourceMgr: ResourceMgr starting ....
+2025-05-15T18:46:49.900Z INFO GOXDCR.ResourceMgr: cgroup supported = true
+2025-05-15T18:46:49.900Z INFO GOXDCR.TpThrottler:  starting...
+2025-05-15T18:46:49.900Z INFO GOXDCR.ResourceMgr: ResourceMgr started
+2025-05-15T18:46:49.900Z INFO GOXDCR.BackfillMgr: BackfillMgr Starting...
+2025-05-15T18:46:49.900Z INFO GOXDCR.BackfillMgr: BackfillMgr Started
+2025-05-15T18:46:49.900Z INFO GOXDCR.ReplMgr: Replication manager is initialized
+2025-05-15T18:46:49.900Z INFO GOXDCR.GenericSupervisor: Starting supervisor ReplicationManagerSupervisor.
+2025-05-15T18:46:49.900Z INFO GOXDCR.GenericSupervisor: Started supervisor ReplicationManagerSupervisor.
+2025-05-15T18:46:49.900Z INFO GOXDCR.ReplMgr: initReplications succeeded
+2025-05-15T18:46:49.900Z INFO GOXDCR.ReplMgr: upgradeRemoteClusterRefs started.
+2025-05-15T18:46:49.900Z INFO GOXDCR.ReplMgr: upgradeRemoteClusterRefs exited
+2025-05-15T18:46:49.900Z INFO GOXDCR.GlobalSettingChangeListener: Started MetakvChangeListener GlobalSettingChangeListener
+2025-05-15T18:46:49.900Z INFO GOXDCR.ResourceMgr: collectCpuUsage starting ....
+
+2025-05-15T18:46:49.900Z INFO GOXDCR.ReplMgr: pollEOF: About to start stdin polling
+2025-05-15T18:46:49.900Z INFO GOXDCR.ResourceMgr: manageResources starting ....
+
+2025-05-15T18:46:49.900Z INFO GOXDCR.ResourceMgr: logStats starting ....
+
+2025-05-15T18:46:49.900Z INFO GOXDCR.TpThrottler:  update routine starting
+2025-05-15T18:46:49.900Z INFO GOXDCR.TpThrottler:  clearReassignedTokens starting... clearing every 3s
+2025-05-15T18:46:49.900Z INFO GOXDCR.ReplMgr: checkReplicationStatus started.
+2025-05-15T18:46:49.900Z INFO GOXDCR.TpThrottler:  logStats started
+2025-05-15T18:46:49.900Z INFO GOXDCR.ReplMgr: logMemStats started.
+2025-05-15T18:46:50.400Z INFO GOXDCR.InternalSettingChangeListener: Started MetakvChangeListener InternalSettingsChangeListener
+2025-05-15T18:46:50.559Z INFO GOXDCR.ResourceMgr: Finished retrieving node's information - isKVNode: true
+2025-05-15T18:46:50.762+00:00 DEBU REGU.impl.init.0.func1() at aggrecorder.go:57 [id 39] will report aggregate recorder stats every 5m0s 
+2025-05-15T18:46:50.902Z INFO GOXDCR.RemoteClusterChangeListener: Started MetakvChangeListener RemoteClusterChangeListener
+2025-05-15T18:46:51.406Z INFO GOXDCR.ReplicationSpecChangeListener: Started MetakvChangeListener ReplicationSpecChangeListener
+2025-05-15T18:46:51.904Z WARN GOXDCR.ResourceMgr: Error retrieving overall cpu. err=CGroup prev timestamp not set
+2025-05-15T18:46:51.907Z INFO GOXDCR.AdminPort: Constructed adminport
+2025-05-15T18:46:51.907Z INFO GOXDCR.ReplMgr: Admin port has been launched
+2025-05-15T18:46:51.907Z INFO GOXDCR.GenericSupervisor: Adding child AdminportSupervisor to supervisor ReplicationManagerSupervisor
+2025-05-15T18:46:51.907Z INFO GOXDCR.ReplMgr: ReplicationManager is running
+2025-05-15T18:46:51.907Z INFO GOXDCR.HttpServer: [xdcr:127.0.0.1:9998] new http server xdcr 127.0.0.1:9998 /
+2025-05-15T18:46:51.907Z INFO GOXDCR.AdminPort: http server started 127.0.0.1:9998 !
+2025-05-15T18:46:51.908Z INFO GOXDCR.P2PManager: P2PManagerImpl started with lifeCycleId mwqaai1WulRaha3jlpxYXtjmLoLif6u9mOAV4Lr28t4=
+2025-05-15T18:46:51.908Z INFO GOXDCR.HttpServer: [xdcr:127.0.0.1:9998] starting ... 
+2025-05-15T18:46:57.985Z ERRO GOXDCR.AdminPort: Error authenticating request. request=&{GET /_prometheusMetrics?timeout=10000 HTTP/1.1 1 1 map[Accept:[application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1] Accept-Encoding:[gzip] Authorization:[Basic xxxxx] User-Agent:[Prometheus/2.45.0] X-Prometheus-Scrape-Timeout-Seconds:[10]] {} <nil> 0 [] false 127.0.0.1:9998 map[] map[] <nil> map[] 127.0.0.1:53702 /_prometheusMetrics?timeout=10000 <nil> <nil> <nil> 0x4000200960 <nil> [] map[]}
+ err= Authentication failure
+2025-05-15T18:46:57.988Z ERRO GOXDCR.ReplMgr: Error getting real user id from http request. err=Authentication failure
+2025-05-15T18:46:57.989Z INFO GOXDCR.AuditSvc: GetMemcachedConnection serverAddr=127.0.0.1:11210, bucketName=
+2025-05-15T18:46:57.993Z INFO GOXDCR.AuditSvc: Successfully sent HELO command with userAgent=Goxdcr Audit. attributes={false 1 false false}
+2025-05-15T18:46:59.902Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:46:59.903Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:46:59.903Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:47:01.910Z INFO GOXDCR.P2PManager: Successfully sent request type Discovery to nodes map[]
+2025-05-15T18:47:04.901Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:47:07.987Z ERRO GOXDCR.AdminPort: Error authenticating request. request=&{GET /_prometheusMetrics?timeout=10000 HTTP/1.1 1 1 map[Accept:[application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1] Accept-Encoding:[gzip] Authorization:[Basic xxxxx] User-Agent:[Prometheus/2.45.0] X-Prometheus-Scrape-Timeout-Seconds:[10]] {} <nil> 0 [] false 127.0.0.1:9998 map[] map[] <nil> map[] 127.0.0.1:53702 /_prometheusMetrics?timeout=10000 <nil> <nil> <nil> 0x4000200cd0 <nil> [] map[]}
+ err= Authentication failure
+2025-05-15T18:47:07.989Z ERRO GOXDCR.ReplMgr: Error getting real user id from http request. err=Authentication failure
+2025-05-15T18:47:07.989Z INFO GOXDCR.AuditSvc: GetMemcachedConnection serverAddr=127.0.0.1:11210, bucketName=
+2025-05-15T18:47:07.994Z INFO GOXDCR.AuditSvc: Successfully sent HELO command with userAgent=Goxdcr Audit. attributes={false 1 false false}
+2025-05-15T18:47:09.902Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:47:09.903Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:47:09.903Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:47:17.984Z ERRO GOXDCR.AdminPort: Error authenticating request. request=&{GET /_prometheusMetrics?timeout=10000 HTTP/1.1 1 1 map[Accept:[application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1] Accept-Encoding:[gzip] Authorization:[Basic xxxxx] User-Agent:[Prometheus/2.45.0] X-Prometheus-Scrape-Timeout-Seconds:[10]] {} <nil> 0 [] false 127.0.0.1:9998 map[] map[] <nil> map[] 127.0.0.1:53702 /_prometheusMetrics?timeout=10000 <nil> <nil> <nil> 0x4000200ff0 <nil> [] map[]}
+ err= Authentication failure
+2025-05-15T18:47:17.986Z ERRO GOXDCR.ReplMgr: Error getting real user id from http request. err=Authentication failure
+2025-05-15T18:47:17.986Z INFO GOXDCR.AuditSvc: GetMemcachedConnection serverAddr=127.0.0.1:11210, bucketName=
+2025-05-15T18:47:17.988Z INFO GOXDCR.AuditSvc: Successfully sent HELO command with userAgent=Goxdcr Audit. attributes={false 1 false false}
+2025-05-15T18:47:19.904Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:47:19.904Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:47:19.904Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:47:19.904Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:47:22.265Z INFO GOXDCR.SecuritySvc: Received security change notification. code 1
+2025-05-15T18:47:22.266Z INFO GOXDCR.SecuritySvc: Certificates are updated.
+2025-05-15T18:47:29.901Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:47:29.901Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:47:29.901Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:47:34.901Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:47:37.379Z INFO GOXDCR.AdminPort: doPostPeerToPeerRequest of type Discovery from db2.lan:8091
+2025-05-15T18:47:37.379Z INFO GOXDCR.P2PManager: Discovered peers: map[db2.lan:8091:j0nOcb9J-4J6fouXglv60KGHYJiY_mjuo_5E5WmnEfQ=]
+2025-05-15T18:47:39.903Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:47:39.903Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:47:39.903Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:47:40.030Z INFO GOXDCR.AdminPort: doPostPeerToPeerRequest of type Discovery from db3.lan:8091
+2025-05-15T18:47:40.030Z INFO GOXDCR.P2PManager: Discovered peers: map[db2.lan:8091:j0nOcb9J-4J6fouXglv60KGHYJiY_mjuo_5E5WmnEfQ= db3.lan:8091:FDNuMH4SCGbVSwTHBQMKY2q80hVAPkzCt-5r3P42SA4=]
+2025-05-15T18:47:49.901Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:47:49.901Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:47:49.901Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:47:49.901Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:47:59.901Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:47:59.901Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:47:59.901Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:48:04.902Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:48:09.901Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:48:09.901Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:48:09.901Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:48:19.902Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:48:19.902Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:48:19.903Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:48:19.903Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:48:29.901Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:48:29.901Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:48:29.901Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:48:34.901Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:48:39.901Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:48:39.901Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:48:39.901Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:48:49.901Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:48:49.901Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:48:49.901Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:48:49.905Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:48:49.907Z INFO GOXDCR.ReplMgr: Mem stats = {"Alloc":7468008,"TotalAlloc":10294896,"Sys":18175240,"Lookups":0,"Mallocs":60765,"Frees":27869,"HeapAlloc":7468008,"HeapSys":11698176,"HeapIdle":2318336,"HeapInuse":9379840,"HeapReleased":2252800,"HeapObjects":32896,"StackInuse":884736,"StackSys":884736,"MSpanInuse":115360,"MSpanSys":130560,"MCacheInuse":4800,"MCacheSys":15600,"BuckHashSys":1455354,"GCSys":3009568,"OtherSys":981246,"NextGC":11402072,"LastGC":1747334842131020802,"PauseTotalNs":1558209,"PauseNs":[28834,368166,1161209,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"PauseEnd":[1747334809756822842,1747334809765304426,1747334842131020802,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"NumGC":3,"NumForcedGC":0,"GCCPUFraction":0.00014241189718424175,"EnableGC":true,"DebugGC":false,"BySize":[{"Size":0,"Mallocs":0,"Frees":0},{"Size":8,"Mallocs":737,"Frees":338},{"Size":16,"Mallocs":19813,"Frees":6546},{"Size":24,"Mallocs":5365,"Frees":2067},{"Size":32,"Mallocs":4003,"Frees":2430},{"Size":48,"Mallocs":8014,"Frees":2512},{"Size":64,"Mallocs":3847,"Frees":2304},{"Size":80,"Mallocs":1107,"Frees":234},{"Size":96,"Mallocs":2216,"Frees":1124},{"Size":112,"Mallocs":2462,"Frees":1439},{"Size":128,"Mallocs":984,"Frees":796},{"Size":144,"Mallocs":757,"Frees":392},{"Size":160,"Mallocs":433,"Frees":167},{"Size":176,"Mallocs":136,"Frees":70},{"Size":192,"Mallocs":41,"Frees":21},{"Size":208,"Mallocs":274,"Frees":85},{"Size":224,"Mallocs":252,"Frees":88},{"Size":240,"Mallocs":56,"Frees":5},{"Size":256,"Mallocs":548,"Frees":503},{"Size":288,"Mallocs":1556,"Frees":418},{"Size":320,"Mallocs":133,"Frees":91},{"Size":352,"Mallocs":859,"Frees":181},{"Size":384,"Mallocs":68,"Frees":33},{"Size":416,"Mallocs":35,"Frees":11},{"Size":448,"Mallocs":140,"Frees":1},{"Size":480,"Mallocs":16,"Frees":5},{"Size":512,"Mallocs":96,"Frees":53},{"Size":576,"Mallocs":189,"Frees":34},{"Size":640,"Mallocs":205,"Frees":8},{"Size":704,"Mallocs":106,"Frees":61},{"Size":768,"Mallocs":8,"Frees":4},{"Size":896,"Mallocs":36,"Frees":18},{"Size":1024,"Mallocs":18,"Frees":7},{"Size":1152,"Mallocs":128,"Frees":35},{"Size":1280,"Mallocs":568,"Frees":561},{"Size":1408,"Mallocs":66,"Frees":31},{"Size":1536,"Mallocs":10,"Frees":4},{"Size":1792,"Mallocs":17,"Frees":3},{"Size":2048,"Mallocs":18,"Frees":3},{"Size":2304,"Mallocs":87,"Frees":14},{"Size":2688,"Mallocs":10,"Frees":9},{"Size":3072,"Mallocs":20,"Frees":11},{"Size":3200,"Mallocs":0,"Frees":0},{"Size":3456,"Mallocs":3,"Frees":0},{"Size":4096,"Mallocs":76,"Frees":16},{"Size":4864,"Mallocs":15,"Frees":8},{"Size":5376,"Mallocs":4,"Frees":1},{"Size":6144,"Mallocs":12,"Frees":6},{"Size":6528,"Mallocs":1,"Frees":0},{"Size":6784,"Mallocs":2,"Frees":1},{"Size":6912,"Mallocs":4,"Frees":0},{"Size":8192,"Mallocs":16,"Frees":3},{"Size":9472,"Mallocs":16,"Frees":3},{"Size":9728,"Mallocs":0,"Frees":0},{"Size":10240,"Mallocs":0,"Frees":0},{"Size":10880,"Mallocs":0,"Frees":0},{"Size":12288,"Mallocs":5,"Frees":1},{"Size":13568,"Mallocs":1,"Frees":0},{"Size":14336,"Mallocs":30,"Frees":0},{"Size":16384,"Mallocs":3,"Frees":1},{"Size":18432,"Mallocs":5,"Frees":2}]}
+2025-05-15T18:48:59.902Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:48:59.902Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:48:59.902Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:49:04.901Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:49:09.901Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:49:09.901Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:49:09.901Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:49:19.901Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:49:19.901Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:49:19.902Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:49:19.902Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:49:29.903Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:49:29.904Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:49:29.904Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:49:34.901Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:49:39.902Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:49:39.902Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:49:39.902Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:49:49.901Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:49:49.901Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:49:49.901Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:49:49.901Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:49:59.901Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:49:59.901Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:49:59.901Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:50:04.903Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:50:09.901Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:50:09.901Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:50:09.902Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:50:19.901Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:50:19.901Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:50:19.901Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:50:19.901Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:50:29.901Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:50:29.901Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:50:29.901Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:50:34.902Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:50:39.902Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:50:39.902Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:50:39.902Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:50:49.903Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:50:49.903Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:50:49.903Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:50:49.908Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:50:49.908Z INFO GOXDCR.ReplMgr: Mem stats = {"Alloc":5743192,"TotalAlloc":10867800,"Sys":18175240,"Lookups":0,"Mallocs":69029,"Frees":53583,"HeapAlloc":5743192,"HeapSys":11698176,"HeapIdle":4014080,"HeapInuse":7684096,"HeapReleased":1998848,"HeapObjects":15446,"StackInuse":884736,"StackSys":884736,"MSpanInuse":101920,"MSpanSys":130560,"MCacheInuse":4800,"MCacheSys":15600,"BuckHashSys":1455850,"GCSys":3042360,"OtherSys":947958,"NextGC":11487448,"LastGC":1747334962216910802,"PauseTotalNs":3097543,"PauseNs":[28834,368166,1161209,1539334,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"PauseEnd":[1747334809756822842,1747334809765304426,1747334842131020802,1747334962216910802,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"NumGC":4,"NumForcedGC":0,"GCCPUFraction":0.00006096052997103741,"EnableGC":true,"DebugGC":false,"BySize":[{"Size":0,"Mallocs":0,"Frees":0},{"Size":8,"Mallocs":758,"Frees":413},{"Size":16,"Mallocs":22409,"Frees":17772},{"Size":24,"Mallocs":6251,"Frees":4677},{"Size":32,"Mallocs":4271,"Frees":3525},{"Size":48,"Mallocs":9955,"Frees":6982},{"Size":64,"Mallocs":4312,"Frees":3471},{"Size":80,"Mallocs":1452,"Frees":1061},{"Size":96,"Mallocs":2626,"Frees":1870},{"Size":112,"Mallocs":2607,"Frees":1700},{"Size":128,"Mallocs":1028,"Frees":891},{"Size":144,"Mallocs":881,"Frees":682},{"Size":160,"Mallocs":433,"Frees":190},{"Size":176,"Mallocs":136,"Frees":90},{"Size":192,"Mallocs":53,"Frees":37},{"Size":208,"Mallocs":358,"Frees":171},{"Size":224,"Mallocs":336,"Frees":267},{"Size":240,"Mallocs":56,"Frees":6},{"Size":256,"Mallocs":560,"Frees":523},{"Size":288,"Mallocs":1738,"Frees":1520},{"Size":320,"Mallocs":133,"Frees":97},{"Size":352,"Mallocs":1195,"Frees":913},{"Size":384,"Mallocs":104,"Frees":72},{"Size":416,"Mallocs":35,"Frees":13},{"Size":448,"Mallocs":144,"Frees":2},{"Size":480,"Mallocs":16,"Frees":15},{"Size":512,"Mallocs":103,"Frees":69},{"Size":576,"Mallocs":191,"Frees":172},{"Size":640,"Mallocs":205,"Frees":9},{"Size":704,"Mallocs":106,"Frees":71},{"Size":768,"Mallocs":8,"Frees":4},{"Size":896,"Mallocs":38,"Frees":20},{"Size":1024,"Mallocs":19,"Frees":8},{"Size":1152,"Mallocs":129,"Frees":108},{"Size":1280,"Mallocs":568,"Frees":566},{"Size":1408,"Mallocs":66,"Frees":40},{"Size":1536,"Mallocs":10,"Frees":9},{"Size":1792,"Mallocs":20,"Frees":4},{"Size":2048,"Mallocs":19,"Frees":4},{"Size":2304,"Mallocs":88,"Frees":75},{"Size":2688,"Mallocs":10,"Frees":9},{"Size":3072,"Mallocs":20,"Frees":11},{"Size":3200,"Mallocs":0,"Frees":0},{"Size":3456,"Mallocs":3,"Frees":0},{"Size":4096,"Mallocs":81,"Frees":41},{"Size":4864,"Mallocs":16,"Frees":9},{"Size":5376,"Mallocs":4,"Frees":3},{"Size":6144,"Mallocs":12,"Frees":7},{"Size":6528,"Mallocs":1,"Frees":1},{"Size":6784,"Mallocs":2,"Frees":2},{"Size":6912,"Mallocs":4,"Frees":4},{"Size":8192,"Mallocs":16,"Frees":10},{"Size":9472,"Mallocs":16,"Frees":3},{"Size":9728,"Mallocs":0,"Frees":0},{"Size":10240,"Mallocs":0,"Frees":0},{"Size":10880,"Mallocs":0,"Frees":0},{"Size":12288,"Mallocs":5,"Frees":1},{"Size":13568,"Mallocs":1,"Frees":0},{"Size":14336,"Mallocs":30,"Frees":0},{"Size":16384,"Mallocs":3,"Frees":1},{"Size":18432,"Mallocs":5,"Frees":2}]}
+2025-05-15T18:50:59.903Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:50:59.904Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:50:59.904Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:51:04.901Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:51:09.901Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:51:09.902Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:51:09.902Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:51:19.903Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:51:19.903Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:51:19.903Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:51:19.903Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:51:29.902Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:51:29.902Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:51:29.902Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:51:34.902Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:51:39.904Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:51:39.904Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:51:39.904Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:51:49.902Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:51:49.903Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:51:49.903Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:51:49.903Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:51:59.903Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:51:59.904Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:51:59.904Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:52:04.905Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:52:09.902Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:52:09.902Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:52:09.902Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:52:19.903Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:52:19.903Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:52:19.903Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:52:19.903Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:52:29.902Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:52:29.902Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:52:29.902Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:52:34.902Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:52:39.911Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:52:39.916Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:52:39.916Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:52:49.903Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:52:49.902Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:52:49.903Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:52:49.903Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:52:49.903Z INFO GOXDCR.ReplMgr: Mem stats = {"Alloc":5707600,"TotalAlloc":11446456,"Sys":18175240,"Lookups":0,"Mallocs":77362,"Frees":61676,"HeapAlloc":5707600,"HeapSys":11730944,"HeapIdle":4210688,"HeapInuse":7520256,"HeapReleased":3375104,"HeapObjects":15686,"StackInuse":851968,"StackSys":851968,"MSpanInuse":106400,"MSpanSys":130560,"MCacheInuse":4800,"MCacheSys":15600,"BuckHashSys":1455850,"GCSys":3050600,"OtherSys":939718,"NextGC":11357816,"LastGC":1747335082307127468,"PauseTotalNs":3764043,"PauseNs":[28834,368166,1161209,1539334,666500,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"PauseEnd":[1747334809756822842,1747334809765304426,1747334842131020802,1747334962216910802,1747335082307127468,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"NumGC":5,"NumForcedGC":0,"GCCPUFraction":0.000039841417719490264,"EnableGC":true,"DebugGC":false,"BySize":[{"Size":0,"Mallocs":0,"Frees":0},{"Size":8,"Mallocs":769,"Frees":416},{"Size":16,"Mallocs":24961,"Frees":20222},{"Size":24,"Mallocs":7154,"Frees":5571},{"Size":32,"Mallocs":4559,"Frees":3800},{"Size":48,"Mallocs":11961,"Frees":8950},{"Size":64,"Mallocs":4790,"Frees":3937},{"Size":80,"Mallocs":1809,"Frees":1415},{"Size":96,"Mallocs":3067,"Frees":2282},{"Size":112,"Mallocs":2756,"Frees":1846},{"Size":128,"Mallocs":1075,"Frees":940},{"Size":144,"Mallocs":1007,"Frees":804},{"Size":160,"Mallocs":436,"Frees":190},{"Size":176,"Mallocs":140,"Frees":90},{"Size":192,"Mallocs":65,"Frees":49},{"Size":208,"Mallocs":440,"Frees":251},{"Size":224,"Mallocs":423,"Frees":353},{"Size":240,"Mallocs":56,"Frees":6},{"Size":256,"Mallocs":572,"Frees":535},{"Size":288,"Mallocs":1928,"Frees":1705},{"Size":320,"Mallocs":133,"Frees":97},{"Size":352,"Mallocs":1547,"Frees":1257},{"Size":384,"Mallocs":140,"Frees":108},{"Size":416,"Mallocs":36,"Frees":13},{"Size":448,"Mallocs":144,"Frees":2},{"Size":480,"Mallocs":16,"Frees":15},{"Size":512,"Mallocs":110,"Frees":81},{"Size":576,"Mallocs":191,"Frees":172},{"Size":640,"Mallocs":205,"Frees":9},{"Size":704,"Mallocs":108,"Frees":71},{"Size":768,"Mallocs":8,"Frees":4},{"Size":896,"Mallocs":39,"Frees":20},{"Size":1024,"Mallocs":20,"Frees":9},{"Size":1152,"Mallocs":129,"Frees":108},{"Size":1280,"Mallocs":568,"Frees":566},{"Size":1408,"Mallocs":68,"Frees":40},{"Size":1536,"Mallocs":10,"Frees":9},{"Size":1792,"Mallocs":20,"Frees":4},{"Size":2048,"Mallocs":20,"Frees":5},{"Size":2304,"Mallocs":88,"Frees":75},{"Size":2688,"Mallocs":10,"Frees":9},{"Size":3072,"Mallocs":20,"Frees":11},{"Size":3200,"Mallocs":0,"Frees":0},{"Size":3456,"Mallocs":3,"Frees":0},{"Size":4096,"Mallocs":86,"Frees":45},{"Size":4864,"Mallocs":16,"Frees":9},{"Size":5376,"Mallocs":4,"Frees":3},{"Size":6144,"Mallocs":12,"Frees":7},{"Size":6528,"Mallocs":1,"Frees":1},{"Size":6784,"Mallocs":2,"Frees":2},{"Size":6912,"Mallocs":4,"Frees":4},{"Size":8192,"Mallocs":16,"Frees":13},{"Size":9472,"Mallocs":16,"Frees":3},{"Size":9728,"Mallocs":0,"Frees":0},{"Size":10240,"Mallocs":0,"Frees":0},{"Size":10880,"Mallocs":0,"Frees":0},{"Size":12288,"Mallocs":5,"Frees":1},{"Size":13568,"Mallocs":1,"Frees":0},{"Size":14336,"Mallocs":30,"Frees":0},{"Size":16384,"Mallocs":3,"Frees":1},{"Size":18432,"Mallocs":5,"Frees":2}]}
+2025-05-15T18:52:59.905Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:52:59.906Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:52:59.906Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:53:04.902Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:53:09.903Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:53:09.903Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:53:09.903Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:53:19.902Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:53:19.902Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:53:19.902Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:53:19.902Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:53:29.902Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:53:29.902Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:53:29.902Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:53:34.902Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:53:39.903Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:53:39.903Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:53:39.903Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:53:49.904Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:53:49.904Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:53:49.905Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:53:49.905Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:53:59.904Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:53:59.904Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:53:59.904Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:54:04.904Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:54:09.902Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:54:09.903Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:54:09.903Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:54:19.903Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:54:19.904Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:54:19.905Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:54:19.905Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:54:29.902Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:54:29.903Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:54:29.903Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:54:34.903Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:54:39.903Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:54:39.903Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:54:39.903Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:54:49.903Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:54:49.903Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:54:49.903Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:54:49.903Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:54:49.903Z INFO GOXDCR.ReplMgr: Mem stats = {"Alloc":5695560,"TotalAlloc":12006928,"Sys":18175240,"Lookups":0,"Mallocs":85511,"Frees":70012,"HeapAlloc":5695560,"HeapSys":11698176,"HeapIdle":4145152,"HeapInuse":7553024,"HeapReleased":3375104,"HeapObjects":15499,"StackInuse":884736,"StackSys":884736,"MSpanInuse":115360,"MSpanSys":130560,"MCacheInuse":4800,"MCacheSys":15600,"BuckHashSys":1456050,"GCSys":3052648,"OtherSys":937470,"NextGC":11390168,"LastGC":1747335202407293510,"PauseTotalNs":4291167,"PauseNs":[28834,368166,1161209,1539334,666500,527124,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"PauseEnd":[1747334809756822842,1747334809765304426,1747334842131020802,1747334962216910802,1747335082307127468,1747335202407293510,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"NumGC":6,"NumForcedGC":0,"GCCPUFraction":0.00003120407640044926,"EnableGC":true,"DebugGC":false,"BySize":[{"Size":0,"Mallocs":0,"Frees":0},{"Size":8,"Mallocs":770,"Frees":423},{"Size":16,"Mallocs":27443,"Frees":22786},{"Size":24,"Mallocs":8044,"Frees":6476},{"Size":32,"Mallocs":4838,"Frees":4088},{"Size":48,"Mallocs":13950,"Frees":10966},{"Size":64,"Mallocs":5261,"Frees":4423},{"Size":80,"Mallocs":2164,"Frees":1773},{"Size":96,"Mallocs":3488,"Frees":2705},{"Size":112,"Mallocs":2904,"Frees":1997},{"Size":128,"Mallocs":1121,"Frees":986},{"Size":144,"Mallocs":1131,"Frees":932},{"Size":160,"Mallocs":436,"Frees":193},{"Size":176,"Mallocs":140,"Frees":94},{"Size":192,"Mallocs":77,"Frees":61},{"Size":208,"Mallocs":518,"Frees":331},{"Size":224,"Mallocs":511,"Frees":441},{"Size":240,"Mallocs":56,"Frees":6},{"Size":256,"Mallocs":584,"Frees":547},{"Size":288,"Mallocs":2116,"Frees":1896},{"Size":320,"Mallocs":133,"Frees":97},{"Size":352,"Mallocs":1899,"Frees":1613},{"Size":384,"Mallocs":176,"Frees":144},{"Size":416,"Mallocs":36,"Frees":13},{"Size":448,"Mallocs":144,"Frees":2},{"Size":480,"Mallocs":16,"Frees":15},{"Size":512,"Mallocs":117,"Frees":88},{"Size":576,"Mallocs":191,"Frees":172},{"Size":640,"Mallocs":205,"Frees":9},{"Size":704,"Mallocs":108,"Frees":73},{"Size":768,"Mallocs":8,"Frees":4},{"Size":896,"Mallocs":39,"Frees":21},{"Size":1024,"Mallocs":20,"Frees":9},{"Size":1152,"Mallocs":129,"Frees":108},{"Size":1280,"Mallocs":568,"Frees":566},{"Size":1408,"Mallocs":68,"Frees":42},{"Size":1536,"Mallocs":10,"Frees":9},{"Size":1792,"Mallocs":20,"Frees":4},{"Size":2048,"Mallocs":20,"Frees":5},{"Size":2304,"Mallocs":88,"Frees":75},{"Size":2688,"Mallocs":10,"Frees":9},{"Size":3072,"Mallocs":20,"Frees":11},{"Size":3200,"Mallocs":0,"Frees":0},{"Size":3456,"Mallocs":3,"Frees":0},{"Size":4096,"Mallocs":88,"Frees":49},{"Size":4864,"Mallocs":16,"Frees":9},{"Size":5376,"Mallocs":6,"Frees":3},{"Size":6144,"Mallocs":12,"Frees":7},{"Size":6528,"Mallocs":1,"Frees":1},{"Size":6784,"Mallocs":2,"Frees":2},{"Size":6912,"Mallocs":4,"Frees":4},{"Size":8192,"Mallocs":16,"Frees":13},{"Size":9472,"Mallocs":16,"Frees":3},{"Size":9728,"Mallocs":0,"Frees":0},{"Size":10240,"Mallocs":0,"Frees":0},{"Size":10880,"Mallocs":0,"Frees":0},{"Size":12288,"Mallocs":5,"Frees":1},{"Size":13568,"Mallocs":1,"Frees":0},{"Size":14336,"Mallocs":30,"Frees":0},{"Size":16384,"Mallocs":3,"Frees":1},{"Size":18432,"Mallocs":5,"Frees":2}]}
+2025-05-15T18:54:59.905Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:54:59.915Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:54:59.915Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:55:04.911Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:55:09.906Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:55:09.906Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:55:09.906Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:55:19.906Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:55:19.906Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:55:19.907Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:55:19.907Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:55:29.906Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:55:29.907Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:55:29.907Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:55:34.913Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:55:39.913Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:55:39.914Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:55:39.914Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:55:49.912Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:55:49.912Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:55:49.912Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:55:49.912Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:55:59.914Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:55:59.915Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:55:59.915Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:56:04.916Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:56:09.915Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:56:09.915Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:56:09.915Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:56:19.919Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:56:19.920Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:56:19.920Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:56:19.920Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:56:29.916Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:56:29.916Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:56:29.916Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:56:34.914Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:56:39.914Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:56:39.914Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:56:39.914Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:56:49.914Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T18:56:49.915Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T18:56:49.915Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T18:56:49.915Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T18:56:49.915Z INFO GOXDCR.ReplMgr: Mem stats = {"Alloc":5692320,"TotalAlloc":12568448,"Sys":18175240,"Lookups":0,"Mallocs":93592,"Frees":78212,"HeapAlloc":5692320,"HeapSys":11665408,"HeapIdle":4153344,"HeapInuse":7512064,"HeapReleased":3375104,"HeapObjects":15380,"StackInuse":917504,"StackSys":917504,"MSpanInuse":113280,"MSpanSys":130560,"MCacheInuse":4800,"MCacheSys":15600,"BuckHashSys":1456738,"GCSys":3052648,"OtherSys":936782,"NextGC":11394568,"LastGC":1747335322513703260,"PauseTotalNs":6112167,"PauseNs":[28834,368166,1161209,1539334,666500,527124,1821000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"PauseEnd":[1747334809756822842,1747334809765304426,1747334842131020802,1747334962216910802,1747335082307127468,1747335202407293510,1747335322513703260,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"NumGC":7,"NumForcedGC":0,"GCCPUFraction":0.000029274794663463706,"EnableGC":true,"DebugGC":false,"BySize":[{"Size":0,"Mallocs":0,"Frees":0},{"Size":8,"Mallocs":771,"Frees":426},{"Size":16,"Mallocs":29888,"Frees":25279},{"Size":24,"Mallocs":8935,"Frees":7376},{"Size":32,"Mallocs":5111,"Frees":4370},{"Size":48,"Mallocs":15916,"Frees":12966},{"Size":64,"Mallocs":5731,"Frees":4898},{"Size":80,"Mallocs":2515,"Frees":2132},{"Size":96,"Mallocs":3922,"Frees":3121},{"Size":112,"Mallocs":3050,"Frees":2145},{"Size":128,"Mallocs":1169,"Frees":1035},{"Size":144,"Mallocs":1253,"Frees":1056},{"Size":160,"Mallocs":437,"Frees":193},{"Size":176,"Mallocs":140,"Frees":94},{"Size":192,"Mallocs":89,"Frees":73},{"Size":208,"Mallocs":598,"Frees":411},{"Size":224,"Mallocs":597,"Frees":529},{"Size":240,"Mallocs":56,"Frees":6},{"Size":256,"Mallocs":596,"Frees":561},{"Size":288,"Mallocs":2300,"Frees":2085},{"Size":320,"Mallocs":133,"Frees":97},{"Size":352,"Mallocs":2243,"Frees":1965},{"Size":384,"Mallocs":212,"Frees":180},{"Size":416,"Mallocs":36,"Frees":13},{"Size":448,"Mallocs":144,"Frees":2},{"Size":480,"Mallocs":16,"Frees":15},{"Size":512,"Mallocs":124,"Frees":97},{"Size":576,"Mallocs":191,"Frees":172},{"Size":640,"Mallocs":205,"Frees":9},{"Size":704,"Mallocs":108,"Frees":73},{"Size":768,"Mallocs":8,"Frees":4},{"Size":896,"Mallocs":39,"Frees":21},{"Size":1024,"Mallocs":21,"Frees":10},{"Size":1152,"Mallocs":129,"Frees":108},{"Size":1280,"Mallocs":568,"Frees":566},{"Size":1408,"Mallocs":68,"Frees":42},{"Size":1536,"Mallocs":10,"Frees":9},{"Size":1792,"Mallocs":20,"Frees":4},{"Size":2048,"Mallocs":21,"Frees":6},{"Size":2304,"Mallocs":88,"Frees":75},{"Size":2688,"Mallocs":10,"Frees":9},{"Size":3072,"Mallocs":20,"Frees":11},{"Size":3200,"Mallocs":0,"Frees":0},{"Size":3456,"Mallocs":3,"Frees":0},{"Size":4096,"Mallocs":91,"Frees":53},{"Size":4864,"Mallocs":18,"Frees":9},{"Size":5376,"Mallocs":6,"Frees":3},{"Size":6144,"Mallocs":12,"Frees":7},{"Size":6528,"Mallocs":1,"Frees":1},{"Size":6784,"Mallocs":2,"Frees":2},{"Size":6912,"Mallocs":4,"Frees":4},{"Size":8192,"Mallocs":16,"Frees":13},{"Size":9472,"Mallocs":16,"Frees":3},{"Size":9728,"Mallocs":0,"Frees":0},{"Size":10240,"Mallocs":0,"Frees":0},{"Size":10880,"Mallocs":0,"Frees":0},{"Size":12288,"Mallocs":5,"Frees":1},{"Size":13568,"Mallocs":1,"Frees":0},{"Size":14336,"Mallocs":30,"Frees":0},{"Size":16384,"Mallocs":3,"Frees":1},{"Size":18432,"Mallocs":5,"Frees":2}]}
