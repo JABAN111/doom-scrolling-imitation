@@ -10,7 +10,6 @@ import (
 // InitializeCluster возвращает пропингованный кластер
 func InitializeCluster(cfg config.Config, log *slog.Logger) (*gocb.Cluster, error) {
 	log.Info("Initializing Couchbase cluster")
-	//gocb.SetLogger(gocb.VerboseStdioLogger()) // закоментить, если нужно заткнуть логи бд
 
 	options := gocb.ClusterOptions{
 		Authenticator: gocb.PasswordAuthenticator{

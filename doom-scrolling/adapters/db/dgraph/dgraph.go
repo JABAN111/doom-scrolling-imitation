@@ -4,14 +4,15 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/dgraph-io/dgo/v240"
 	"log/slog"
 	"rshd/lab1/v2/config"
-	"rshd/lab1/v2/db/graph"
+	"rshd/lab1/v2/internal/db/graph"
 
 	"github.com/dgraph-io/dgo/v240/protos/api"
 )
 
-type DgraphDb struct {
+type DbDgraph struct {
 	log          *slog.Logger
 	dgraphClient *graph.DgraphClient
 }
@@ -22,7 +23,7 @@ type response struct {
 	} `json:"people"`
 }
 
-func New(log *slog.Logger, cfg config.Config) (*DgraphDb, error) {
+func New(log *slog.Logger, cfg config.Config) (*DbDgraph, error) {
 	dgraphClient, err := graph.InitClient(cfg, log)
 	ctx := context.Background()
 	if err != nil {
@@ -44,56 +45,14 @@ func New(log *slog.Logger, cfg config.Config) (*DgraphDb, error) {
 		return nil, err
 	}
 
-	return &DgraphDb{log: log, dgraphClient: dgraphClient}, nil
+	return &DbDgraph{log: log, dgraphClient: dgraphClient}, nil
 }
 
-func (db *DgraphDb) SETBEN200() {
+func (db *DbDgraph) FollowUser(_ context.Context, followerName, followingName string) error {
 	txn := db.dgraphClient.Dg.NewTxn()
-	defer txn.Discard(context.Background())
-
-	query := `
-	{
-		people(func: eq(name, "Ann")) {
-			uid
-		}
-	}`
-
-	resp, err := txn.Query(context.Background(), query)
-	if err != nil {
-		db.log.Error("Query failed", "error", err)
-		panic(err)
-	}
-	var response response
-	if err := json.Unmarshal(resp.Json, &response); err != nil {
-		db.log.Error("Error unmarshaling JSON", "error", err)
-		panic(err)
-	}
-
-	if len(response.People) == 0 {
-		db.log.Error("No person found to update")
-		return
-	}
-
-	mutation := &api.Mutation{
-		SetJson: []byte(
-			`
-			{
-				"uid": "` + response.People[0].UID + `",
-				"age": 200
-			}
-			`),
-		CommitNow: true,
-	}
-
-	_, err = txn.Mutate(context.Background(), mutation)
-	if err != nil {
-		db.log.Error("Mutation failed", "error", err)
-		panic(err)
-	}
-}
-func (db *DgraphDb) FollowUser(ctx context.Context, followerName, followingName string) error {
-	txn := db.dgraphClient.Dg.NewTxn()
-	defer txn.Discard(context.Background())
+	defer func(txn *dgo.Txn, ctx context.Context) {
+		_ = txn.Discard(ctx)
+	}(txn, context.Background())
 
 	queryFollower := `
 	{
@@ -156,9 +115,11 @@ func (db *DgraphDb) FollowUser(ctx context.Context, followerName, followingName 
 	return nil
 }
 
-func (db *DgraphDb) LikePost(ctx context.Context, userID, postID string) error {
+func (db *DbDgraph) LikePost(ctx context.Context, userID, postID string) error {
 	txn := db.dgraphClient.Dg.NewTxn()
-	defer txn.Discard(context.Background())
+	defer func(txn *dgo.Txn, ctx context.Context) {
+		_ = txn.Discard(ctx)
+	}(txn, context.Background())
 
 	userUid := `
 	{
@@ -216,9 +177,11 @@ func (db *DgraphDb) LikePost(ctx context.Context, userID, postID string) error {
 	return nil
 }
 
-func (db *DgraphDb) GetFeed(ctx context.Context, userID string) ([]string, error) {
+func (db *DbDgraph) GetFeed(ctx context.Context, userID string) ([]string, error) {
 	txn := db.dgraphClient.Dg.NewTxn()
-	defer txn.Discard(context.Background())
+	defer func(txn *dgo.Txn, ctx context.Context) {
+		_ = txn.Discard(ctx)
+	}(txn, context.Background())
 
 	query := fmt.Sprintf(`
 	{
@@ -255,7 +218,7 @@ func (db *DgraphDb) GetFeed(ctx context.Context, userID string) ([]string, error
 	return nil, nil
 }
 
-func (db *DgraphDb) CreateUser(ctx context.Context, username string) error {
+func (db *DbDgraph) CreateUser(ctx context.Context, username string) error {
 	mutation := &api.Mutation{
 		SetJson: []byte(`{
 			"username": "` + username + `"
@@ -278,7 +241,7 @@ func (db *DgraphDb) CreateUser(ctx context.Context, username string) error {
 	return nil
 }
 
-func (db *DgraphDb) CreatePost(ctx context.Context, postId, userId string) error {
+func (db *DbDgraph) CreatePost(ctx context.Context, postId, userId string) error {
 	mutation := &api.Mutation{
 		SetJson: []byte(`{
 			"id": "` + postId + `",
@@ -302,9 +265,11 @@ func (db *DgraphDb) CreatePost(ctx context.Context, postId, userId string) error
 	return nil
 }
 
-func (db *DgraphDb) READ() {
+func (db *DbDgraph) READ() {
 	txn := db.dgraphClient.Dg.NewTxn()
-	defer txn.Discard(context.Background())
+	defer func(txn *dgo.Txn, ctx context.Context) {
+		_ = txn.Discard(ctx)
+	}(txn, context.Background())
 
 	query := `
 	{
@@ -328,9 +293,11 @@ func (db *DgraphDb) READ() {
 
 }
 
-func (db *DgraphDb) RANDOMBULLSHITGO() {
+func (db *DbDgraph) RANDOMBULLSHITGO() {
 	txn := db.dgraphClient.Dg.NewTxn()
-	defer txn.Discard(context.Background())
+	defer func(txn *dgo.Txn, ctx context.Context) {
+		_ = txn.Discard(ctx)
+	}(txn, context.Background())
 
 	mutation := &api.Mutation{
 		SetJson: []byte(`

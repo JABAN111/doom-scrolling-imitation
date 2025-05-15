@@ -298,19 +298,6 @@ func getMemoryUsage() (float64, error) {
 	return vmStat.UsedPercent, nil
 }
 
-func getCPUUsage1() (float64, error) {
-	percentages, err := cpu.Percent(1*time.Second, false)
-	if err != nil {
-		return 0, err
-	}
-
-	if len(percentages) == 0 {
-		return 0, fmt.Errorf("no CPU data available")
-	}
-
-	return percentages[0], nil
-}
-
 func (s *Service) StartSystemMetricsCollection(ctx context.Context, tick time.Duration) {
 	ticker := time.NewTicker(tick)
 	defer ticker.Stop()

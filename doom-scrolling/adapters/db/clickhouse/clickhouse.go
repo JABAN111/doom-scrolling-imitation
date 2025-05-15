@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log/slog"
+	"rshd/lab1/v2/internal/util"
 
 	"rshd/lab1/v2/core"
 
@@ -22,16 +23,11 @@ func New(log *slog.Logger) *clickhouseDb {
 		return nil
 	}
 
-	chConn, ok := conn.(clickhouse.Conn)
-	createTables(chConn)
-	chConn.Ping(context.Background())
-	if !ok {
-		log.Error("не удалось привести соединение к типу clickhouse.Conn")
-		return nil
-	}
+	_ = createTables(conn)
+	_ = conn.Ping(context.Background())
 	return &clickhouseDb{
 		log:  log,
-		conn: chConn,
+		conn: conn,
 	}
 }
 
@@ -96,7 +92,7 @@ func (db *clickhouseDb) GetTopActions(ctx context.Context, days, limit int) ([]c
 	if err != nil {
 		return nil, err
 	}
-	defer rows.Close()
+	defer util.SafeClose(rows)
 
 	var stats []core.TagStat
 	for rows.Next() {
@@ -138,7 +134,7 @@ func (db *clickhouseDb) ExecuteAnalyticsQuery(ctx context.Context, query string,
 	if err != nil {
 		return nil, err
 	}
-	defer rows.Close()
+	defer util.SafeClose(rows)
 
 	columns := rows.Columns()
 	var results []any
