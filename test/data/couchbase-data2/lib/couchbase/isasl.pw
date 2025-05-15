@@ -1,0 +1,423 @@
+{
+  "@@version@@": 2,
+  "@prometheus": {
+    "hash": {
+      "hashes": [
+        "/+XGGqdW52eHuoZJ2r6po9AkVzI6yDJqFN3PHBb8s3M="
+      ],
+      "algorithm": "argon2id",
+      "salt": "VaWjvOpf4f7K7uifu+JtSw==",
+      "parallelism": 1,
+      "time": 3,
+      "memory": 524288
+    },
+    "scram-sha-512": {
+      "salt": "ZlqSKb6Zmj7+Q4cxoE5SX8pUGDO5Ry/qI7TaHE5nGPSrhIji+9CTt4eaTmT73v2jozvoQJy8vRiogWDqpqBLYA==",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "wwzXiX6ZklrdwvNSpdI4oAYpwku0XSa767j2Xv0XIPmtDM8WkKITFuHRdX3ViMTeK9vRJ8VTXIxkjYnIePJsBg==",
+          "server_key": "wxHiH4h7Y1pr4ZmaLuKztqgK3XsNN9l3t3e19bKGCHG9DoD0DJdW9dMmUvvd057UN55/qKc1npWLAyYQsk9jXQ=="
+        }
+      ]
+    },
+    "scram-sha-256": {
+      "salt": "C6DQX+r+FDVUKVGrjbWkOLb7UXLdw/akp6DiNhWS9bA=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "55bpr/g75c0BvAD+toHpGCnOS4v1k/k2qWLFmg3v+6g=",
+          "server_key": "wm6Zg43mY5qJEavPjdGjQ1AfgACRmqSqMzkr/RMPIH8="
+        }
+      ]
+    },
+    "scram-sha-1": {
+      "salt": "QPV1zUKm6DwtXMTidZihFnOw4QY=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "yIhO2obK5lowjtv3sJIyrv6vV9w=",
+          "server_key": "SY4WKyxoJYH3hMsOVmAvjXphEEk="
+        }
+      ]
+    }
+  },
+  "@ns_server": {
+    "hash": {
+      "hashes": [
+        "VdJ69nrLH7RYeARmjrYbjWu77706U9uW0UVExUrt8VM="
+      ],
+      "algorithm": "argon2id",
+      "salt": "Un4hrcsqIeevimUKsBk2Lw==",
+      "parallelism": 1,
+      "time": 3,
+      "memory": 524288
+    },
+    "scram-sha-512": {
+      "salt": "FfiRhmKmL3DOZ/+c7otfv5YQ0OU8wEaGUhN0kQ+o+PHsQkfHo/IyzdeLASvSLYcV5M1ex7qVjsbj/cbzdcIZSg==",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "700ONcJd4sDCJA/DbFnvdnNaTkCFUBeDpZDmpjRAmTtFUXGADRDFVXxQqQeyxtj08DMzTpaUp/DkPNPBzqQz7w==",
+          "server_key": "V32NZbxdhDIi67LU5FulAqFupXxWdk1quyNMJAOT6JlwtifvxxKeOY5M4H5naWzjs7Ma7oqrweIbyyrq7xMWng=="
+        }
+      ]
+    },
+    "scram-sha-256": {
+      "salt": "vkFK6q23wcwiBZkYnIv0k6VMEzOmMEm9Qsuc4AkKiQk=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "0gyxDLPdoo5rJFupfSyRnumk86Q3GX7yLfbLmYZ6akc=",
+          "server_key": "ogIfDCk6RZr0Ju57tY1rSmsfdbj80byPbgK60rIn/oo="
+        }
+      ]
+    },
+    "scram-sha-1": {
+      "salt": "3b/aRI6QZCxhnq654sDNj/oSucc=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "OtRP35eydDAT18UPafZHhyRokw0=",
+          "server_key": "e90gmYNPAvtdmJDNdaXz16M7fA8="
+        }
+      ]
+    }
+  },
+  "@cbq-engine": {
+    "hash": {
+      "hashes": [
+        "VdJ69nrLH7RYeARmjrYbjWu77706U9uW0UVExUrt8VM="
+      ],
+      "algorithm": "argon2id",
+      "salt": "Un4hrcsqIeevimUKsBk2Lw==",
+      "parallelism": 1,
+      "time": 3,
+      "memory": 524288
+    },
+    "scram-sha-512": {
+      "salt": "FfiRhmKmL3DOZ/+c7otfv5YQ0OU8wEaGUhN0kQ+o+PHsQkfHo/IyzdeLASvSLYcV5M1ex7qVjsbj/cbzdcIZSg==",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "700ONcJd4sDCJA/DbFnvdnNaTkCFUBeDpZDmpjRAmTtFUXGADRDFVXxQqQeyxtj08DMzTpaUp/DkPNPBzqQz7w==",
+          "server_key": "V32NZbxdhDIi67LU5FulAqFupXxWdk1quyNMJAOT6JlwtifvxxKeOY5M4H5naWzjs7Ma7oqrweIbyyrq7xMWng=="
+        }
+      ]
+    },
+    "scram-sha-256": {
+      "salt": "vkFK6q23wcwiBZkYnIv0k6VMEzOmMEm9Qsuc4AkKiQk=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "0gyxDLPdoo5rJFupfSyRnumk86Q3GX7yLfbLmYZ6akc=",
+          "server_key": "ogIfDCk6RZr0Ju57tY1rSmsfdbj80byPbgK60rIn/oo="
+        }
+      ]
+    },
+    "scram-sha-1": {
+      "salt": "3b/aRI6QZCxhnq654sDNj/oSucc=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "OtRP35eydDAT18UPafZHhyRokw0=",
+          "server_key": "e90gmYNPAvtdmJDNdaXz16M7fA8="
+        }
+      ]
+    }
+  },
+  "@projector": {
+    "hash": {
+      "hashes": [
+        "VdJ69nrLH7RYeARmjrYbjWu77706U9uW0UVExUrt8VM="
+      ],
+      "algorithm": "argon2id",
+      "salt": "Un4hrcsqIeevimUKsBk2Lw==",
+      "parallelism": 1,
+      "time": 3,
+      "memory": 524288
+    },
+    "scram-sha-512": {
+      "salt": "FfiRhmKmL3DOZ/+c7otfv5YQ0OU8wEaGUhN0kQ+o+PHsQkfHo/IyzdeLASvSLYcV5M1ex7qVjsbj/cbzdcIZSg==",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "700ONcJd4sDCJA/DbFnvdnNaTkCFUBeDpZDmpjRAmTtFUXGADRDFVXxQqQeyxtj08DMzTpaUp/DkPNPBzqQz7w==",
+          "server_key": "V32NZbxdhDIi67LU5FulAqFupXxWdk1quyNMJAOT6JlwtifvxxKeOY5M4H5naWzjs7Ma7oqrweIbyyrq7xMWng=="
+        }
+      ]
+    },
+    "scram-sha-256": {
+      "salt": "vkFK6q23wcwiBZkYnIv0k6VMEzOmMEm9Qsuc4AkKiQk=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "0gyxDLPdoo5rJFupfSyRnumk86Q3GX7yLfbLmYZ6akc=",
+          "server_key": "ogIfDCk6RZr0Ju57tY1rSmsfdbj80byPbgK60rIn/oo="
+        }
+      ]
+    },
+    "scram-sha-1": {
+      "salt": "3b/aRI6QZCxhnq654sDNj/oSucc=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "OtRP35eydDAT18UPafZHhyRokw0=",
+          "server_key": "e90gmYNPAvtdmJDNdaXz16M7fA8="
+        }
+      ]
+    }
+  },
+  "@goxdcr": {
+    "hash": {
+      "hashes": [
+        "VdJ69nrLH7RYeARmjrYbjWu77706U9uW0UVExUrt8VM="
+      ],
+      "algorithm": "argon2id",
+      "salt": "Un4hrcsqIeevimUKsBk2Lw==",
+      "parallelism": 1,
+      "time": 3,
+      "memory": 524288
+    },
+    "scram-sha-512": {
+      "salt": "FfiRhmKmL3DOZ/+c7otfv5YQ0OU8wEaGUhN0kQ+o+PHsQkfHo/IyzdeLASvSLYcV5M1ex7qVjsbj/cbzdcIZSg==",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "700ONcJd4sDCJA/DbFnvdnNaTkCFUBeDpZDmpjRAmTtFUXGADRDFVXxQqQeyxtj08DMzTpaUp/DkPNPBzqQz7w==",
+          "server_key": "V32NZbxdhDIi67LU5FulAqFupXxWdk1quyNMJAOT6JlwtifvxxKeOY5M4H5naWzjs7Ma7oqrweIbyyrq7xMWng=="
+        }
+      ]
+    },
+    "scram-sha-256": {
+      "salt": "vkFK6q23wcwiBZkYnIv0k6VMEzOmMEm9Qsuc4AkKiQk=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "0gyxDLPdoo5rJFupfSyRnumk86Q3GX7yLfbLmYZ6akc=",
+          "server_key": "ogIfDCk6RZr0Ju57tY1rSmsfdbj80byPbgK60rIn/oo="
+        }
+      ]
+    },
+    "scram-sha-1": {
+      "salt": "3b/aRI6QZCxhnq654sDNj/oSucc=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "OtRP35eydDAT18UPafZHhyRokw0=",
+          "server_key": "e90gmYNPAvtdmJDNdaXz16M7fA8="
+        }
+      ]
+    }
+  },
+  "@index": {
+    "hash": {
+      "hashes": [
+        "VdJ69nrLH7RYeARmjrYbjWu77706U9uW0UVExUrt8VM="
+      ],
+      "algorithm": "argon2id",
+      "salt": "Un4hrcsqIeevimUKsBk2Lw==",
+      "parallelism": 1,
+      "time": 3,
+      "memory": 524288
+    },
+    "scram-sha-512": {
+      "salt": "FfiRhmKmL3DOZ/+c7otfv5YQ0OU8wEaGUhN0kQ+o+PHsQkfHo/IyzdeLASvSLYcV5M1ex7qVjsbj/cbzdcIZSg==",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "700ONcJd4sDCJA/DbFnvdnNaTkCFUBeDpZDmpjRAmTtFUXGADRDFVXxQqQeyxtj08DMzTpaUp/DkPNPBzqQz7w==",
+          "server_key": "V32NZbxdhDIi67LU5FulAqFupXxWdk1quyNMJAOT6JlwtifvxxKeOY5M4H5naWzjs7Ma7oqrweIbyyrq7xMWng=="
+        }
+      ]
+    },
+    "scram-sha-256": {
+      "salt": "vkFK6q23wcwiBZkYnIv0k6VMEzOmMEm9Qsuc4AkKiQk=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "0gyxDLPdoo5rJFupfSyRnumk86Q3GX7yLfbLmYZ6akc=",
+          "server_key": "ogIfDCk6RZr0Ju57tY1rSmsfdbj80byPbgK60rIn/oo="
+        }
+      ]
+    },
+    "scram-sha-1": {
+      "salt": "3b/aRI6QZCxhnq654sDNj/oSucc=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "OtRP35eydDAT18UPafZHhyRokw0=",
+          "server_key": "e90gmYNPAvtdmJDNdaXz16M7fA8="
+        }
+      ]
+    }
+  },
+  "@fts": {
+    "hash": {
+      "hashes": [
+        "VdJ69nrLH7RYeARmjrYbjWu77706U9uW0UVExUrt8VM="
+      ],
+      "algorithm": "argon2id",
+      "salt": "Un4hrcsqIeevimUKsBk2Lw==",
+      "parallelism": 1,
+      "time": 3,
+      "memory": 524288
+    },
+    "scram-sha-512": {
+      "salt": "FfiRhmKmL3DOZ/+c7otfv5YQ0OU8wEaGUhN0kQ+o+PHsQkfHo/IyzdeLASvSLYcV5M1ex7qVjsbj/cbzdcIZSg==",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "700ONcJd4sDCJA/DbFnvdnNaTkCFUBeDpZDmpjRAmTtFUXGADRDFVXxQqQeyxtj08DMzTpaUp/DkPNPBzqQz7w==",
+          "server_key": "V32NZbxdhDIi67LU5FulAqFupXxWdk1quyNMJAOT6JlwtifvxxKeOY5M4H5naWzjs7Ma7oqrweIbyyrq7xMWng=="
+        }
+      ]
+    },
+    "scram-sha-256": {
+      "salt": "vkFK6q23wcwiBZkYnIv0k6VMEzOmMEm9Qsuc4AkKiQk=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "0gyxDLPdoo5rJFupfSyRnumk86Q3GX7yLfbLmYZ6akc=",
+          "server_key": "ogIfDCk6RZr0Ju57tY1rSmsfdbj80byPbgK60rIn/oo="
+        }
+      ]
+    },
+    "scram-sha-1": {
+      "salt": "3b/aRI6QZCxhnq654sDNj/oSucc=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "OtRP35eydDAT18UPafZHhyRokw0=",
+          "server_key": "e90gmYNPAvtdmJDNdaXz16M7fA8="
+        }
+      ]
+    }
+  },
+  "@eventing": {
+    "hash": {
+      "hashes": [
+        "VdJ69nrLH7RYeARmjrYbjWu77706U9uW0UVExUrt8VM="
+      ],
+      "algorithm": "argon2id",
+      "salt": "Un4hrcsqIeevimUKsBk2Lw==",
+      "parallelism": 1,
+      "time": 3,
+      "memory": 524288
+    },
+    "scram-sha-512": {
+      "salt": "FfiRhmKmL3DOZ/+c7otfv5YQ0OU8wEaGUhN0kQ+o+PHsQkfHo/IyzdeLASvSLYcV5M1ex7qVjsbj/cbzdcIZSg==",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "700ONcJd4sDCJA/DbFnvdnNaTkCFUBeDpZDmpjRAmTtFUXGADRDFVXxQqQeyxtj08DMzTpaUp/DkPNPBzqQz7w==",
+          "server_key": "V32NZbxdhDIi67LU5FulAqFupXxWdk1quyNMJAOT6JlwtifvxxKeOY5M4H5naWzjs7Ma7oqrweIbyyrq7xMWng=="
+        }
+      ]
+    },
+    "scram-sha-256": {
+      "salt": "vkFK6q23wcwiBZkYnIv0k6VMEzOmMEm9Qsuc4AkKiQk=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "0gyxDLPdoo5rJFupfSyRnumk86Q3GX7yLfbLmYZ6akc=",
+          "server_key": "ogIfDCk6RZr0Ju57tY1rSmsfdbj80byPbgK60rIn/oo="
+        }
+      ]
+    },
+    "scram-sha-1": {
+      "salt": "3b/aRI6QZCxhnq654sDNj/oSucc=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "OtRP35eydDAT18UPafZHhyRokw0=",
+          "server_key": "e90gmYNPAvtdmJDNdaXz16M7fA8="
+        }
+      ]
+    }
+  },
+  "@cbas": {
+    "hash": {
+      "hashes": [
+        "VdJ69nrLH7RYeARmjrYbjWu77706U9uW0UVExUrt8VM="
+      ],
+      "algorithm": "argon2id",
+      "salt": "Un4hrcsqIeevimUKsBk2Lw==",
+      "parallelism": 1,
+      "time": 3,
+      "memory": 524288
+    },
+    "scram-sha-512": {
+      "salt": "FfiRhmKmL3DOZ/+c7otfv5YQ0OU8wEaGUhN0kQ+o+PHsQkfHo/IyzdeLASvSLYcV5M1ex7qVjsbj/cbzdcIZSg==",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "700ONcJd4sDCJA/DbFnvdnNaTkCFUBeDpZDmpjRAmTtFUXGADRDFVXxQqQeyxtj08DMzTpaUp/DkPNPBzqQz7w==",
+          "server_key": "V32NZbxdhDIi67LU5FulAqFupXxWdk1quyNMJAOT6JlwtifvxxKeOY5M4H5naWzjs7Ma7oqrweIbyyrq7xMWng=="
+        }
+      ]
+    },
+    "scram-sha-256": {
+      "salt": "vkFK6q23wcwiBZkYnIv0k6VMEzOmMEm9Qsuc4AkKiQk=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "0gyxDLPdoo5rJFupfSyRnumk86Q3GX7yLfbLmYZ6akc=",
+          "server_key": "ogIfDCk6RZr0Ju57tY1rSmsfdbj80byPbgK60rIn/oo="
+        }
+      ]
+    },
+    "scram-sha-1": {
+      "salt": "3b/aRI6QZCxhnq654sDNj/oSucc=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "OtRP35eydDAT18UPafZHhyRokw0=",
+          "server_key": "e90gmYNPAvtdmJDNdaXz16M7fA8="
+        }
+      ]
+    }
+  },
+  "@backup": {
+    "hash": {
+      "hashes": [
+        "VdJ69nrLH7RYeARmjrYbjWu77706U9uW0UVExUrt8VM="
+      ],
+      "algorithm": "argon2id",
+      "salt": "Un4hrcsqIeevimUKsBk2Lw==",
+      "parallelism": 1,
+      "time": 3,
+      "memory": 524288
+    },
+    "scram-sha-512": {
+      "salt": "FfiRhmKmL3DOZ/+c7otfv5YQ0OU8wEaGUhN0kQ+o+PHsQkfHo/IyzdeLASvSLYcV5M1ex7qVjsbj/cbzdcIZSg==",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "700ONcJd4sDCJA/DbFnvdnNaTkCFUBeDpZDmpjRAmTtFUXGADRDFVXxQqQeyxtj08DMzTpaUp/DkPNPBzqQz7w==",
+          "server_key": "V32NZbxdhDIi67LU5FulAqFupXxWdk1quyNMJAOT6JlwtifvxxKeOY5M4H5naWzjs7Ma7oqrweIbyyrq7xMWng=="
+        }
+      ]
+    },
+    "scram-sha-256": {
+      "salt": "vkFK6q23wcwiBZkYnIv0k6VMEzOmMEm9Qsuc4AkKiQk=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "0gyxDLPdoo5rJFupfSyRnumk86Q3GX7yLfbLmYZ6akc=",
+          "server_key": "ogIfDCk6RZr0Ju57tY1rSmsfdbj80byPbgK60rIn/oo="
+        }
+      ]
+    },
+    "scram-sha-1": {
+      "salt": "3b/aRI6QZCxhnq654sDNj/oSucc=",
+      "iterations": 15000,
+      "hashes": [
+        {
+          "stored_key": "OtRP35eydDAT18UPafZHhyRokw0=",
+          "server_key": "e90gmYNPAvtdmJDNdaXz16M7fA8="
+        }
+      ]
+    }
+  }
+}

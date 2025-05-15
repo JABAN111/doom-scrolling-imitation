@@ -1,0 +1,105 @@
+2025-05-15T21:09:35.569185+00:00 INFO ---------- Opening logfile: 
+2025-05-15T21:09:35.570984+00:00 INFO Couchbase version 7.6.2-3721 starting.
+2025-05-15T21:09:35.570996+00:00 INFO Process identifier: 330
+2025-05-15T21:09:35.571003+00:00 INFO recalculate_max_connections: {"engine_fds":982546,"max_connections":65000,"max_fds":1048576,"system_connections":5000}
+2025-05-15T21:09:35.571039+00:00 INFO Breakpad enabled. Minidumps will be written to '/opt/couchbase/var/lib/couchbase/crash'
+2025-05-15T21:09:35.571189+00:00 INFO Fine clock resolution:42ns, overhead:19ns
+2025-05-15T21:09:35.572084+00:00 INFO Coarse clock resolution:1000000ns, overhead:6ns
+2025-05-15T21:09:35.572093+00:00 INFO (Clock measurement period: 1ns)
+2025-05-15T21:09:35.572360+00:00 INFO Using SLA configuration: {"COMPACT_DB":{"slow":"1800 s"},"CREATE_BUCKET":{"slow":"5 s"},"DELETE_BUCKET":{"slow":"10 s"},"SELECT_BUCKET":{"slow":"10 ms"},"SEQNO_PERSISTENCE":{"slow":"30 s"},"comment":"Current MCBP SLA configuration","default":{"slow":"500 ms"},"version":1}
+2025-05-15T21:09:35.572369+00:00 INFO Enable standard input listener
+2025-05-15T21:09:35.572436+00:00 INFO NUMA: Not available - not setting mem policy.
+2025-05-15T21:09:35.572673+00:00 INFO Loading RBAC configuration from [/opt/couchbase/var/lib/couchbase/config/memcached.rbac]
+2025-05-15T21:09:35.572991+00:00 INFO Loading error maps from [/opt/couchbase/etc/couchbase/kv/error_maps]
+2025-05-15T21:09:35.573483+00:00 INFO Starting external authentication manager
+2025-05-15T21:09:35.578002+00:00 INFO Changing logging level to 0
+2025-05-15T21:09:35.578012+00:00 INFO recalculate_max_connections: {"engine_fds":982546,"max_connections":65000,"max_fds":1048576,"system_connections":5000}
+2025-05-15T21:09:35.578013+00:00 INFO Initialize bucket manager
+2025-05-15T21:09:35.578014+00:00 INFO Initialize SASL
+2025-05-15T21:09:35.578617+00:00 INFO Starting network interface manager
+2025-05-15T21:09:35.578725+00:00 INFO Enable port(s)
+2025-05-15T21:09:35.578788+00:00 INFO 15 Listen on IPv4: 0.0.0.0:11210 Properties: {"so_keepalive":1,"so_linger":"off","so_rcvbuf":131072,"so_sndbuf":16384,"tcp_keepcnt":9,"tcp_keepidle":7200,"tcp_keepintvl":75,"tcp_user_timeout":5000}
+2025-05-15T21:09:35.578821+00:00 INFO 16 Listen on IPv4: 0.0.0.0:11209 Properties: {"so_keepalive":1,"so_linger":"off","so_rcvbuf":131072,"so_sndbuf":16384,"tcp_keepcnt":9,"tcp_keepidle":7200,"tcp_keepintvl":75,"tcp_user_timeout":0}
+2025-05-15T21:09:35.578847+00:00 INFO 17 Listen on IPv4: 0.0.0.0:11207 (TLS) Properties: {"so_keepalive":1,"so_linger":"off","so_rcvbuf":131072,"so_sndbuf":16384,"tcp_keepcnt":9,"tcp_keepidle":7200,"tcp_keepintvl":75,"tcp_user_timeout":5000}
+2025-05-15T21:09:35.578871+00:00 INFO 18 Listen on IPv4: 0.0.0.0:11206 (TLS) Properties: {"so_keepalive":1,"so_linger":"off","so_rcvbuf":131072,"so_sndbuf":16384,"tcp_keepcnt":9,"tcp_keepidle":7200,"tcp_keepintvl":75,"tcp_user_timeout":0}
+2025-05-15T21:09:35.578907+00:00 INFO 19 Listen on IPv6: [::]:11210 Properties: {"so_keepalive":1,"so_linger":"off","so_rcvbuf":131072,"so_sndbuf":16384,"tcp_keepcnt":9,"tcp_keepidle":7200,"tcp_keepintvl":75,"tcp_user_timeout":5000}
+2025-05-15T21:09:35.578949+00:00 INFO 20 Listen on IPv6: [::]:11209 Properties: {"so_keepalive":1,"so_linger":"off","so_rcvbuf":131072,"so_sndbuf":16384,"tcp_keepcnt":9,"tcp_keepidle":7200,"tcp_keepintvl":75,"tcp_user_timeout":0}
+2025-05-15T21:09:35.578974+00:00 INFO 21 Listen on IPv6: [::]:11207 (TLS) Properties: {"so_keepalive":1,"so_linger":"off","so_rcvbuf":131072,"so_sndbuf":16384,"tcp_keepcnt":9,"tcp_keepidle":7200,"tcp_keepintvl":75,"tcp_user_timeout":5000}
+2025-05-15T21:09:35.578994+00:00 INFO 22 Listen on IPv6: [::]:11206 (TLS) Properties: {"so_keepalive":1,"so_linger":"off","so_rcvbuf":131072,"so_sndbuf":16384,"tcp_keepcnt":9,"tcp_keepidle":7200,"tcp_keepintvl":75,"tcp_user_timeout":0}
+2025-05-15T21:09:35.579298+00:00 INFO Prometheus Exporter started, listening on family:inet port:11280
+2025-05-15T21:09:35.579835+00:00 INFO Starting Phosphor tracing with config: "buffer-mode:ring;buffer-size:20971520;enabled-categories:*"
+2025-05-15T21:09:35.598701+00:00 INFO Taskable No bucket registered with low priority
+2025-05-15T21:09:35.598927+00:00 INFO Started executor pool with backend:Folly readers:10 writers:4 auxIO:20 nonIO:3
+2025-05-15T21:09:35.599025+00:00 INFO Initialization complete. Accepting clients.
+2025-05-15T21:09:36.026827+00:00 INFO 69: Client {"ip":"127.0.0.1","port":33944} authenticated as @ns_server. Mechanism:[PLAIN]
+2025-05-15T21:09:36.363889+00:00 INFO 70: Client {"ip":"127.0.0.1","port":34030} authenticated as @ns_server. Mechanism:[PLAIN]
+2025-05-15T21:09:36.364224+00:00 INFO 70: HELO [ns_server:memcached_refresh] [ {"ip":"127.0.0.1","port":34030} - {"ip":"127.0.0.1","port":11209} (System, @ns_server) ]
+2025-05-15T21:09:36.364802+00:00 INFO 70: Loading RBAC configuration from [/opt/couchbase/var/lib/couchbase/config/memcached.rbac]
+2025-05-15T21:09:36.365881+00:00 INFO 70: RBAC configuration updated [ {"ip":"127.0.0.1","port":34030} - {"ip":"127.0.0.1","port":11209} (System, @ns_server) ]
+2025-05-15T21:09:36.367362+00:00 INFO Password database updated successfully
+2025-05-15T21:09:36.458596+00:00 INFO 70: Client {"ip":"127.0.0.1","port":34040} authenticated as @ns_server. Mechanism:[PLAIN]
+2025-05-15T21:09:36.459002+00:00 INFO 70: HELO [ns_server:ns_memcached_sockets_pool] [ {"ip":"127.0.0.1","port":34040} - {"ip":"127.0.0.1","port":11209} (System, @ns_server) ]
+2025-05-15T21:09:36.469426+00:00 INFO 71: Client {"ip":"127.0.0.1","port":34056} authenticated as @ns_server. Mechanism:[PLAIN]
+2025-05-15T21:09:36.469671+00:00 INFO 71: HELO [ns_server:ns_memcached_sockets_pool] [ {"ip":"127.0.0.1","port":34056} - {"ip":"127.0.0.1","port":11209} (System, @ns_server) ]
+2025-05-15T21:09:36.562528+00:00 INFO 72: Client {"ip":"127.0.0.1","port":34058} authenticated as @ns_server. Mechanism:[PLAIN]
+2025-05-15T21:09:36.562702+00:00 INFO 73: Client {"ip":"127.0.0.1","port":34060} authenticated as @ns_server. Mechanism:[PLAIN]
+2025-05-15T21:09:36.562911+00:00 INFO 72: HELO [ns_server:ns_memcached_sockets_pool] [ {"ip":"127.0.0.1","port":34058} - {"ip":"127.0.0.1","port":11209} (System, @ns_server) ]
+2025-05-15T21:09:36.563026+00:00 INFO 73: HELO [ns_server:ns_memcached_sockets_pool] [ {"ip":"127.0.0.1","port":34060} - {"ip":"127.0.0.1","port":11209} (System, @ns_server) ]
+2025-05-15T21:09:36.563741+00:00 INFO 73: Updated global configuration. New revision: {"epoch":1,"revno":12}
+2025-05-15T21:09:36.565258+00:00 INFO 73: Updated global configuration. New revision: {"epoch":1,"revno":18}
+2025-05-15T21:09:36.568612+00:00 INFO TLS configuration changed to: {"CA file":"/opt/couchbase/var/lib/couchbase/config/certs/ca.pem","certificate chain":"/opt/couchbase/var/lib/couchbase/config/certs/chain.pem","cipher list":{"TLS 1.2":"HIGH","TLS 1.3":"TLS_AES_256_GCM_SHA384:TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256"},"cipher order":true,"client cert auth":"disabled","minimum version":"TLS 1.2","password":"not set","private key":"/opt/couchbase/var/lib/couchbase/config/certs/pkey.pem"}
+2025-05-15T21:09:36.572895+00:00 INFO TLS configuration changed to: {"CA file":"/opt/couchbase/var/lib/couchbase/config/certs/ca.pem","certificate chain":"/opt/couchbase/var/lib/couchbase/config/certs/chain.pem","cipher list":{"TLS 1.2":"HIGH","TLS 1.3":"TLS_AES_256_GCM_SHA384:TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256"},"cipher order":true,"client cert auth":"disabled","minimum version":"TLS 1.2","password":"not set","private key":"/opt/couchbase/var/lib/couchbase/config/certs/pkey.pem"}
+2025-05-15T21:09:45.822867+00:00 INFO 74: Client {"ip":"127.0.0.1","port":57642} authenticated as @goxdcr. Mechanism:[PLAIN]
+2025-05-15T21:09:45.822984+00:00 INFO 74: HELO [Goxdcr Audit] TCP nodelay [ {"ip":"127.0.0.1","port":57642} - {"ip":"127.0.0.1","port":11210} (System, @goxdcr) ]
+2025-05-15T21:09:55.829205+00:00 INFO 74: Client {"ip":"127.0.0.1","port":57358} authenticated as @goxdcr. Mechanism:[PLAIN]
+2025-05-15T21:09:55.829457+00:00 INFO 74: HELO [Goxdcr Audit] TCP nodelay [ {"ip":"127.0.0.1","port":57358} - {"ip":"127.0.0.1","port":11210} (System, @goxdcr) ]
+2025-05-15T21:10:05.831706+00:00 INFO 74: Client {"ip":"127.0.0.1","port":43404} authenticated as @goxdcr. Mechanism:[PLAIN]
+2025-05-15T21:10:05.831971+00:00 INFO 74: HELO [Goxdcr Audit] TCP nodelay [ {"ip":"127.0.0.1","port":43404} - {"ip":"127.0.0.1","port":11210} (System, @goxdcr) ]
+2025-05-15T21:10:15.828732+00:00 INFO 70: Client {"ip":"127.0.0.1","port":38630} authenticated as @goxdcr. Mechanism:[PLAIN]
+2025-05-15T21:10:15.829141+00:00 INFO 70: HELO [Goxdcr Audit] TCP nodelay [ {"ip":"127.0.0.1","port":38630} - {"ip":"127.0.0.1","port":11210} (System, @goxdcr) ]
+2025-05-15T21:10:25.824123+00:00 INFO 70: Client {"ip":"127.0.0.1","port":59760} authenticated as @goxdcr. Mechanism:[PLAIN]
+2025-05-15T21:10:25.824264+00:00 INFO 70: HELO [Goxdcr Audit] TCP nodelay [ {"ip":"127.0.0.1","port":59760} - {"ip":"127.0.0.1","port":11210} (System, @goxdcr) ]
+2025-05-15T21:10:35.822020+00:00 INFO 70: Client {"ip":"127.0.0.1","port":52494} authenticated as @goxdcr. Mechanism:[PLAIN]
+2025-05-15T21:10:35.822245+00:00 INFO 70: HELO [Goxdcr Audit] TCP nodelay [ {"ip":"127.0.0.1","port":52494} - {"ip":"127.0.0.1","port":11210} (System, @goxdcr) ]
+2025-05-15T21:10:45.829325+00:00 INFO 70: Client {"ip":"127.0.0.1","port":39752} authenticated as @goxdcr. Mechanism:[PLAIN]
+2025-05-15T21:10:45.829636+00:00 INFO 70: HELO [Goxdcr Audit] TCP nodelay [ {"ip":"127.0.0.1","port":39752} - {"ip":"127.0.0.1","port":11210} (System, @goxdcr) ]
+2025-05-15T21:10:55.834444+00:00 INFO 70: Client {"ip":"127.0.0.1","port":46758} authenticated as @goxdcr. Mechanism:[PLAIN]
+2025-05-15T21:10:55.834803+00:00 INFO 70: HELO [Goxdcr Audit] TCP nodelay [ {"ip":"127.0.0.1","port":46758} - {"ip":"127.0.0.1","port":11210} (System, @goxdcr) ]
+2025-05-15T21:11:04.345496+00:00 INFO Gracefully shutting down due to shutdown message or stdin closure
+2025-05-15T21:11:04.412451+00:00 INFO Initiating graceful shutdown. sigint:false sigterm:false
+2025-05-15T21:11:04.412460+00:00 INFO Stop all buckets
+2025-05-15T21:11:04.412484+00:00 INFO Shutting down Prometheus exporter: {"family":"inet","host":"127.0.0.1","port":11280,"type":"prometheus","uuid":"1887573b-858e-4fe2-a334-84b288df4539"}
+2025-05-15T21:11:04.456447+00:00 INFO Shutting down client worker threads
+2025-05-15T21:11:04.456493+00:00 INFO Stopping worker thread 0
+2025-05-15T21:11:04.456536+00:00 INFO Stopping worker thread 6
+2025-05-15T21:11:04.456542+00:00 INFO Stopping worker thread 2
+2025-05-15T21:11:04.456543+00:00 INFO Stopping worker thread 3
+2025-05-15T21:11:04.456545+00:00 INFO Stopping worker thread 4
+2025-05-15T21:11:04.456550+00:00 INFO Stopping worker thread 7
+2025-05-15T21:11:04.456582+00:00 INFO Stopping worker thread 5
+2025-05-15T21:11:04.457503+00:00 INFO Stopping worker thread 1
+2025-05-15T21:11:04.458746+00:00 INFO Stopping worker thread 0
+2025-05-15T21:11:04.458948+00:00 INFO Shutting down network interface manager thread
+2025-05-15T21:11:04.459076+00:00 INFO Releasing server sockets
+2025-05-15T21:11:04.459533+00:00 INFO Shutting down IPv4 interface: 0.0.0.0:11210
+2025-05-15T21:11:04.459564+00:00 INFO Shutting down IPv4 interface: 0.0.0.0:11209
+2025-05-15T21:11:04.459580+00:00 INFO Shutting down IPv4 interface: 0.0.0.0:11207
+2025-05-15T21:11:04.459584+00:00 INFO Shutting down IPv4 interface: 0.0.0.0:11206
+2025-05-15T21:11:04.459586+00:00 INFO Shutting down IPv6 interface: [::]:11210
+2025-05-15T21:11:04.459589+00:00 INFO Shutting down IPv6 interface: [::]:11209
+2025-05-15T21:11:04.459592+00:00 INFO Shutting down IPv6 interface: [::]:11207
+2025-05-15T21:11:04.459595+00:00 INFO Shutting down IPv6 interface: [::]:11206
+2025-05-15T21:11:04.459597+00:00 INFO Network interface manager thread stopped
+2025-05-15T21:11:04.459749+00:00 INFO Releasing bucket resources
+2025-05-15T21:11:04.459790+00:00 INFO Shutting down RBAC subsystem
+2025-05-15T21:11:04.459842+00:00 INFO Shutting down executor pool
+2025-05-15T21:11:04.462287+00:00 INFO Releasing signal handlers
+2025-05-15T21:11:04.462295+00:00 INFO Shutting down external authentication service
+2025-05-15T21:11:04.462378+00:00 INFO Shutting down SASL server
+2025-05-15T21:11:04.462384+00:00 INFO Deinitialising tracing
+2025-05-15T21:11:04.462387+00:00 INFO Shutting down all engines
+2025-05-15T21:11:04.462526+00:00 INFO Shutting down audit daemon
+2025-05-15T21:11:04.462680+00:00 INFO Removing breakpad
+2025-05-15T21:11:04.462689+00:00 INFO Shutting down event base
+2025-05-15T21:11:04.462707+00:00 INFO Shutting down logger extension
+2025-05-15T21:11:04.462887+00:00 INFO ---------- Closing logfile

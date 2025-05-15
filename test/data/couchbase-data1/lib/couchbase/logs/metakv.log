@@ -1,0 +1,14 @@
+[metakv:debug,2025-05-15T21:09:35.081Z,ns_1@cb.local:simple_store_xdcr_ckpt_data<0.595.0>:simple_store:init:108]Creating Table: xdcr_ckpt_data
+[metakv:debug,2025-05-15T21:09:35.145Z,ns_1@cb.local:simple_store_testconditions<0.704.0>:simple_store:init:108]Creating Table: testconditions
+[metakv:debug,2025-05-15T21:09:35.385Z,ns_1@cb.local:<0.634.0>:menelaus_metakv:handle_mutate:84]Updated <<"/query/sequences_cache/revision">>. Elapsed time:0 ms.
+[metakv:debug,2025-05-15T21:09:35.387Z,ns_1@cb.local:<0.634.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /query/sequences_cache/. Continuous = true
+[metakv:debug,2025-05-15T21:09:35.387Z,ns_1@cb.local:<0.634.0>:menelaus_metakv:write_chunk:155]Sent /query/sequences_cache/revision rev: g2gCYQBsAAAAAWgCbQAAACA0ZTBmOWMwMWQ2NmJiYTM4ZGE1MWNjNmJkNThkOTFiNWgCYQFuBQAP1JrhDmo= sensitive: false
+[metakv:debug,2025-05-15T21:09:35.406Z,ns_1@cb.local:<0.635.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /remoteCluster/. Continuous = false
+[metakv:debug,2025-05-15T21:09:35.409Z,ns_1@cb.local:<0.638.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /remoteCluster/. Continuous = false
+[metakv:debug,2025-05-15T21:09:35.410Z,ns_1@cb.local:<0.638.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /replicationSpec/. Continuous = false
+[metakv:debug,2025-05-15T21:09:35.410Z,ns_1@cb.local:<0.638.0>:metakv:check_continuous_allowed:95]Continuous should not be set to true while iterating on XDCR Checkpoints.
+[metakv:debug,2025-05-15T21:09:35.410Z,ns_1@cb.local:<0.638.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /ckpt/backfill/. Continuous = false
+[metakv:debug,2025-05-15T21:09:35.411Z,ns_1@cb.local:<0.638.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /GlobalConfiguration/. Continuous = true
+[metakv:debug,2025-05-15T21:09:35.915Z,ns_1@cb.local:<0.636.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /V2InternalSettings/. Continuous = true
+[metakv:debug,2025-05-15T21:09:36.416Z,ns_1@cb.local:<0.640.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /remoteCluster/. Continuous = true
+[metakv:debug,2025-05-15T21:09:36.921Z,ns_1@cb.local:<0.641.0>:menelaus_metakv:handle_iterate:127]Starting iteration of /replicationSpec/. Continuous = true

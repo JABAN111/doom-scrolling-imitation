@@ -14,6 +14,15 @@ x-minio-common: &minio-common
     retries: 5
 
 services:
+  myapp:
+    container_name: doom-scroll-conn
+    build:
+      context: doom-scrolling
+      dockerfile: Dockerfile
+    networks:
+      - couchbase-net
+
+
   db1.lan: #cb
     image: couchbase:7.6.2
     container_name: db1.lan
@@ -28,7 +37,7 @@ services:
       - "8097:8097"    # Backup Service Port
       - "9102:9102"    # Index Service Port
       - "11210:11210"  # Data Service Port
-      - "11211:11211"  # Memcached Data Service Port
+      - "11219:11211"  # Memcached Data Service Port
     networks:
       - couchbase-net
     environment:
@@ -51,7 +60,7 @@ services:
       - "9086:8096"    # Eventing Service Port
       - "9087:8097"    # Backup Service Port
       - "9103:9102"    # Index Service Port
-      - "11214:11210"  # Data Service Port (different external port)
+      - "11211:11210"  # Data Service Port (different external port)
     networks:
       - couchbase-net
     environment:
@@ -114,7 +123,7 @@ services:
   influxdb2:
     image: influxdb:2
     ports:
-      - 8086:8086
+      - "8086:8086"
     environment:
       DOCKER_INFLUXDB_INIT_MODE: setup
       DOCKER_INFLUXDB_INIT_USERNAME_FILE: /run/secrets/influxdb2-admin-username
@@ -192,8 +201,5 @@ volumes:
   data4-2:
 
 networks:
-  cb-net:
-  workshop:
-    driver: bridge
   couchbase-net:
     driver: bridge

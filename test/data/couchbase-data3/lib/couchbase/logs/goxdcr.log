@@ -1,0 +1,134 @@
+2025-05-15T21:09:35.283Z INFO GOXDCR.ReplMgr: GOMAXPROCS=4
+2025-05-15T21:09:35.284Z INFO GOXDCR.SecuritySvc: Security service started. Waiting for security context to be initialized
+2025-05-15T21:09:35.284Z INFO GOXDCR.TopoSvc: Start watching 127.0.0.1:8091:/poolsStreaming/default.
+2025-05-15T21:09:35.284Z INFO GOXDCR.SecuritySvc: Received security change notification. code 15
+2025-05-15T21:09:35.284Z INFO GOXDCR.SecuritySvc: Cluster Encryption is changed to enabled=false, strict=false
+2025-05-15T21:09:35.286Z INFO GOXDCR.SecuritySvc: Certificates are updated.
+2025-05-15T21:09:35.286Z INFO GOXDCR.SecuritySvc: Security context is initialized.
+2025-05-15T21:09:35.300Z INFO GOXDCR.IntSettSvc: Internal settings not found in metakv
+2025-05-15T21:09:35.309Z INFO GOXDCR.ReplMgr: XDCR internal settings: map[AuditReadTimeout:1 AuditWriteTimeout:1 BackfillPersistInterval:1000 BucketTopologyGCPruneTimeHour:24 BucketTopologyGCScanTimeMin:1 BypassSanInCertificateCheck:0 CapellaHostNameSuffix:.cloud.couchbase.com CapiBatchTimeout:180 CapiDataChanSizeMultiplier:1 CapiMaxRetryBatchUpdateDocs:6 CapiReadTimeout:60 CapiRetryInterval:500 CapiWriteTimeout:10 ChangesLeftThresholdForOngoingReplication:200000 CkptCacheCtrlChLen:10 CkptCacheReqChLen:1000 ConnectionErrorsListMaxEntries:20 ConnectionPreCheckGCTimeoutSec:120 ConnectionPreCheckRPCTimeoutSec:15 CpuCollectionInterval:2000 DatapoolLogFrequency:10 DefaultHttpTimeout:180 ExtraQuotaForUnderutilizedCPU:10 FilteringInternalKeyKey:[$%XDCRInternalKey*%$] FilteringInternalXattrKey:[$%XDCRInternalMeta*%$] HELOTimeout:120 HealthCheckIntervalSec:120 IntervalForThrottlerCalibration:4 JsNumWorkers:4 JsWorkerMemQuotaBytes:1572864 KeepAlivePeriod:30 ManifestRefreshSrcInterval:2 ManifestRefreshTgtInterval:60 MaxCheckpointRecordsToKeep:5 MaxCheckpointRecordsToRead:5 MaxCountBacklogForSetDcpPriority:5 MaxCountCpuNotMaxed:3 MaxCountDCPStreamsInactive:10 MaxCountNoBacklogForResetDcpPriority:300 MaxCountThroughputDrop:3 MaxLengthSnapshotHistory:200 MaxNumOfMetakvRetries:4 MaxNumberOfAsyncListeners:4 MaxRetryCapiService:5 MaxRetryForLiveUpdatePipeline:5 MaxRetryTargetStats:6 MaxTopologyChangeCountBeforeRestart:30 MaxTopologyStableCountBeforeRestart:30 MaxWorkersForCheckpointing:5 MemStatsLogInterval:120 NumberOfSlotsForBandwidthThrottling:10 NumberOfSlotsForThroughputThrottling:10 OSOModeOverride:0 P2PCommTimeoutSec:15 P2PMaxReceiveChLen:10000 P2POpaqueCleanupIntervalSec:5 P2PReplicaReplicatorReloadSize:10 P2PRetryFactor:2 P2PRetryWaitTimeMillisec:200 P2PVBRelatedGCIntervalHour:24 PeerManifestsGetterSleepTimeSec:1 PeersManifestsGetterMaxRetry:8 PercentageOfBytesToSendAsMin:30 PipelineTimeoutP2PProtocolSec:60 RefreshRemoteClusterRefInterval:15 RemoteClusterAlternateAddrChangeKey:5 ReplSpecCheckInterval:15 ReplStatusExportBrokenMapTimeoutSec:5 ReplStatusLoadBrokenMapTimeoutSec:5 ReplicationSpecGCCnt:4 ResourceManagementInterval:1000 ResourceManagementRatioBase:100 ResourceManagementRatioUpperBound:90 ResourceManagementStatsInterval:10000 ResourceMgrKVDetectionRetryInterval:60 RetryIntervalMetakv:500 RetryIntervalTargetStats:1000 ShortHttpTimeout:20 StatsLogInterval:30 StopwatchDiagExternalThresholdMs:5000 StopwatchDiagInternalThresholdMs:2000 ThresholdForThroughSeqnoComputation:100 ThresholdPercentageForEventChanSizeLogging:90 ThresholdRatioForProcessCpu:95 ThresholdRatioForTotalCpu:95 ThroughSeqnoBgScannerFreqSec:5 ThroughSeqnoBgScannerLogFreqSec:60 ThroughputSampleAlpha:15 ThroughputSampleSize:1028 ThroughputThrottlerClearTokensInterval:3000 ThroughputThrottlerLogInterval:10000 TimeoutCheckpointBeforeStop:180 TimeoutDcpCloseUprFeed:3 TimeoutDcpCloseUprStreams:3 TimeoutHttpsPortLookup:2 TimeoutPartsStart:30 TimeoutPartsStop:10 TimeoutRuntimeContextStart:30 TimeoutRuntimeContextStop:10 TopologyChangeCheckInterval:10 TopologySvcCooldownPeriodSec:60 TopologySvcErrCooldownPeriodSec:120 UprFeedBufferSize:1048576 UprFeedDataChanLength:20000 WaitTimeBetweenMetadataChangeListeners:500 WaitTimeForLiveUpdatePipeline:2000 XmemBackoffTimeNewConn:1000 XmemBackoffWaitTime:10 XmemDefaultRespTimeout:1000 XmemMaxBackoffFactor:10 XmemMaxBatchSize:50 XmemMaxDataChanSize:10485760 XmemMaxIdleCount:60 XmemMaxIdleCountLowerBound:10 XmemMaxIdleCountUpperBound:120 XmemMaxReadDownTime:60 XmemMaxRetry:5 XmemMaxRetryInterval:300 XmemMaxRetryIntervalMutationLocked:30 XmemMaxRetryMutationLocked:20 XmemMaxRetryNewConn:10 XmemReadTimeout:120 XmemSelfMonitorInterval:6 XmemWriteTimeout:120 dnsSrvReBootstrap:true humanRecoverySec:300]
+2025-05-15T21:09:35.309Z INFO GOXDCR.AuditSvc: Created audit service.
+2025-05-15T21:09:35.309Z INFO GOXDCR.UILogSvc: Created ui log service.
+2025-05-15T21:09:35.310Z INFO GOXDCR.ReplSpecSvc: Cache has been initialized for ReplicationSpecService
+2025-05-15T21:09:35.310Z INFO GOXDCR.CollectionsManifestSvc: CollectionsManifestSvc starting...
+2025-05-15T21:09:35.310Z INFO GOXDCR.CollectionsManifestSvc: CollectionsManifestSvc started
+2025-05-15T21:09:35.310Z INFO GOXDCR.BackfillReplSvc: Cache has been initialized for BackfillReplicationService
+2025-05-15T21:09:35.311Z INFO GOXDCR.PipelineMgr: Pipeline Manager is constructed
+2025-05-15T21:09:35.311Z INFO GOXDCR.ResourceMgr: Resource Manager is initialized
+2025-05-15T21:09:35.311Z INFO GOXDCR.ResourceMgr: ResourceMgr starting ....
+2025-05-15T21:09:35.311Z INFO GOXDCR.ResourceMgr: cgroup supported = true
+2025-05-15T21:09:35.311Z INFO GOXDCR.TpThrottler:  starting...
+2025-05-15T21:09:35.311Z INFO GOXDCR.ResourceMgr: ResourceMgr started
+2025-05-15T21:09:35.311Z INFO GOXDCR.BackfillMgr: BackfillMgr Starting...
+2025-05-15T21:09:35.311Z INFO GOXDCR.BackfillMgr: BackfillMgr Started
+2025-05-15T21:09:35.311Z INFO GOXDCR.ReplMgr: Replication manager is initialized
+2025-05-15T21:09:35.311Z INFO GOXDCR.GenericSupervisor: Starting supervisor ReplicationManagerSupervisor.
+2025-05-15T21:09:35.311Z INFO GOXDCR.GenericSupervisor: Started supervisor ReplicationManagerSupervisor.
+2025-05-15T21:09:35.311Z INFO GOXDCR.ReplMgr: initReplications succeeded
+2025-05-15T21:09:35.311Z INFO GOXDCR.ReplMgr: upgradeRemoteClusterRefs started.
+2025-05-15T21:09:35.311Z INFO GOXDCR.ReplMgr: upgradeRemoteClusterRefs exited
+2025-05-15T21:09:35.311Z INFO GOXDCR.GlobalSettingChangeListener: Started MetakvChangeListener GlobalSettingChangeListener
+2025-05-15T21:09:35.312Z INFO GOXDCR.ReplMgr: pollEOF: About to start stdin polling
+2025-05-15T21:09:35.312Z INFO GOXDCR.ResourceMgr: manageResources starting ....
+
+2025-05-15T21:09:35.312Z INFO GOXDCR.TpThrottler:  update routine starting
+2025-05-15T21:09:35.312Z INFO GOXDCR.TpThrottler:  clearReassignedTokens starting... clearing every 3s
+2025-05-15T21:09:35.312Z INFO GOXDCR.TpThrottler:  logStats started
+2025-05-15T21:09:35.312Z INFO GOXDCR.ResourceMgr: collectCpuUsage starting ....
+
+2025-05-15T21:09:35.312Z INFO GOXDCR.ResourceMgr: logStats starting ....
+
+2025-05-15T21:09:35.312Z INFO GOXDCR.ReplMgr: checkReplicationStatus started.
+2025-05-15T21:09:35.312Z INFO GOXDCR.ReplMgr: logMemStats started.
+2025-05-15T21:09:35.812Z INFO GOXDCR.InternalSettingChangeListener: Started MetakvChangeListener InternalSettingsChangeListener
+2025-05-15T21:09:36.031Z INFO GOXDCR.ResourceMgr: Finished retrieving node's information - isKVNode: true
+2025-05-15T21:09:36.160+00:00 DEBU REGU.impl.init.0.func1() at aggrecorder.go:57 [id 58] will report aggregate recorder stats every 5m0s 
+2025-05-15T21:09:36.313Z INFO GOXDCR.RemoteClusterChangeListener: Started MetakvChangeListener RemoteClusterChangeListener
+2025-05-15T21:09:36.816Z INFO GOXDCR.ReplicationSpecChangeListener: Started MetakvChangeListener ReplicationSpecChangeListener
+2025-05-15T21:09:37.313Z WARN GOXDCR.ResourceMgr: Error retrieving overall cpu. err=CGroup prev timestamp not set
+2025-05-15T21:09:37.317Z INFO GOXDCR.AdminPort: Constructed adminport
+2025-05-15T21:09:37.318Z INFO GOXDCR.ReplMgr: Admin port has been launched
+2025-05-15T21:09:37.318Z INFO GOXDCR.GenericSupervisor: Adding child AdminportSupervisor to supervisor ReplicationManagerSupervisor
+2025-05-15T21:09:37.318Z INFO GOXDCR.ReplMgr: ReplicationManager is running
+2025-05-15T21:09:37.318Z INFO GOXDCR.HttpServer: [xdcr:127.0.0.1:9998] new http server xdcr 127.0.0.1:9998 /
+2025-05-15T21:09:37.318Z INFO GOXDCR.AdminPort: http server started 127.0.0.1:9998 !
+2025-05-15T21:09:37.318Z INFO GOXDCR.P2PManager: P2PManagerImpl started with lifeCycleId BBj6kMmifrmV_Ku5vX3y9mrg_aMiTrcmT_notsJiCUU=
+2025-05-15T21:09:37.318Z INFO GOXDCR.HttpServer: [xdcr:127.0.0.1:9998] starting ... 
+2025-05-15T21:09:45.314Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T21:09:45.314Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T21:09:45.314Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T21:09:47.042Z ERRO GOXDCR.AdminPort: Error authenticating request. request=&{GET /_prometheusMetrics?timeout=10000 HTTP/1.1 1 1 map[Accept:[application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1] Accept-Encoding:[gzip] Authorization:[Basic xxxxx] User-Agent:[Prometheus/2.45.0] X-Prometheus-Scrape-Timeout-Seconds:[10]] {} <nil> 0 [] false 127.0.0.1:9998 map[] map[] <nil> map[] 127.0.0.1:59972 /_prometheusMetrics?timeout=10000 <nil> <nil> <nil> 0x40001ba5f0 <nil> [] map[]}
+ err= Authentication failure
+2025-05-15T21:09:47.045Z ERRO GOXDCR.ReplMgr: Error getting real user id from http request. err=Authentication failure
+2025-05-15T21:09:47.045Z INFO GOXDCR.AuditSvc: GetMemcachedConnection serverAddr=127.0.0.1:11210, bucketName=
+2025-05-15T21:09:47.049Z INFO GOXDCR.AuditSvc: Successfully sent HELO command with userAgent=Goxdcr Audit. attributes={false 1 false false}
+2025-05-15T21:09:47.319Z INFO GOXDCR.P2PManager: Successfully sent request type Discovery to nodes map[]
+2025-05-15T21:09:50.312Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T21:09:55.314Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T21:09:55.314Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T21:09:55.314Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T21:09:57.044Z ERRO GOXDCR.AdminPort: Error authenticating request. request=&{GET /_prometheusMetrics?timeout=10000 HTTP/1.1 1 1 map[Accept:[application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1] Accept-Encoding:[gzip] Authorization:[Basic xxxxx] User-Agent:[Prometheus/2.45.0] X-Prometheus-Scrape-Timeout-Seconds:[10]] {} <nil> 0 [] false 127.0.0.1:9998 map[] map[] <nil> map[] 127.0.0.1:59972 /_prometheusMetrics?timeout=10000 <nil> <nil> <nil> 0x400005dcc0 <nil> [] map[]}
+ err= Authentication failure
+2025-05-15T21:09:57.047Z ERRO GOXDCR.ReplMgr: Error getting real user id from http request. err=Authentication failure
+2025-05-15T21:09:57.047Z INFO GOXDCR.AuditSvc: GetMemcachedConnection serverAddr=127.0.0.1:11210, bucketName=
+2025-05-15T21:09:57.051Z INFO GOXDCR.AuditSvc: Successfully sent HELO command with userAgent=Goxdcr Audit. attributes={false 1 false false}
+2025-05-15T21:10:05.312Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T21:10:05.312Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T21:10:05.312Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T21:10:05.312Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T21:10:07.044Z ERRO GOXDCR.AdminPort: Error authenticating request. request=&{GET /_prometheusMetrics?timeout=10000 HTTP/1.1 1 1 map[Accept:[application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1] Accept-Encoding:[gzip] Authorization:[Basic xxxxx] User-Agent:[Prometheus/2.45.0] X-Prometheus-Scrape-Timeout-Seconds:[10]] {} <nil> 0 [] false 127.0.0.1:9998 map[] map[] <nil> map[] 127.0.0.1:59972 /_prometheusMetrics?timeout=10000 <nil> <nil> <nil> 0x40001baa50 <nil> [] map[]}
+ err= Authentication failure
+2025-05-15T21:10:07.046Z ERRO GOXDCR.ReplMgr: Error getting real user id from http request. err=Authentication failure
+2025-05-15T21:10:07.046Z INFO GOXDCR.AuditSvc: GetMemcachedConnection serverAddr=127.0.0.1:11210, bucketName=
+2025-05-15T21:10:07.049Z INFO GOXDCR.AuditSvc: Successfully sent HELO command with userAgent=Goxdcr Audit. attributes={false 1 false false}
+2025-05-15T21:10:15.313Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T21:10:15.314Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T21:10:15.314Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T21:10:17.045Z ERRO GOXDCR.AdminPort: Error authenticating request. request=&{GET /_prometheusMetrics?timeout=10000 HTTP/1.1 1 1 map[Accept:[application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1] Accept-Encoding:[gzip] Authorization:[Basic xxxxx] User-Agent:[Prometheus/2.45.0] X-Prometheus-Scrape-Timeout-Seconds:[10]] {} <nil> 0 [] false 127.0.0.1:9998 map[] map[] <nil> map[] 127.0.0.1:59972 /_prometheusMetrics?timeout=10000 <nil> <nil> <nil> 0x4000022640 <nil> [] map[]}
+ err= Authentication failure
+2025-05-15T21:10:17.048Z ERRO GOXDCR.ReplMgr: Error getting real user id from http request. err=Authentication failure
+2025-05-15T21:10:17.048Z INFO GOXDCR.AuditSvc: GetMemcachedConnection serverAddr=127.0.0.1:11210, bucketName=
+2025-05-15T21:10:17.050Z INFO GOXDCR.AuditSvc: Successfully sent HELO command with userAgent=Goxdcr Audit. attributes={false 1 false false}
+2025-05-15T21:10:20.314Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T21:10:25.313Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T21:10:25.313Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T21:10:25.313Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T21:10:27.051Z ERRO GOXDCR.AdminPort: Error authenticating request. request=&{GET /_prometheusMetrics?timeout=10000 HTTP/1.1 1 1 map[Accept:[application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1] Accept-Encoding:[gzip] Authorization:[Basic xxxxx] User-Agent:[Prometheus/2.45.0] X-Prometheus-Scrape-Timeout-Seconds:[10]] {} <nil> 0 [] false 127.0.0.1:9998 map[] map[] <nil> map[] 127.0.0.1:59972 /_prometheusMetrics?timeout=10000 <nil> <nil> <nil> 0x40001ba190 <nil> [] map[]}
+ err= Authentication failure
+2025-05-15T21:10:27.055Z ERRO GOXDCR.ReplMgr: Error getting real user id from http request. err=Authentication failure
+2025-05-15T21:10:27.055Z INFO GOXDCR.AuditSvc: GetMemcachedConnection serverAddr=127.0.0.1:11210, bucketName=
+2025-05-15T21:10:27.058Z INFO GOXDCR.AuditSvc: Successfully sent HELO command with userAgent=Goxdcr Audit. attributes={false 1 false false}
+2025-05-15T21:10:35.312Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T21:10:35.312Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T21:10:35.312Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T21:10:35.313Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T21:10:37.042Z ERRO GOXDCR.AdminPort: Error authenticating request. request=&{GET /_prometheusMetrics?timeout=10000 HTTP/1.1 1 1 map[Accept:[application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1] Accept-Encoding:[gzip] Authorization:[Basic xxxxx] User-Agent:[Prometheus/2.45.0] X-Prometheus-Scrape-Timeout-Seconds:[10]] {} <nil> 0 [] false 127.0.0.1:9998 map[] map[] <nil> map[] 127.0.0.1:59972 /_prometheusMetrics?timeout=10000 <nil> <nil> <nil> 0x4000882320 <nil> [] map[]}
+ err= Authentication failure
+2025-05-15T21:10:37.044Z ERRO GOXDCR.ReplMgr: Error getting real user id from http request. err=Authentication failure
+2025-05-15T21:10:37.044Z INFO GOXDCR.AuditSvc: GetMemcachedConnection serverAddr=127.0.0.1:11210, bucketName=
+2025-05-15T21:10:37.046Z INFO GOXDCR.AuditSvc: Successfully sent HELO command with userAgent=Goxdcr Audit. attributes={false 1 false false}
+2025-05-15T21:10:45.314Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T21:10:45.315Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T21:10:45.315Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T21:10:47.040Z ERRO GOXDCR.AdminPort: Error authenticating request. request=&{GET /_prometheusMetrics?timeout=10000 HTTP/1.1 1 1 map[Accept:[application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1] Accept-Encoding:[gzip] Authorization:[Basic xxxxx] User-Agent:[Prometheus/2.45.0] X-Prometheus-Scrape-Timeout-Seconds:[10]] {} <nil> 0 [] false 127.0.0.1:9998 map[] map[] <nil> map[] 127.0.0.1:59972 /_prometheusMetrics?timeout=10000 <nil> <nil> <nil> 0x40008827d0 <nil> [] map[]}
+ err= Authentication failure
+2025-05-15T21:10:47.041Z ERRO GOXDCR.ReplMgr: Error getting real user id from http request. err=Authentication failure
+2025-05-15T21:10:47.041Z INFO GOXDCR.AuditSvc: GetMemcachedConnection serverAddr=127.0.0.1:11210, bucketName=
+2025-05-15T21:10:47.043Z INFO GOXDCR.AuditSvc: Successfully sent HELO command with userAgent=Goxdcr Audit. attributes={false 1 false false}
+2025-05-15T21:10:50.314Z INFO GOXDCR.PipelineMgr: Replication Status = map[]
+2025-05-15T21:10:55.313Z INFO GOXDCR.ResourceMgr: Resource Manager State = <nil>
+2025-05-15T21:10:55.314Z INFO GOXDCR.ResourceMgr: backlogCount=0, noBacklogCount=0 extraQuota=false cpuNotMaxedCount=0 throughputDropCount=0
+2025-05-15T21:10:55.314Z INFO GOXDCR.ResourceMgr: DcpPriorityMap=map[]
+ongoingReplMap=map[]
+2025-05-15T21:10:57.047Z ERRO GOXDCR.AdminPort: Error authenticating request. request=&{GET /_prometheusMetrics?timeout=10000 HTTP/1.1 1 1 map[Accept:[application/openmetrics-text;version=1.0.0,application/openmetrics-text;version=0.0.1;q=0.75,text/plain;version=0.0.4;q=0.5,*/*;q=0.1] Accept-Encoding:[gzip] Authorization:[Basic xxxxx] User-Agent:[Prometheus/2.45.0] X-Prometheus-Scrape-Timeout-Seconds:[10]] {} <nil> 0 [] false 127.0.0.1:9998 map[] map[] <nil> map[] 127.0.0.1:59972 /_prometheusMetrics?timeout=10000 <nil> <nil> <nil> 0x40001bab40 <nil> [] map[]}
+ err= Authentication failure
+2025-05-15T21:10:57.050Z ERRO GOXDCR.ReplMgr: Error getting real user id from http request. err=Authentication failure
+2025-05-15T21:10:57.050Z INFO GOXDCR.AuditSvc: GetMemcachedConnection serverAddr=127.0.0.1:11210, bucketName=
+2025-05-15T21:10:57.054Z INFO GOXDCR.AuditSvc: Successfully sent HELO command with userAgent=Goxdcr Audit. attributes={false 1 false false}

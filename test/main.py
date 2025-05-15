@@ -1,5 +1,5 @@
 from couchbase.cluster import Cluster, ClusterOptions
-from couchbase_core.cluster import PasswordAuthenticator
+from couchbase.cluster import PasswordAuthenticator
 from dotenv import load_dotenv
 import os
 

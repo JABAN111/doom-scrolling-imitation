@@ -9,10 +9,11 @@ init-cluster:
 		--cluster-username $(COUCHBASE_USER) \
 		--cluster-password $(COUCHBASE_PASSWORD) \
 		--services data,index,query \
+		--cluster-name medium\
 		--cluster-ramsize 3072 \
 		--cluster-index-ramsize 512 \
 		--cluster-analytics-ramsize 1024 \
-		--cluster-eventing-ramsize 256"
+		--cluster-eventing-ramsize 256"\
 
 add-nodes:
 	@echo "Adding db2.lan..."
@@ -29,6 +30,12 @@ add-nodes:
 		--server-add-username=$(COUCHBASE_USER) \
 		--server-add-password=$(COUCHBASE_PASSWORD) \
 		--services=data,index,query"
+
+rename-bucket:
+	curl -u jaba_admin:jaba_pwd \
+		 -X POST http://localhost:8091/node/controller/rename \
+		 -d hostname=db1.lan
+
 
 rebalance:
 	@echo "Rebalancing cluster..."

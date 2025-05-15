@@ -24,6 +24,25 @@ func main() {
 
 	endpoint := "localhost:9000" // push to config file
 
+	cfg := config.Config{
+		CouchBaseCfg: config.CouchBaseConfig{
+			URL:      "db1.lan",
+			Username: "jaba_admin",
+			Password: "jaba_pwd",
+			Bucket:   "doom-scrolling",
+		},
+		DgraphCfg: config.DgraphConfig{
+			URL: "localhost:9080",
+		},
+	}
+
+	docDB, err := couchbase.New(log, cfg)
+	if err != nil {
+		log.Error("Failed to initialize Couchbase", "error", err)
+		os.Exit(1)
+	}
+	panic("success")
+	log.Info("connect to document db")
 	// Initialize minio client object.
 	minioClient, err := sss.NewMinio(log, endpoint, false)
 	if err != nil {
@@ -56,24 +75,6 @@ func main() {
 	err = minioClient.DownloadPostImage(context.Background(), filepath.Base(testFile), "/Users/jaba/Documents/life/ITMO/rshd/lab1/tt/data.txt")
 	if err == nil {
 		panic("???")
-	}
-
-	cfg := config.Config{
-		CouchBaseCfg: config.CouchBaseConfig{
-			URL:      "db1.lan,db2.lan,db3.lan",
-			Username: "jaba_admin",
-			Password: "jaba_pwd",
-			Bucket:   "doom-scrolling",
-		},
-		DgraphCfg: config.DgraphConfig{
-			URL: "localhost:9080",
-		},
-	}
-
-	docDB, err := couchbase.New(log, cfg)
-	if err != nil {
-		log.Error("Failed to initialize Couchbase", "error", err)
-		os.Exit(1)
 	}
 
 	graphDB, err := neof4j.New(log, cfg)
