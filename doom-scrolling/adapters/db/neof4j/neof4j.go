@@ -3,6 +3,7 @@ package neof4j
 import (
 	"context"
 	"github.com/neo4j/neo4j-go-driver/v5/neo4j"
+	"log"
 	"log/slog"
 	"rshd/lab1/v2/config"
 )
@@ -76,7 +77,12 @@ func (db *Neo4jDb) LikePost(ctx context.Context, username, postID string) error 
 
 func (db *Neo4jDb) GetFeed(ctx context.Context, username string) ([]string, error) {
 	session := db.driver.NewSession(ctx, neo4j.SessionConfig{})
-	defer session.Close(ctx)
+	defer func(session neo4j.SessionWithContext, ctx context.Context) {
+		err := session.Close(ctx)
+		if err != nil {
+			log.Print("[INFO] fail to close session")
+		}
+	}(session, ctx)
 
 	result, err := session.Run(ctx,
 		`MATCH (u:User {username: $username})-[:FOLLOWS]->(f)-[:POSTED]->(p:Post)
@@ -111,7 +117,12 @@ func (db *Neo4jDb) GetFeed(ctx context.Context, username string) ([]string, erro
 
 func (db *Neo4jDb) CreatePost(ctx context.Context, postID, username string) error { // Переименовано userId -> username
 	session := db.driver.NewSession(ctx, neo4j.SessionConfig{})
-	defer session.Close(ctx)
+	defer func(session neo4j.SessionWithContext, ctx context.Context) {
+		err := session.Close(ctx)
+		if err != nil {
+			log.Print("[INFO] fail to close session")
+		}
+	}(session, ctx)
 
 	_, err := session.ExecuteWrite(ctx, func(tx neo4j.ManagedTransaction) (interface{}, error) {
 		return tx.Run(ctx, `
