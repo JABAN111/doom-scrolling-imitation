@@ -1,10 +1,11 @@
 package document
 
 import (
-	"github.com/couchbase/gocb/v2"
 	"log/slog"
 	"rshd/lab1/v2/config"
 	"time"
+
+	"github.com/couchbase/gocb/v2"
 )
 
 // InitializeCluster возвращает пропингованный кластер

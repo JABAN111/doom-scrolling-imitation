@@ -4,10 +4,11 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/dgraph-io/dgo/v240"
 	"log/slog"
 	"rshd/lab1/v2/config"
 	"rshd/lab1/v2/internal/db/graph"
+
+	"github.com/dgraph-io/dgo/v240"
 
 	"github.com/dgraph-io/dgo/v240/protos/api"
 )
