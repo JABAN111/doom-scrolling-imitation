@@ -49,23 +49,61 @@ services:
     environment:
       - NEO4J_AUTH=neo4j/password123
 
-  clickhouse:
-    image: 'clickhouse/clickhouse-server:23.4'
-    user: '101:101'
-    container_name: clickhouse
-    hostname: clickhouse
-    ports:
-      - '127.0.0.1:8123:8123'
-      - '127.0.0.1:9005:9000'
-    depends_on:
-      - clickhouse-keeper
-  clickhouse-keeper:
-    image: 'clickhouse/clickhouse-keeper:23.4-alpine'
-    user: '101:101'
-    container_name: clickhouse-keeper
-    hostname: clickhouse-keeper
-    ports:
-      - '127.0.0.1:9181:9181'
+  zookeeper:
+    image: zookeeper:3.7
+    container_name: zookeeper
+    hostname: zookeeper
+    networks:
+      clickhouse-network:
+        ipv4_address: 172.23.0.10
+  clickhouse01:
+      image: clickhouse/clickhouse-server:22.5
+      container_name: clickhouse01
+      hostname: clickhouse01
+      networks:
+        clickhouse-network:
+          ipv4_address: 172.23.0.11
+      ports:
+        - '127.0.0.1:8123:8123'
+        - '127.0.0.1:9020:9000'
+      volumes:
+        - ./configs/clickhouse/clickhouse04:/etc/clickhouse-server
+      depends_on:
+        - zookeeper
+  clickhouse02:
+      image: clickhouse/clickhouse-server:22.5
+      container_name: clickhouse02
+      hostname: clickhouse02
+      networks:
+        clickhouse-network:
+          ipv4_address: 172.23.0.12
+      volumes:
+        - ./configs/clickhouse/clickhouse02:/etc/clickhouse-server
+      depends_on:
+        - zookeeper
+  clickhouse03:
+      image: clickhouse/clickhouse-server:22.5
+      container_name: clickhouse03
+      hostname: clickhouse03
+      networks:
+        clickhouse-network:
+          ipv4_address: 172.23.0.13
+      volumes:
+        - ./configs/clickhouse/clickhouse03:/etc/clickhouse-server
+      depends_on:
+        - zookeeper
+  clickhouse04:
+      image: clickhouse/clickhouse-server:22.5
+      container_name: clickhouse04
+      hostname: clickhouse04
+      networks:
+        clickhouse-network:
+          ipv4_address: 172.23.0.14
+      volumes:
+        - ./configs/clickhouse/clickhouse04:/etc/clickhouse-server
+      depends_on:
+        - zookeeper
+ 
 
   influxdb2:
     image: influxdb:2
@@ -110,6 +148,7 @@ services:
       - data4-1:/data1
       - data4-2:/data2
 
+
   nginx:
     image: nginx:1.19.2-alpine
     hostname: nginx
@@ -147,3 +186,9 @@ volumes:
 networks:
   workshop:
     driver: bridge
+  clickhouse-network:
+    name: clickhouse-network
+    ipam:
+      config:
+        - subnet: 172.23.0.0/24
+
