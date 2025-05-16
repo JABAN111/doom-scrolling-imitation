@@ -176,7 +176,7 @@ func main() {
 	}
 
 	s := &http.Server{
-		Addr:         "localhost:8080",
+		Addr:         ":8080",
 		ReadTimeout:  30 * time.Second,
 		WriteTimeout: 30 * time.Second,
 		Handler:      mux,

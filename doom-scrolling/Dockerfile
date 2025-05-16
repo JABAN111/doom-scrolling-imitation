@@ -12,4 +12,6 @@ WORKDIR /app
 COPY --from=build /app/main ./main
 COPY config.yaml .
 
+EXPOSE 8080
+
 ENTRYPOINT [ "./main" ]
