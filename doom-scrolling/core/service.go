@@ -2,8 +2,10 @@ package core
 
 import (
 	"context"
+	"encoding/base64"
 	"fmt"
 	"log/slog"
+	"os"
 	"sync"
 	"time"
 
@@ -16,6 +18,7 @@ type Service struct {
 	GraphDB      GraphDB
 	TimeSeriesDB TimeSeriesDB
 	ColumnarDB   ColumnarDB
+	S3           S3
 	log          *slog.Logger
 	numWorkers   int
 }
@@ -26,6 +29,7 @@ func NewService(
 	graph GraphDB,
 	tsDB TimeSeriesDB,
 	columnarDB ColumnarDB,
+	s3 S3,
 	numWorkers int,
 ) *Service {
 	return &Service{
@@ -34,6 +38,7 @@ func NewService(
 		TimeSeriesDB: tsDB,
 		ColumnarDB:   columnarDB,
 		log:          log,
+		S3:           s3,
 		numWorkers:   numWorkers,
 	}
 }
@@ -56,11 +61,17 @@ func (s *Service) CreateUser(ctx context.Context, user User) (User, error) {
 	return user, nil
 }
 
-func (s *Service) CreatePost(ctx context.Context, post Post) (Post, error) {
+func (s *Service) CreatePost(ctx context.Context, post Post, filePath string) (Post, error) {
 	post.CreatedAt = time.Now()
 	post, err := s.DocumentDB.CreatePost(ctx, post)
 	if err != nil {
-		s.log.Info("Failed to create post", "error", err)
+		s.log.Error("Failed to create post", "error", err)
+		return Post{}, err
+	}
+
+	err = s.S3.UploadPostImage(ctx, post.ID, filePath)
+	if err != nil {
+		s.log.Error("failed to save an image for the post", "error", err)
 		return Post{}, err
 	}
 
@@ -202,14 +213,37 @@ func (s *Service) GetFeed(ctx context.Context, userID string) ([]Post, error) {
 	for _, postId := range feeds {
 		go func() {
 			defer wg.Done()
+			defer func() {
+				<-sema
+			}()
+
 			sema <- struct{}{}
 
+			tmp, err := os.CreateTemp("", "img-*.jpg")
+			defer func(name string) {
+				err := os.Remove(name)
+				if err != nil {
+					return
+				}
+			}(tmp.Name())
+			if err != nil {
+				return
+			}
 			post, err := s.DocumentDB.GetPost(ctx, postId)
+
+			if err := s.S3.DownloadPostImage(ctx, post.ID, tmp.Name()); err != nil {
+				s.log.Error("fail to download image for the post", "err", err)
+				return
+			} else {
+				data, err := os.ReadFile(tmp.Name())
+				if err == nil {
+					post.ImageBase64 = base64.StdEncoding.EncodeToString(data)
+				}
+			}
 			if err != nil {
 				s.log.Error("Failed to parse post", "postid", postId)
 			}
 			postChan <- post
-			<-sema
 		}()
 	}
 

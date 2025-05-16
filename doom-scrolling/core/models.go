@@ -1,6 +1,8 @@
 package core
 
-import "time"
+import (
+	"time"
+)
 
 type EventType string
 
@@ -19,11 +21,11 @@ type User struct {
 }
 
 type Post struct {
-	ID        string    `json:"id"`
-	UserID    string    `json:"user_id"`
-	ImageURL  string    `json:"image_url"`
-	Caption   string    `json:"caption"`
-	CreatedAt time.Time `json:"created_at"`
+	ID          string    `json:"id"`
+	UserID      string    `json:"user_id"`
+	ImageBase64 string    `json:"image_base64,omitempty"`
+	Caption     string    `json:"caption"`
+	CreatedAt   time.Time `json:"created_at"`
 }
 
 type AnalyticsEvent struct {

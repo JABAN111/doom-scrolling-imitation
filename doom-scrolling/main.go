@@ -71,7 +71,7 @@ func main() {
 	clickhouseClient := clickhouse.New(log, crg.ClickhouseConfig.URL)
 
 	numWorkers := 20
-	service := core.NewService(log, docDB, graphDB, influxClient, clickhouseClient, numWorkers)
+	service := core.NewService(log, docDB, graphDB, influxClient, clickhouseClient, minioClient, numWorkers)
 	fmt.Print(service)
 
 	ctx := context.Background()
@@ -98,20 +98,20 @@ func main() {
 		log.Error("bob follow charlie failed", "error", err)
 	}
 
-	if _, err := service.CreatePost(ctx, core.Post{ID: "post1", UserID: "bob"}); err != nil {
+	if _, err := service.CreatePost(ctx, core.Post{ID: "post1", UserID: "bob"}, testFile); err != nil {
 		log.Error("bob post1 creation failed", "error", err)
 	}
 	time.Sleep(100 * time.Millisecond)
-	if _, err := service.CreatePost(ctx, core.Post{ID: "post2", UserID: "bob"}); err != nil {
+	if _, err := service.CreatePost(ctx, core.Post{ID: "post2", UserID: "bob"}, testFile); err != nil {
 		log.Error("bob post2 creation failed", "error", err)
 	}
 
 	time.Sleep(100 * time.Millisecond)
-	if _, err := service.CreatePost(ctx, core.Post{ID: "post3", UserID: "charlie"}); err != nil {
+	if _, err := service.CreatePost(ctx, core.Post{ID: "post3", UserID: "charlie"}, testFile); err != nil {
 		log.Error("charlie post3 creation failed", "error", err)
 	}
 	time.Sleep(100 * time.Millisecond)
-	if _, err := service.CreatePost(ctx, core.Post{ID: "post4", UserID: "charlie"}); err != nil {
+	if _, err := service.CreatePost(ctx, core.Post{ID: "post4", UserID: "charlie"}, testFile); err != nil {
 		log.Error("charlie post4 creation failed", "error", err)
 	}
 

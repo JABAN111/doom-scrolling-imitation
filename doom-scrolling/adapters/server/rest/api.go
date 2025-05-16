@@ -3,8 +3,12 @@ package rest
 import (
 	"context"
 	"encoding/json"
+	"io"
 	"log/slog"
+	"mime/multipart"
 	"net/http"
+	"os"
+	"path/filepath"
 	"rshd/lab1/v2/core"
 	"rshd/lab1/v2/internal/util"
 	"strconv"
@@ -32,16 +36,54 @@ func NewCreateUserHandler(ctx context.Context, log *slog.Logger, service *core.S
 
 func NewCreatePostHandler(ctx context.Context, log *slog.Logger, service *core.Service) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		if err := r.ParseMultipartForm(10 << 20); err != nil {
+			util.WriteResponse(ctx, log, w, http.StatusBadRequest, "Invalid multipart form")
+			return
+		}
+
+		postData := r.FormValue("post")
 		var post core.Post
-		if err := json.NewDecoder(r.Body).Decode(&post); err != nil {
-			util.WriteResponse(ctx, log, w, http.StatusBadRequest, "Invalid request payload")
+		if err := json.Unmarshal([]byte(postData), &post); err != nil {
+			util.WriteResponse(ctx, log, w, http.StatusBadRequest, "Invalid post JSON")
 			return
 		}
 		if post.ID == "" {
 			util.WriteResponse(ctx, log, w, http.StatusBadRequest, "ID is required")
 			return
 		}
-		_, err := service.CreatePost(ctx, post)
+		file, header, err := r.FormFile("image")
+		if err != nil {
+			util.WriteResponse(ctx, log, w, http.StatusBadRequest, "Image file is required")
+			return
+		}
+		defer func(file multipart.File) {
+			err := file.Close()
+			if err != nil {
+				return
+			}
+		}(file)
+		tmp, err := os.CreateTemp("", "upload-*"+filepath.Ext(header.Filename))
+		if err != nil {
+			util.WriteResponse(ctx, log, w, http.StatusInternalServerError, "Cannot create temp file")
+			return
+		}
+		defer func() {
+			err := tmp.Close()
+			if err != nil {
+				return
+			}
+			err = os.Remove(tmp.Name())
+			if err != nil {
+				return
+			}
+		}()
+
+		if _, err := io.Copy(tmp, file); err != nil {
+			util.WriteResponse(ctx, log, w, http.StatusInternalServerError, "Failed to save uploaded image")
+			return
+		}
+
+		_, err = service.CreatePost(ctx, post, tmp.Name())
 		if err != nil {
 			util.WriteResponse(ctx, log, w, http.StatusInternalServerError, "Failed to create post")
 			return
