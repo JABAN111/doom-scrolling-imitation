@@ -24,7 +24,6 @@ type MinioConfig struct {
 }
 
 func NewMinio(log *slog.Logger, endpoint string, useSsl bool) (*MinioConfig, error) {
-	// TODO УДАЛИТЬ
 	if err := os.Setenv("MINIO_ACCESS", "JABA_SUPER_USER_MINIO"); err != nil {
 		return nil, err
 	}

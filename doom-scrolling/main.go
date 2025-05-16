@@ -21,8 +21,10 @@ import (
 
 func main() {
 	log := slog.New(slog.NewTextHandler(os.Stdout, nil))
+	crg := config.MustLoad("./config.yaml")
+	fmt.Printf("data %v \n", crg)
 
-	endpoint := "localhost:9000" // push to config file
+	endpoint := crg.Minio.URL
 
 	// Initialize minio client object.
 	minioClient, err := sss.NewMinio(log, endpoint, false)
@@ -38,59 +40,35 @@ func main() {
 		log.Error("unexpected error while connecting to minio", "err", err)
 		os.Exit(2)
 	}
-	testFile := "/Users/jaba/Documents/life/ITMO/rshd/lab1/doom-scrolling/main.go"
+
+	testFile := "./config.yaml"
 	fmt.Println(filepath.Base(testFile))
 	err = minioClient.UploadPostImage(context.Background(), filepath.Base(testFile), testFile)
 	if err != nil {
 		panic(err)
 	}
+	log.Info("minio working")
 
-	err = minioClient.DownloadPostImage(context.Background(), filepath.Base(testFile), "/Users/jaba/Documents/life/ITMO/rshd/lab1/tt/data.txt")
-	if err != nil {
-		panic(err)
-	}
-	err = minioClient.DeletePostImage(context.Background(), filepath.Base(testFile))
-	if err != nil {
-		panic(err)
-	}
-	err = minioClient.DownloadPostImage(context.Background(), filepath.Base(testFile), "/Users/jaba/Documents/life/ITMO/rshd/lab1/tt/data.txt")
-	if err == nil {
-		panic("???")
-	}
-
-	cfg := config.Config{
-		CouchBaseCfg: config.CouchBaseConfig{
-			URL:      "db1.lan",
-			Username: "jaba_admin",
-			Password: "jaba_pwd",
-			Bucket:   "doom-scrolling",
-		},
-		DgraphCfg: config.DgraphConfig{
-			URL: "localhost:9080",
-		},
-	}
-
-	docDB, err := couchbase.New(log, cfg)
+	docDB, err := couchbase.New(log, crg)
 	if err != nil {
 		log.Error("Failed to initialize Couchbase", "error", err)
 		os.Exit(1)
 	}
 
-	graphDB, err := neof4j.New(log, cfg)
+	graphDB, err := neof4j.New(log, crg)
 	if err != nil {
 		log.Error("Failed to initialize Neo4j", "error", err)
 		os.Exit(1)
 	}
 
-	uri := "http://localhost:8086"
 	token := "0YVmO2e179ymcr4AZoA9FOEAIZSdDmezA8yIuLnSL4ERowgKZGKWEKqZAR64BCVn1aC4tN6Jq7aVM0ldAMZJIQ=="
-	influxClient, err := influx.New(log, uri, token, "docs", "home")
+	influxClient, err := influx.New(log, "http://"+crg.Influx.URL, token, "docs", "home")
 	if err != nil {
 		log.Error("Failed to initialize influx db", "error", err)
 		os.Exit(1)
 	}
 
-	clickhouseClient := clickhouse.New(log)
+	clickhouseClient := clickhouse.New(log, crg.ClickhouseConfig.URL)
 
 	numWorkers := 20
 	service := core.NewService(log, docDB, graphDB, influxClient, clickhouseClient, numWorkers)
@@ -205,61 +183,8 @@ func main() {
 	}
 
 	go service.StartSystemMetricsCollection(context.Background(), time.Minute*1)
-	if err := s.ListenAndServe(); err != http.ErrServerClosed {
+	log.Info("server is starting...")
+	if err := s.ListenAndServe(); !errors.Is(err, http.ErrServerClosed) {
 		log.Error("server closed unexpectedly", "error", err)
-
 	}
-	go func() {
-		if err := s.ListenAndServe(); err != http.ErrServerClosed {
-			log.Error("server closed unexpectedly", "error", err)
-		}
-	}()
-
-	<-ctx.Done()
-
-	// gracefulShutdown(log, s, clients)
 }
-
-// func gracefulShutdown(log *slog.Logger, restServer *http.Server, clients map[string]core.GrpcClient) {
-// log.Info("Shutting down the server")
-// shutdownTimeoutCtx, cancel := context.WithTimeout(context.Background(), maxShutdownTime)
-// defer cancel()
-
-// log.Debug("Closing all clients...")
-
-// var wg sync.WaitGroup
-
-// for _, client := range clients {
-// 	wg.Add(1)
-// 	go func(client core.GrpcClient) {
-// 		defer wg.Done()
-
-// 		done := make(chan error, 1)
-
-// 		go func() {
-// 			done <- client.Close()
-// 		}()
-
-// 		select {
-// 		case <-shutdownTimeoutCtx.Done():
-// 			log.Warn("Time-out of client disconnecting")
-// 			return
-// 		case err := <-done:
-// 			if err != nil {
-// 				log.Error("Error while closing the client", "error", err)
-// 			}
-// 			return
-// 		}
-// 	}(client)
-// }
-// wg.Wait()
-
-// log.Debug("Client closing are finished")
-
-// log.Debug("Starting shutdown for the http server")
-// if err := restServer.Shutdown(shutdownTimeoutCtx); err != nil {
-// 	log.Error("Failed to shut down server", "error", err)
-// }
-
-// log.Info("Server shutdown complete")
-// }

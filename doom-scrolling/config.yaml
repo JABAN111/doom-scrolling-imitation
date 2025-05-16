@@ -1,0 +1,13 @@
+clickhouseConfig:
+  url: "localhost:9020"
+couchBaseCfg:
+  url: "db1.lan"
+  username: "jaba_admin"
+  password: "jaba_pwd"
+  bucket: "doom-scrolling"
+influx:
+  url: "localhost:8086"
+neo4J:
+  url: "localhost:7687"
+minio:
+  url: "localhost:9000"

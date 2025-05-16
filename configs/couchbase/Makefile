@@ -15,14 +15,8 @@ init-cluster:
 		--cluster-analytics-ramsize 1024 \
 		--cluster-eventing-ramsize 256"\
 
-add-nodes:
-	@echo "Adding db2.lan..."
-	docker exec -it db1.lan bash -c "couchbase-cli server-add -c db1.lan:8091 \
-		-u $(COUCHBASE_USER) -p $(COUCHBASE_PASSWORD) \
-		--server-add=db2.lan \
-		--server-add-username=$(COUCHBASE_USER) \
-		--server-add-password=$(COUCHBASE_PASSWORD) \
-		--services=data,index,query"
+add-nodes: add-second add-third
+add-third:
 	@echo "Adding db3.lan..."
 	docker exec -it db1.lan bash -c "couchbase-cli server-add -c db1.lan:8091 \
 		-u $(COUCHBASE_USER) -p $(COUCHBASE_PASSWORD) \
@@ -30,6 +24,17 @@ add-nodes:
 		--server-add-username=$(COUCHBASE_USER) \
 		--server-add-password=$(COUCHBASE_PASSWORD) \
 		--services=data,index,query"
+
+add-second:
+	@echo "Adding db2.lan..."
+	docker exec -it db1.lan bash -c "couchbase-cli server-add -c db1.lan:8091 \
+		-u $(COUCHBASE_USER) -p $(COUCHBASE_PASSWORD) \
+		--server-add=db2.lan \
+		--server-add-username=$(COUCHBASE_USER) \
+		--server-add-password=$(COUCHBASE_PASSWORD) \
+		--services=data,index,query"
+	sleep 3
+
 
 rename-bucket:
 	curl -u jaba_admin:jaba_pwd \

@@ -17,8 +17,8 @@ type clickhouseDb struct {
 	conn clickhouse.Conn
 }
 
-func New(log *slog.Logger) *clickhouseDb {
-	conn, err := connect(log)
+func New(log *slog.Logger, url string) *clickhouseDb {
+	conn, err := connect(log, url)
 	if err != nil {
 		log.Error("ClickHouse connection error", "err", err)
 		return nil
@@ -32,10 +32,10 @@ func New(log *slog.Logger) *clickhouseDb {
 	}
 }
 
-func connect(log *slog.Logger) (clickhouse.Conn, error) {
+func connect(log *slog.Logger, url string) (clickhouse.Conn, error) {
 	ctx := context.Background()
 	conn, err := clickhouse.Open(&clickhouse.Options{
-		Addr: []string{"localhost:9020"},
+		Addr: []string{url},
 		Auth: clickhouse.Auth{
 			Database: "default",
 			Username: "default",
