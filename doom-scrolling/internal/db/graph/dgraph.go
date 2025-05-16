@@ -17,7 +17,7 @@ type DgraphClient struct {
 }
 
 func InitClient(cfg config.Config, log *slog.Logger) (*DgraphClient, error) {
-	conn, err := grpc.NewClient(cfg.DgraphCfg.URL, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	conn, err := grpc.NewClient("not used", grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		log.Error("Failed to dial gRPC", "error", err)
 		return nil, err
