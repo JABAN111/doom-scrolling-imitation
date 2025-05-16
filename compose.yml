@@ -14,31 +14,74 @@ x-minio-common: &minio-common
     retries: 5
 
 services:
-  couchbase-server:
-    build: configs/couchbase/couchbase-server
+  db1.lan: #cb
+    image: couchbase:7.6.2
+    container_name: db1.lan
+    hostname: db1.lan
     ports:
-      - 8091-8096:8091-8096
-      - 11210:11210
-    environment:
-      - CLUSTER_NAME=couchbase-demo
-      - COUCHBASE_ADMINISTRATOR_USERNAME=jaba_admin
-      - COUCHBASE_ADMINISTRATOR_PASSWORD=jaba_pwd
-      - COUCHBASE_BUCKET=doom-scrolling
-      - COUCHBASE_BUCKET_RAMSIZE=512
-      - COUCHBASE_RBAC_USERNAME=jaba_rbac
-      - COUCHBASE_RBAC_PASSWORD=jaba_rbac_pwd
-      - COUCHBASE_RBAC_NAME=jaba_rbac_name
-      - COUCHBASE_RAM_SIZE=2048
-      - COUCHBASE_INDEX_RAM_SIZE=512
-    hostname: couchbase-server
-    container_name: couchbase-server
-    working_dir: /opt/couchbase
-    stdin_open: true
-    tty: true
+      - "8091:8091"    # Management Port
+      - "8092:8092"    # Internal Cluster Manager Port
+      - "8093:8093"    # Query Service Port
+      - "8094:8094"    # Full Text Search (FTS) Port
+      - "8095:8095"    # Analytics Service Port
+      - "8096:8096"    # Eventing Service Port
+      - "8097:8097"    # Backup Service Port
+      - "9102:9102"    # Index Service Port
+      - "11210:11210"  # Data Service Port
+      - "11219:11211"  # Memcached Data Service Port
     networks:
-      - workshop
-    entrypoint: ['']
-    command: sh -c "/opt/couchbase/init/init-cbserver.sh"
+      - couchbase-net
+    environment:
+      - COUCHBASE_USER=jaba_admin
+      - COUCHBASE_PASSWORD=jaba_pwd
+      - COUCHBASE_BUCKET=doom-scrolling
+    volumes:
+      - ./volumes/couchbase-1:/opt/couchbase/var
+
+  db2.lan:
+      image: couchbase:7.6.2
+      container_name: db2.lan
+      hostname: db2.lan
+      ports:
+        - "9081:8091"    # Management Port (different external port)
+        - "9082:8092"    # Internal Cluster Manager Port
+        - "9083:8093"    # Query Service Port
+        - "9084:8094"    # Full Text Search (FTS) Port
+        - "9085:8095"    # Analytics Service Port
+        - "9086:8096"    # Eventing Service Port
+        - "9087:8097"    # Backup Service Port
+        - "9103:9102"    # Index Service Port
+        - "11211:11210"  # Data Service Port (different external port)
+      networks:
+        - couchbase-net
+      environment:
+        - COUCHBASE_USER=jaba_admin
+        - COUCHBASE_PASSWORD=jaba_pwd
+        - COUCHBASE_BUCKET=doom-scrolling
+      volumes:
+        - ./volumes/couchbase-2/couchbase-data2:/opt/couchbase/var
+  db3.lan:
+      image: couchbase:7.6.2
+      container_name: db3.lan
+      hostname: db3.lan
+      ports:
+        - "10091:8091"   # Management Port (different external port)
+        - "10092:8092"   # Internal Cluster Manager Port
+        - "10093:8093"   # Query Service Port
+        - "10094:8094"   # Full Text Search (FTS) Port
+        - "10095:8095"   # Analytics Service Port
+        - "10096:8096"   # Eventing Service Port
+        - "10097:8097"   # Backup Service Port
+        - "9104:9102"    # Index Service Port
+        - "11212:11210"  # Data Service Port (different external port)
+      networks:
+        - couchbase-net
+      environment:
+        - COUCHBASE_USER=jaba_admin
+        - COUCHBASE_PASSWORD=jaba_pwd
+        - COUCHBASE_BUCKET=doom-scrolling
+      volumes:
+        - ./volumes/couchbase-3:/opt/couchbase/var
 
   server1:
     image: ${NEO4J_DOCKER_IMAGE}

@@ -10,6 +10,13 @@ lint: tools
 up:
 	${container_runtime} compose up --build -d
 
+start-all:
+	rm -fr ./volumes
+	${container_runtime} compose down -v
+	${container_runtime} compose up -d
+	@echo wait cluster to start && sleep 10
+	make -C ./configs/couchbase cluster-up
+
 down:
 	${container_runtime} compose down
 
