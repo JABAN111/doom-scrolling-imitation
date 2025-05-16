@@ -74,6 +74,9 @@ services:
       image: clickhouse/clickhouse-server:22.5
       container_name: clickhouse02
       hostname: clickhouse02
+      ports:
+        - '127.0.0.1:8124:8123'
+        - '127.0.0.1:9021:9000'
       networks:
         clickhouse-network:
           ipv4_address: 172.23.0.12
@@ -85,6 +88,9 @@ services:
       image: clickhouse/clickhouse-server:22.5
       container_name: clickhouse03
       hostname: clickhouse03
+      ports:
+        - '127.0.0.1:8125:8123'
+        - '127.0.0.1:9022:9000'
       networks:
         clickhouse-network:
           ipv4_address: 172.23.0.13
@@ -96,6 +102,9 @@ services:
       image: clickhouse/clickhouse-server:22.5
       container_name: clickhouse04
       hostname: clickhouse04
+      ports:
+        - '127.0.0.1:8126:8123'
+        - '127.0.0.1:9023:9000'
       networks:
         clickhouse-network:
           ipv4_address: 172.23.0.14
@@ -103,7 +112,7 @@ services:
         - ./configs/clickhouse/clickhouse04:/etc/clickhouse-server
       depends_on:
         - zookeeper
- 
+
 
   influxdb2:
     image: influxdb:2
