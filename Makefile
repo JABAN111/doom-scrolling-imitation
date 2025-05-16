@@ -13,9 +13,10 @@ up:
 start-all:
 	rm -fr ./volumes
 	${container_runtime} compose down -v
+	make -C ./configs/clickhouse config
 	${container_runtime} compose up -d
-	@echo wait cluster to start && sleep 10
-	make -C ./configs/couchbase cluster-up
+	@echo wait luster to start && sleep 10
+	make -C ./configs/couchbase luster-up
 
 down:
 	${container_runtime} compose down

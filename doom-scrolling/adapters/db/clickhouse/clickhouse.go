@@ -2,6 +2,7 @@ package clickhouse
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"log/slog"
 	"rshd/lab1/v2/internal/util"
@@ -56,7 +57,8 @@ func connect(log *slog.Logger) (clickhouse.Conn, error) {
 		return nil, err
 	}
 	if err := conn.Ping(ctx); err != nil {
-		if exception, ok := err.(*clickhouse.Exception); ok {
+		var exception *clickhouse.Exception
+		if errors.As(err, &exception) {
 			fmt.Printf("Exception [%d] %s \n%s\n", exception.Code, exception.Message, exception.StackTrace)
 		}
 		return nil, err

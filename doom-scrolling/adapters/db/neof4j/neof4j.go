@@ -16,7 +16,7 @@ type Neo4jDb struct {
 func New(log *slog.Logger, cfg config.Config) (*Neo4jDb, error) {
 	neo4jUsername := "neo4j"
 	neo4jPassword := "your_password"
-	uri := "neo4j://localhost:7474"
+	uri := "neo4j://localhost:7687"
 	driver, err := neo4j.NewDriverWithContext(uri, neo4j.BasicAuth(neo4jUsername, neo4jPassword, ""))
 	if err != nil {
 		return nil, err

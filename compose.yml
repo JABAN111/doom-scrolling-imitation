@@ -336,12 +336,15 @@ volumes:
   data4-2:
 
 networks:
-  neo4j-internal:
-  workshop:
-    driver: bridge
   clickhouse-network:
     name: clickhouse-network
     ipam:
       config:
         - subnet: 172.23.0.0/24
+  neo4j-internal:
+  couchbase-net:
+    driver: bridge
+  workshop:
+    driver: bridge
+
 

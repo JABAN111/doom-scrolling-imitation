@@ -4,6 +4,8 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/neo4j/neo4j-go-driver/v5/neo4j"
+	"log"
 	"log/slog"
 	"net/http"
 	"os"
@@ -19,7 +21,31 @@ import (
 	"time"
 )
 
+func connectNeo4j() (neo4j.DriverWithContext, error) {
+	// Замените на свои реальные credentials или задайте NEO4J_AUTH в .env
+	uri := "neo4j://localhost:7687"
+	auth := neo4j.BasicAuth("neo4j", "your_password", "")
+	driver, err := neo4j.NewDriverWithContext(uri, auth)
+	if err != nil {
+		return nil, err
+	}
+	// Проверяем подключение
+	ctx := context.Background()
+	if err = driver.VerifyConnectivity(ctx); err != nil {
+		driver.Close(ctx)
+		return nil, err
+	}
+	log.Println("✅ Neo4j connected via Bolt")
+	return driver, nil
+}
+
 func main() {
+	data, err := connectNeo4j()
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("yes, ", data)
+	os.Exit(1)
 	log := slog.New(slog.NewTextHandler(os.Stdout, nil))
 
 	endpoint := "localhost:9000" // push to config file
@@ -60,7 +86,7 @@ func main() {
 
 	cfg := config.Config{
 		CouchBaseCfg: config.CouchBaseConfig{
-			URL:      "localhost",
+			URL:      "db1.lan",
 			Username: "jaba_admin",
 			Password: "jaba_pwd",
 			Bucket:   "doom-scrolling",
