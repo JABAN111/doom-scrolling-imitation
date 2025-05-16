@@ -1,0 +1,42 @@
+2025-05-16 00:28:35.891+0000 INFO  Logging config in use: Embedded default config 'default-user-logs.xml'
+2025-05-16 00:28:35.897+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2025-05-16 00:28:35.931+0000 INFO  Command expansion is explicitly enabled for configuration
+2025-05-16 00:28:35.931+0000 INFO  Executing external script to retrieve value of setting server.routing.advertised_address
+2025-05-16 00:28:35.931+0000 INFO  Executing external script to retrieve value of setting server.cluster.raft.advertised_address
+2025-05-16 00:28:35.931+0000 INFO  Executing external script to retrieve value of setting server.cluster.advertised_address
+2025-05-16 00:28:35.933+0000 INFO  Starting...
+2025-05-16 00:28:38.561+0000 INFO  ======== Neo4j 2025.04.0 ========
+2025-05-16 00:28:38.588+0000 INFO  This instance is ServerId{6817fb7c} (6817fb7c-7218-4f7c-92b0-e004ccdd7d44)
+2025-05-16 00:28:38.872+0000 INFO  Resolved endpoints with DNS{endpoints:'[neo4j-network:6000]'} to '[172.21.0.2:6000, 172.21.0.3:6000, 172.21.0.4:6000]'
+2025-05-16 00:28:38.924+0000 INFO  Resolved endpoints with DNS{endpoints:'[neo4j-network:6000]'} to '[172.21.0.2:6000, 172.21.0.3:6000, 172.21.0.4:6000]'
+2025-05-16 00:28:42.596+0000 INFO  Neo4j Server shutdown initiated by request
+2025-05-16 00:28:42.599+0000 INFO  Stopped.
+2025-05-16 00:55:38.668+0000 INFO  Logging config in use: Embedded default config 'default-user-logs.xml'
+2025-05-16 00:55:38.675+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2025-05-16 00:55:38.711+0000 INFO  Command expansion is explicitly enabled for configuration
+2025-05-16 00:55:38.715+0000 INFO  Executing external script to retrieve value of setting server.routing.advertised_address
+2025-05-16 00:55:38.715+0000 INFO  Executing external script to retrieve value of setting server.cluster.raft.advertised_address
+2025-05-16 00:55:38.715+0000 INFO  Executing external script to retrieve value of setting server.cluster.advertised_address
+2025-05-16 00:55:38.720+0000 INFO  Starting...
+2025-05-16 00:55:41.497+0000 INFO  ======== Neo4j 2025.04.0 ========
+2025-05-16 00:55:41.529+0000 INFO  This instance is ServerId{6817fb7c} (6817fb7c-7218-4f7c-92b0-e004ccdd7d44)
+2025-05-16 00:55:41.813+0000 INFO  Resolved endpoints with DNS{endpoints:'[neo4j-network:6000]'} to '[172.21.0.2:6000, 172.21.0.3:6000, 172.21.0.4:6000, 172.21.0.5:6000]'
+2025-05-16 00:55:41.935+0000 INFO  Resolved endpoints with DNS{endpoints:'[neo4j-network:6000]'} to '[172.21.0.2:6000, 172.21.0.3:6000, 172.21.0.4:6000, 172.21.0.5:6000]'
+2025-05-16 00:55:49.952+0000 INFO  Connected to server1/172.21.0.2:7000 [Category[name=RAFT] version:3.0]
+2025-05-16 00:55:55.584+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2025-05-16 00:55:55.628+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2025-05-16 00:55:55.641+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2025-05-16 00:55:55.651+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2025-05-16 00:55:56.570+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2025-05-16 00:55:56.571+0000 INFO  Remote interface available at http://localhost:7474/
+2025-05-16 00:55:56.573+0000 INFO  id: 6AFC345AD5A881A7ACFEC307DF87E9AD06496EDF54E8EA990AE15C3A8050C155
+2025-05-16 00:55:56.574+0000 INFO  name: system
+2025-05-16 00:55:56.574+0000 INFO  creationDate: 2025-05-16T00:55:47.15Z
+2025-05-16 00:55:56.575+0000 INFO  Started.
+2025-05-16 00:58:21.722+0000 INFO  Neo4j Server shutdown initiated by request
+2025-05-16 00:58:21.728+0000 INFO  Stopping...
+2025-05-16 00:58:22.685+0000 INFO  Lost connection to server1/172.21.0.2:7000 [Category[name=RAFT] version:3.0]

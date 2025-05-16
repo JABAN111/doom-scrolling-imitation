@@ -1,0 +1,39 @@
+2025-05-16 00:55:38.714+0000 INFO  Logging config in use: Embedded default config 'default-user-logs.xml'
+2025-05-16 00:55:38.724+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2025-05-16 00:55:38.765+0000 INFO  Command expansion is explicitly enabled for configuration
+2025-05-16 00:55:38.766+0000 INFO  Executing external script to retrieve value of setting server.routing.advertised_address
+2025-05-16 00:55:38.767+0000 INFO  Executing external script to retrieve value of setting server.cluster.raft.advertised_address
+2025-05-16 00:55:38.767+0000 INFO  Executing external script to retrieve value of setting server.cluster.advertised_address
+2025-05-16 00:55:38.771+0000 INFO  Starting...
+2025-05-16 00:55:41.474+0000 INFO  ======== Neo4j 2025.04.0 ========
+2025-05-16 00:55:41.516+0000 INFO  This instance is ServerId{ba6adcf2} (ba6adcf2-af8d-4bf8-b35c-ebdbf3e54e29)
+2025-05-16 00:55:41.799+0000 INFO  Resolved endpoints with DNS{endpoints:'[neo4j-network:6000]'} to '[172.21.0.2:6000, 172.21.0.3:6000, 172.21.0.4:6000, 172.21.0.5:6000]'
+2025-05-16 00:55:41.917+0000 INFO  Resolved endpoints with DNS{endpoints:'[neo4j-network:6000]'} to '[172.21.0.2:6000, 172.21.0.3:6000, 172.21.0.4:6000, 172.21.0.5:6000]'
+2025-05-16 00:55:47.928+0000 INFO  Default database 'neo4j' is created
+2025-05-16 00:55:48.619+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2025-05-16 00:55:48.648+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2025-05-16 00:55:49.158+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2025-05-16 00:55:49.165+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2025-05-16 00:55:49.868+0000 INFO  Connected to server4/172.21.0.4:7000 [Category[name=RAFT] version:3.0]
+2025-05-16 00:55:49.872+0000 INFO  Connected to server2/172.21.0.3:7000 [Category[name=RAFT] version:3.0]
+2025-05-16 00:55:49.885+0000 INFO  Connected to server3/172.21.0.5:7000 [Category[name=RAFT] version:3.0]
+2025-05-16 00:55:50.012+0000 INFO  Connected to server3/172.21.0.5:7000 [Category[name=RAFT] version:3.0]
+2025-05-16 00:55:50.017+0000 INFO  Connected to server2/172.21.0.3:7000 [Category[name=RAFT] version:3.0]
+2025-05-16 00:55:50.019+0000 INFO  Connected to server4/172.21.0.4:7000 [Category[name=RAFT] version:3.0]
+2025-05-16 00:55:50.192+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2025-05-16 00:55:50.194+0000 INFO  Remote interface available at http://localhost:7474/
+2025-05-16 00:55:50.198+0000 INFO  id: 6AFC345AD5A881A7ACFEC307DF87E9AD06496EDF54E8EA990AE15C3A8050C155
+2025-05-16 00:55:50.199+0000 INFO  name: system
+2025-05-16 00:55:50.200+0000 INFO  creationDate: 2025-05-16T00:55:47.15Z
+2025-05-16 00:55:50.202+0000 INFO  Started.
+2025-05-16 00:58:21.724+0000 INFO  Neo4j Server shutdown initiated by request
+2025-05-16 00:58:21.731+0000 INFO  Stopping...
+2025-05-16 00:58:22.605+0000 INFO  Lost connection to server2/172.21.0.3:7000 [Category[name=RAFT] version:3.0]
+2025-05-16 00:58:22.605+0000 INFO  Lost connection to server2/172.21.0.3:7000 [Category[name=RAFT] version:3.0]
+2025-05-16 00:58:22.664+0000 INFO  Lost connection to server3/172.21.0.5:7000 [Category[name=RAFT] version:3.0]
+2025-05-16 00:58:22.664+0000 INFO  Lost connection to server3/172.21.0.5:7000 [Category[name=RAFT] version:3.0]
+2025-05-16 00:58:22.672+0000 INFO  Lost connection to server4/172.21.0.4:7000 [Category[name=RAFT] version:3.0]
+2025-05-16 00:58:22.672+0000 INFO  Lost connection to server4/172.21.0.4:7000 [Category[name=RAFT] version:3.0]
+2025-05-16 00:58:29.047+0000 INFO  Stopped.
