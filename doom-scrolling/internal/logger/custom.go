@@ -1,7 +1,8 @@
 package logger
 
 import (
-	"fmt"
+	"bufio"
+	"encoding/json"
 	"log/slog"
 	"os"
 	"rshd/lab1/v2/core"
@@ -51,10 +52,30 @@ func (c *Custom) startUploader(duration time.Duration) {
 	for {
 		select {
 		case <-ticker.C:
-			err := c.SSS.UploadLogs("logs/data.json")
+			c.mu.Lock()
+			f, err := os.Open("data.json")
 			if err != nil {
-				fmt.Println("[ERROR] error while uploading logs")
+				c.mu.Unlock()
+				continue
 			}
+			defer f.Close()
+
+			var entries []json.RawMessage
+			scanner := bufio.NewScanner(f)
+			for scanner.Scan() {
+				entries = append(entries, json.RawMessage(scanner.Bytes()))
+			}
+
+			tmpFile := "data_array.json"
+			out, _ := os.Create(tmpFile)
+			enc := json.NewEncoder(out)
+			enc.SetIndent("", "  ")
+			enc.Encode(entries)
+			out.Close()
+
+			_ = c.SSS.UploadLogs(tmpFile)
+			_ = os.Remove(tmpFile)
+			c.mu.Unlock()
 		}
 	}
 }

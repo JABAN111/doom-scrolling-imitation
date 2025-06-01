@@ -43,7 +43,7 @@ func NewService(
 		log:          log,
 		S3:           s3,
 		numWorkers:   numWorkers,
-		customLogger: logger.GetCustom(s3, 30*time.Second),
+		customLogger: logger.GetCustom(s3, time.Second),
 	}
 }
 

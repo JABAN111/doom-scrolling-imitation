@@ -21,6 +21,7 @@ tart-all:
 start-all:
 	rm -fr ./volumes
 	${container_runtime} compose down -v
+	chmod 640 configs/neof4j/neo4j.conf
 	make -C ./configs/clickhouse config
 	${container_runtime} compose up -d
 	@echo wait sluster to start && sleep 15

@@ -1,6 +1,6 @@
 from typing import Union
 from fastapi import FastAPI
-from spark import pupu
+from spark_handler import pupu
 
 
 app = FastAPI()

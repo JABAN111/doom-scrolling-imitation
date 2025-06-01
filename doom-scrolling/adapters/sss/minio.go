@@ -85,11 +85,11 @@ func (m *MinioConfig) UploadPostImage(ctx context.Context, id string, filePath s
 
 func (m *MinioConfig) UploadLogs(filepath string) error {
 	ctx := context.TODO()
-	err := m.initBucket(ctx, bucketName)
+	err := m.initBucket(ctx, "logs")
 	if err != nil && !errors.Is(err, ErrAlreadyExist) {
 		return err
 	}
-	info, err := m.client.FPutObject(ctx, bucketName, "", filepath, minio.PutObjectOptions{})
+	info, err := m.client.FPutObject(ctx, "logs", "log", filepath, minio.PutObjectOptions{})
 	if err != nil {
 		m.log.Error("fail to save file", "bucket", bucketName, "id", filepath, "err", err)
 		return err
