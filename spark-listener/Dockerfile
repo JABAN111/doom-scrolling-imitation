@@ -1,6 +1,5 @@
 FROM python:3.13-slim
 
-# Устанавливаем Java
 RUN apt-get update && apt-get install -y openjdk-17-jdk
 
 WORKDIR /spark-app

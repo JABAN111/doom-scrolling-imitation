@@ -45,4 +45,6 @@ type S3 interface {
 	// without returning os.File or something like this.
 	DownloadPostImage(ctx context.Context, id string, filePath string) error
 	DeletePostImage(ctx context.Context, id string) error
+
+	UploadLogs(filepath string) error
 }

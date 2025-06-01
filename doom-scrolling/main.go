@@ -16,6 +16,7 @@ import (
 	"rshd/lab1/v2/adapters/sss"
 	"rshd/lab1/v2/config"
 	"rshd/lab1/v2/core"
+	"rshd/lab1/v2/core/service"
 	"time"
 )
 
@@ -71,7 +72,7 @@ func main() {
 	clickhouseClient := clickhouse.New(log, crg.ClickhouseConfig.URL)
 
 	numWorkers := 20
-	service := core.NewService(log, docDB, graphDB, influxClient, clickhouseClient, minioClient, numWorkers)
+	service := service.NewService(log, docDB, graphDB, influxClient, clickhouseClient, minioClient, numWorkers)
 	fmt.Print(service)
 
 	ctx := context.Background()

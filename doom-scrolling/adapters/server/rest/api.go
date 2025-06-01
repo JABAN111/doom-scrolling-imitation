@@ -10,11 +10,12 @@ import (
 	"os"
 	"path/filepath"
 	"rshd/lab1/v2/core"
+	"rshd/lab1/v2/core/service"
 	"rshd/lab1/v2/internal/util"
 	"strconv"
 )
 
-func NewCreateUserHandler(ctx context.Context, log *slog.Logger, service *core.Service) http.HandlerFunc {
+func NewCreateUserHandler(ctx context.Context, log *slog.Logger, service *service.Service) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		var user core.User
 		if err := json.NewDecoder(r.Body).Decode(&user); err != nil {
@@ -34,7 +35,7 @@ func NewCreateUserHandler(ctx context.Context, log *slog.Logger, service *core.S
 	}
 }
 
-func NewCreatePostHandler(ctx context.Context, log *slog.Logger, service *core.Service) http.HandlerFunc {
+func NewCreatePostHandler(ctx context.Context, log *slog.Logger, service *service.Service) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if err := r.ParseMultipartForm(10 << 20); err != nil {
 			util.WriteResponse(ctx, log, w, http.StatusBadRequest, "Invalid multipart form")
@@ -92,7 +93,7 @@ func NewCreatePostHandler(ctx context.Context, log *slog.Logger, service *core.S
 	}
 }
 
-func NewFollowUserHandler(ctx context.Context, log *slog.Logger, service *core.Service) http.HandlerFunc {
+func NewFollowUserHandler(ctx context.Context, log *slog.Logger, service *service.Service) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		err := service.FollowUser(ctx, r.URL.Query().Get("username"), r.URL.Query().Get("usernameToFollow"))
 		if err != nil {
@@ -103,7 +104,7 @@ func NewFollowUserHandler(ctx context.Context, log *slog.Logger, service *core.S
 	}
 }
 
-func NewLikeHandler(ctx context.Context, log *slog.Logger, service *core.Service) http.HandlerFunc {
+func NewLikeHandler(ctx context.Context, log *slog.Logger, service *service.Service) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		err := service.LikePost(ctx, r.URL.Query().Get("user_id"), r.URL.Query().Get("post_id"))
 		if err != nil {
@@ -114,7 +115,7 @@ func NewLikeHandler(ctx context.Context, log *slog.Logger, service *core.Service
 	}
 }
 
-func NewFeedHandler(log *slog.Logger, service *core.Service) http.HandlerFunc {
+func NewFeedHandler(log *slog.Logger, service *service.Service) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		res, err := service.GetFeed(r.Context(), r.URL.Query().Get("username"))
 		if err != nil {
@@ -125,7 +126,7 @@ func NewFeedHandler(log *slog.Logger, service *core.Service) http.HandlerFunc {
 	}
 }
 
-func NewUserStats(log *slog.Logger, service *core.Service) http.HandlerFunc {
+func NewUserStats(log *slog.Logger, service *service.Service) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		username := r.URL.Query().Get("username")
 		if username == "" {
@@ -142,7 +143,7 @@ func NewUserStats(log *slog.Logger, service *core.Service) http.HandlerFunc {
 	}
 }
 
-func NewPopularTags(log *slog.Logger, service *core.Service) http.HandlerFunc {
+func NewPopularTags(log *slog.Logger, service *service.Service) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		days := r.URL.Query().Get("days")
 		limit := r.URL.Query().Get("limit")

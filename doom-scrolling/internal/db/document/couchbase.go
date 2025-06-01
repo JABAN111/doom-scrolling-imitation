@@ -23,8 +23,8 @@ func InitializeCluster(cfg config.Config, log *slog.Logger) (*gocb.Cluster, erro
 		log.Error("Failed to apply Couchbase configuration profile", "error", err)
 		return nil, err
 	}
-
-	cluster, err := gocb.Connect(cfg.CouchBaseCfg.URL, options)
+	cluster, err := gocb.Connect("couchbase://"+cfg.CouchBaseCfg.URL, options)
+	//cluster, err := gocb.Connect(cfg.CouchBaseCfg.URL, options)
 	if err != nil {
 		log.Error("Failed to connect to Couchbase cluster", "error", err)
 		return nil, err

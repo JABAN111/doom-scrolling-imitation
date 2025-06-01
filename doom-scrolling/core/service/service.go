@@ -1,4 +1,4 @@
-package core
+package service
 
 import (
 	"context"
@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"log/slog"
 	"os"
+	"rshd/lab1/v2/core"
+	"rshd/lab1/v2/internal/logger"
 	"sync"
 	"time"
 
@@ -14,22 +16,23 @@ import (
 )
 
 type Service struct {
-	DocumentDB   DocumentDB
-	GraphDB      GraphDB
-	TimeSeriesDB TimeSeriesDB
-	ColumnarDB   ColumnarDB
-	S3           S3
+	DocumentDB   core.DocumentDB
+	GraphDB      core.GraphDB
+	TimeSeriesDB core.TimeSeriesDB
+	ColumnarDB   core.ColumnarDB
+	S3           core.S3
 	log          *slog.Logger
 	numWorkers   int
+	customLogger *logger.Custom
 }
 
 func NewService(
 	log *slog.Logger,
-	db DocumentDB,
-	graph GraphDB,
-	tsDB TimeSeriesDB,
-	columnarDB ColumnarDB,
-	s3 S3,
+	db core.DocumentDB,
+	graph core.GraphDB,
+	tsDB core.TimeSeriesDB,
+	columnarDB core.ColumnarDB,
+	s3 core.S3,
 	numWorkers int,
 ) *Service {
 	return &Service{
@@ -40,14 +43,15 @@ func NewService(
 		log:          log,
 		S3:           s3,
 		numWorkers:   numWorkers,
+		customLogger: logger.GetCustom(s3, 30*time.Second),
 	}
 }
 
-func (s *Service) CreateUser(ctx context.Context, user User) (User, error) {
+func (s *Service) CreateUser(ctx context.Context, user core.User) (core.User, error) {
 	user, err := s.DocumentDB.CreateUser(ctx, user)
 	if err != nil {
 		s.log.Info("Failed to create user", "error", err)
-		return User{}, err
+		return core.User{}, err
 	}
 
 	go s.logUserActivity(ctx, user.Username, "user_created")
@@ -55,28 +59,30 @@ func (s *Service) CreateUser(ctx context.Context, user User) (User, error) {
 	err = s.GraphDB.CreateUser(ctx, user.Username)
 	if err != nil {
 		s.log.Info("Failed to create user in graph", "error", err)
-		return User{}, err
+		return core.User{}, err
 	}
+
+	go s.customLogger.Info("pizda pizda pizda", "user", user)
 
 	return user, nil
 }
 
-func (s *Service) CreatePost(ctx context.Context, post Post, filePath string) (Post, error) {
+func (s *Service) CreatePost(ctx context.Context, post core.Post, filePath string) (core.Post, error) {
 	post.CreatedAt = time.Now()
 	post, err := s.DocumentDB.CreatePost(ctx, post)
 	if err != nil {
 		s.log.Error("Failed to create post", "error", err)
-		return Post{}, err
+		return core.Post{}, err
 	}
 
 	err = s.S3.UploadPostImage(ctx, post.ID, filePath)
 	if err != nil {
 		s.log.Error("failed to save an image for the post", "error", err)
-		return Post{}, err
+		return core.Post{}, err
 	}
 
 	go func() {
-		serEvnt := TimeSeriesEvent{
+		serEvnt := core.TimeSeriesEvent{
 			Measurement: "post_created",
 			Tags: map[string]string{
 				"user_id": post.UserID,
@@ -91,19 +97,19 @@ func (s *Service) CreatePost(ctx context.Context, post Post, filePath string) (P
 	}()
 
 	go func() {
-		_ = s.ColumnarDB.InsertAnalyticsEvent(context.Background(), AnalyticsEvent{
-			Type:       EventCreatePost,
+		_ = s.ColumnarDB.InsertAnalyticsEvent(context.Background(), core.AnalyticsEvent{
+			Type:       core.EventCreatePost,
 			UserID:     post.UserID,
 			PostID:     post.ID,
 			Timestamp:  time.Now(),
-			Additional: fmt.Sprintf(`{"tag": "%s"}`, EventCreatePost),
+			Additional: fmt.Sprintf(`{"tag": "%s"}`, core.EventCreatePost),
 		})
 	}()
 
 	err = s.GraphDB.CreatePost(ctx, post.ID, post.UserID)
 	if err != nil {
 		s.log.Info("Failed to create post in graph", "error", err)
-		return Post{}, err
+		return core.Post{}, err
 	}
 
 	return post, nil
@@ -115,15 +121,15 @@ func (s *Service) LikePost(ctx context.Context, userID, postID string) error {
 		return err
 	}
 
-	go s.logUserActivity(ctx, userID, EventLike)
+	go s.logUserActivity(ctx, userID, core.EventLike)
 
-	err := s.TimeSeriesDB.WriteEvent(ctx, TimeSeriesEvent{
+	err := s.TimeSeriesDB.WriteEvent(ctx, core.TimeSeriesEvent{
 		Measurement: "post_likes",
 		Tags: map[string]string{
 			"user_id": userID,
 			"post_id": postID,
 		},
-		Fields:    map[string]any{string(EventLike): 1},
+		Fields:    map[string]any{string(core.EventLike): 1},
 		Timestamp: time.Now(),
 	})
 	if err != nil {
@@ -133,17 +139,17 @@ func (s *Service) LikePost(ctx context.Context, userID, postID string) error {
 	return nil
 }
 
-func (s *Service) GetPopularTags(ctx context.Context, days, limit int) ([]TagStat, error) {
+func (s *Service) GetPopularTags(ctx context.Context, days, limit int) ([]core.TagStat, error) {
 	return s.ColumnarDB.GetTopActions(ctx, days, limit)
 }
 
-func (s *Service) GetSystemHealth(ctx context.Context) (SystemHealthStats, error) {
+func (s *Service) GetSystemHealth(ctx context.Context) (core.SystemHealthStats, error) {
 	return s.TimeSeriesDB.GetSystemHealth(ctx)
 }
 
-func (s *Service) logUserActivity(ctx context.Context, userID string, eventType EventType) {
+func (s *Service) logUserActivity(ctx context.Context, userID string, eventType core.EventType) {
 	go func() {
-		err := s.TimeSeriesDB.WriteEvent(ctx, TimeSeriesEvent{
+		err := s.TimeSeriesDB.WriteEvent(ctx, core.TimeSeriesEvent{
 			Measurement: "user_activity",
 			Tags:        map[string]string{"user_id": userID, "type": string(eventType)},
 			Timestamp:   time.Now(),
@@ -155,7 +161,7 @@ func (s *Service) logUserActivity(ctx context.Context, userID string, eventType 
 	}()
 
 	go func() {
-		_ = s.ColumnarDB.InsertAnalyticsEvent(context.Background(), AnalyticsEvent{
+		_ = s.ColumnarDB.InsertAnalyticsEvent(context.Background(), core.AnalyticsEvent{
 			Type:       eventType,
 			UserID:     userID,
 			Timestamp:  time.Now(),
@@ -172,7 +178,7 @@ func (s *Service) FollowUser(ctx context.Context, username, usernameToFollow str
 	wg.Add(2)
 	go func() {
 		defer wg.Done()
-		_ = s.TimeSeriesDB.WriteEvent(context.Background(), TimeSeriesEvent{
+		_ = s.TimeSeriesDB.WriteEvent(context.Background(), core.TimeSeriesEvent{
 			Measurement: "user_follow",
 			Tags: map[string]string{
 				"follower":  username,
@@ -186,7 +192,7 @@ func (s *Service) FollowUser(ctx context.Context, username, usernameToFollow str
 	go func() {
 		defer wg.Done()
 
-		_ = s.ColumnarDB.InsertAnalyticsEvent(context.Background(), AnalyticsEvent{
+		_ = s.ColumnarDB.InsertAnalyticsEvent(context.Background(), core.AnalyticsEvent{
 			Type:       "follow",
 			UserID:     username,
 			TargetID:   usernameToFollow,
@@ -198,7 +204,7 @@ func (s *Service) FollowUser(ctx context.Context, username, usernameToFollow str
 	return nil
 }
 
-func (s *Service) GetFeed(ctx context.Context, userID string) ([]Post, error) {
+func (s *Service) GetFeed(ctx context.Context, userID string) ([]core.Post, error) {
 	feeds, err := s.GraphDB.GetFeed(ctx, userID)
 	if err != nil {
 		s.log.Info("Failed to get feed", "error", err)
@@ -206,7 +212,7 @@ func (s *Service) GetFeed(ctx context.Context, userID string) ([]Post, error) {
 	}
 
 	sema := make(chan struct{}, s.numWorkers)
-	postChan := make(chan Post)
+	postChan := make(chan core.Post)
 	wg := sync.WaitGroup{}
 	wg.Add(len(feeds))
 
@@ -252,14 +258,14 @@ func (s *Service) GetFeed(ctx context.Context, userID string) ([]Post, error) {
 		close(postChan)
 	}()
 
-	var posts []Post
+	var posts []core.Post
 
 	for val := range postChan {
 		posts = append(posts, val)
 	}
 
 	go func() {
-		_ = s.TimeSeriesDB.WriteEvent(context.Background(), TimeSeriesEvent{
+		_ = s.TimeSeriesDB.WriteEvent(context.Background(), core.TimeSeriesEvent{
 			Measurement: "feed_viewed",
 			Tags:        map[string]string{"user_id": userID},
 			Fields:      map[string]any{"count": 1},
@@ -270,7 +276,7 @@ func (s *Service) GetFeed(ctx context.Context, userID string) ([]Post, error) {
 	return posts, nil
 }
 
-func (s *Service) GetUserStats(ctx context.Context, userID string) (UserActivity, error) {
+func (s *Service) GetUserStats(ctx context.Context, userID string) (core.UserActivity, error) {
 	return s.ColumnarDB.GetUserActivityStats(ctx, userID)
 }
 
@@ -282,7 +288,7 @@ func (s *Service) CollectAndStoreSystemMetrics(ctx context.Context) {
 		s.log.Error("Failed to get CPU usage", "error", err)
 	}
 	go func() {
-		cpuMetric := SystemMetric{
+		cpuMetric := core.SystemMetric{
 			Service:    "my_service",
 			InstanceID: "instance_1",
 			Type:       "cpu_usage",
@@ -300,7 +306,7 @@ func (s *Service) CollectAndStoreSystemMetrics(ctx context.Context) {
 		return
 	}
 	go func() {
-		memMetric := SystemMetric{
+		memMetric := core.SystemMetric{
 			Service:    "my_service",
 			InstanceID: "instance_1",
 			Type:       "memory_usage",
