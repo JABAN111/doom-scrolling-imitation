@@ -1,8 +1,11 @@
 from pyspark.sql import *
 from pyspark.sql.functions import col
+from sss_handler import download_file
 
 PATH = "./log.json"
 
+
+download_file()
 spark = SparkSession.builder.appName("demo").getOrCreate()
 sc = spark.sparkContext
 
@@ -15,15 +18,15 @@ logsDF.printSchema()
 logsDF.createOrReplaceTempView("people")
 
 
-logsDF.select(
-    col("time"),
-    col("level"),
-    col("msg"),
-    col("user.username").alias("username"),
-    col("user.email").alias("email"),
-    col("user.bio").alias("bio"),
-    col("user.age").alias("возраст")
-).show(truncate=False)
+
+def peopleNames():
+    res = spark.sql("SELECT user.username FROM people WHERE user.age BETWEEN 13 AND 30")
+    return res
+
+def countPeople():
+    return spark.sql("SELECT user.username FROM people WHERE user.age BETWEEN 13 AND 30").count()
+
+peopleNames().show()
 
 
 def pupu():
@@ -37,3 +40,4 @@ def pupu():
         ["first_name", "age"],
     )
     return df.show()
+

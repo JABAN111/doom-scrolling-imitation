@@ -1,20 +1,18 @@
 from typing import Union
 from fastapi import FastAPI
-from spark_handler import pupu
+from spark_handler import *
 
 
 app = FastAPI()
-
 
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
 
 @app.get("/pupu")
-def pupu_end():
+def pupu_end() -> None:
     return pupu()
 
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+@app.get('/count')
+def count() -> int:
+    return countPeople()
