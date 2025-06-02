@@ -18,6 +18,7 @@ type User struct {
 	Username string `json:"username"`
 	Email    string `json:"email"`
 	Bio      string `json:"bio"`
+	Age      int    `json:"age"`
 }
 
 type Post struct {

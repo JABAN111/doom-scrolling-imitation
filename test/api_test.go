@@ -3,9 +3,12 @@ package test
 import (
 	"bytes"
 	"encoding/json"
+	"github.com/google/uuid"
 	"io"
+	"math/rand"
 	"net/http"
 	"net/url"
+	"sync"
 	"testing"
 	"time"
 
@@ -22,6 +25,7 @@ type User struct {
 	Username string `json:"username"`
 	Email    string `json:"email"`
 	Bio      string `json:"bio"`
+	Age      int    `json:"age"`
 }
 
 type Post struct {
@@ -149,4 +153,39 @@ func TestGetFeed(t *testing.T) {
 
 	require.NoError(t, err)
 	require.Equal(t, http.StatusOK, resp.StatusCode, string(body))
+}
+
+type userData struct {
+	Username string `json:"username"`
+	Email    string `json:"email"`
+	Bio      string `json:"bio"`
+	Age      int    `json:"age"`
+}
+
+func TestManyUsers(t *testing.T) {
+	sema := make(chan struct{}, 30)
+	var wg sync.WaitGroup
+	cnt := 1000
+	wg.Add(cnt)
+	for range cnt {
+		go func() {
+			sema <- struct{}{}
+			defer func() {
+				<-sema
+				wg.Done()
+			}()
+			user := User{Username: uuid.NewString(), Email: uuid.NewString() + "@jaba.com", Bio: uuid.NewString(), Age: rand.Int()}
+			payload, err := json.Marshal(user)
+			require.NoError(t, err)
+
+			resp, err := client.Post(address+"/api/action/create", "application/json", bytes.NewBuffer(payload))
+			require.NoError(t, err)
+
+			body, err := io.ReadAll(resp.Body)
+			require.NoError(t, err)
+
+			require.Equal(t, http.StatusCreated, resp.StatusCode, string(body))
+		}()
+	}
+	wg.Wait()
 }

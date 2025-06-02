@@ -1,8 +1,7 @@
 package logger
 
 import (
-	"bufio"
-	"encoding/json"
+	"fmt"
 	"log/slog"
 	"os"
 	"rshd/lab1/v2/core"
@@ -21,7 +20,7 @@ type Custom struct {
 }
 
 func GetCustom(sss core.S3, duration time.Duration) *Custom {
-	f, err := os.OpenFile("data.json", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
+	f, err := os.OpenFile("/app/data.json", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
 	if err != nil {
 		panic(err)
 	}
@@ -53,28 +52,15 @@ func (c *Custom) startUploader(duration time.Duration) {
 		select {
 		case <-ticker.C:
 			c.mu.Lock()
-			f, err := os.Open("data.json")
+			err := c.logFile.Sync()
 			if err != nil {
-				c.mu.Unlock()
-				continue
+				fmt.Println("не смогли синкнуть")
 			}
-			defer f.Close()
-
-			var entries []json.RawMessage
-			scanner := bufio.NewScanner(f)
-			for scanner.Scan() {
-				entries = append(entries, json.RawMessage(scanner.Bytes()))
+			err = c.SSS.UploadLogs("/app/data.json")
+			if err != nil {
+				fmt.Println("произошла критическая да")
+				fmt.Println(err)
 			}
-
-			tmpFile := "data_array.json"
-			out, _ := os.Create(tmpFile)
-			enc := json.NewEncoder(out)
-			enc.SetIndent("", "  ")
-			enc.Encode(entries)
-			out.Close()
-
-			_ = c.SSS.UploadLogs(tmpFile)
-			_ = os.Remove(tmpFile)
 			c.mu.Unlock()
 		}
 	}

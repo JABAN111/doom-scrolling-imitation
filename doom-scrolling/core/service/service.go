@@ -43,7 +43,7 @@ func NewService(
 		log:          log,
 		S3:           s3,
 		numWorkers:   numWorkers,
-		customLogger: logger.GetCustom(s3, time.Second),
+		customLogger: logger.GetCustom(s3, 5*time.Second),
 	}
 }
 
@@ -62,7 +62,7 @@ func (s *Service) CreateUser(ctx context.Context, user core.User) (core.User, er
 		return core.User{}, err
 	}
 
-	go s.customLogger.Info("pizda pizda pizda", "user", user)
+	go s.customLogger.Info("create user", "user", user)
 
 	return user, nil
 }
@@ -112,6 +112,8 @@ func (s *Service) CreatePost(ctx context.Context, post core.Post, filePath strin
 		return core.Post{}, err
 	}
 
+	go s.customLogger.Info("create post", "post", post)
+
 	return post, nil
 }
 
@@ -135,6 +137,8 @@ func (s *Service) LikePost(ctx context.Context, userID, postID string) error {
 	if err != nil {
 		s.log.Error("Failed to write like event", "error", err)
 	}
+
+	go s.customLogger.Info("like post", "userID", userID, "postID", postID)
 
 	return nil
 }
@@ -201,6 +205,7 @@ func (s *Service) FollowUser(ctx context.Context, username, usernameToFollow str
 		})
 	}()
 	wg.Wait()
+	go s.customLogger.Info("follow user", "username", username, "usernameToFollow", usernameToFollow)
 	return nil
 }
 

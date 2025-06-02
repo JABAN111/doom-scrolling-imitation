@@ -79,8 +79,12 @@ func main() {
 
 	users := []string{"alice", "bob", "charlie"}
 	for _, username := range users {
-
-		_, err := service.CreateUser(ctx, core.User{Username: username})
+		_, err := service.CreateUser(ctx, core.User{
+			Username: username,
+			Email:    username + "@gmail.com",
+			Bio:      username + username + username,
+			Age:      22,
+		})
 		if err != nil {
 			log.Error("Failed to create user", "username", username, "error", err)
 		} else {
