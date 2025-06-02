@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"github.com/google/uuid"
 	"io"
-	"math/rand"
+	"math/rand/v2"
 	"net/http"
 	"net/url"
 	"sync"
@@ -174,7 +174,7 @@ func TestManyUsers(t *testing.T) {
 				<-sema
 				wg.Done()
 			}()
-			user := User{Username: uuid.NewString(), Email: uuid.NewString() + "@jaba.com", Bio: uuid.NewString(), Age: rand.Int()}
+			user := User{Username: uuid.NewString(), Email: uuid.NewString() + "@jaba.com", Bio: uuid.NewString(), Age: randRange(10, 200)}
 			payload, err := json.Marshal(user)
 			require.NoError(t, err)
 
@@ -188,4 +188,8 @@ func TestManyUsers(t *testing.T) {
 		}()
 	}
 	wg.Wait()
+}
+
+func randRange(min, max int) int {
+	return rand.IntN(max-min) + min
 }

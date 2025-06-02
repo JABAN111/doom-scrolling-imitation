@@ -26,8 +26,19 @@ def peopleNames():
 def countPeople():
     return spark.sql("SELECT user.username FROM people WHERE user.age BETWEEN 13 AND 30").count()
 
-peopleNames().show()
+def countLevelMessage(level):
+    return logsDF.select(
+    col("time"),
+    col("level"),
+    col("msg"),
+    col("user.username").alias("username"),
+    col("user.email").alias("email"),
+    col("user.bio").alias("bio"),
+    col("user.age").alias("age")
+    ).where("level='"+level+"'")
 
+peopleNames().show(truncate=False)
+countLevelMessage("ERROR").show(truncate=True)
 
 def pupu():
     df = spark.createDataFrame(
